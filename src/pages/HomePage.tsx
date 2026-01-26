@@ -10,8 +10,12 @@ const HomePage = () => {
         <div>
             <HeroSection />
             <QuoteSection />
-            <HowWeCanHelpSection />
-            <AboutSection />
+            <section id="services">
+                <HowWeCanHelpSection />
+            </section>
+            <section id="about">
+                <AboutSection />
+            </section>
             <CTABannerSection />
         </div>
     )
