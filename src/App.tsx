@@ -1,7 +1,7 @@
 import './App.css'
-import HomePage from "./pages/Homepage"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import HomePage from "./pages/HomePage";
+import Header from "./components/header/Header"
+import Footer from "./components/footer/Footer"
 import { BrowserRouter, Routes, Route } from "react-router";
 
 function App() {

@@ -1,8 +1,8 @@
-import HeroSection from "../sections/HeroSection"
-import QuoteSection from "../sections/QuoteSection"
-import HowWeCanHelpSection from "../sections/HowWeHelpSection"
-import AboutSection from "../sections/AboutSection"
-import CTABannerSection from "../sections/CTABannerSection"
+import HeroSection from "../sections/hero/HeroSection"
+import QuoteSection from "../sections/quote/QuoteSection"
+import HowWeCanHelpSection from "../sections/howwehelp/HowWeHelpSection"
+import AboutSection from "../sections/about/AboutSection"
+import CTABannerSection from "../sections/cta banner/CTABannerSection"
 
 const HomePage = () => {
     return (
