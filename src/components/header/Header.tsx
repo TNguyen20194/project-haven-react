@@ -2,6 +2,22 @@ import "./header.style.css"
 import Button from "../buttons/CTAbutton";
 import ThemeToggle from "../buttons/Theme-Toggle";
 
+type Navigation = {
+ title: string,
+ href: string
+}[]
+
+const navLinks: Navigation = [
+  {
+    title: "Learn",
+    href: "#"
+  },
+  {
+    title: "Assessment",
+    href: "#"
+  }
+]
+
 const Header = () => {
   return (
     <header>
@@ -12,17 +28,26 @@ const Header = () => {
           </div>
         </div>
         <div>
-          <nav className="navigation rounded-full" aria-label="main navigation">
+         <nav className="navigation rounded-full" aria-label="main navigation">
+            {
+          navLinks.map((nav, index) => {
+            return (
+            <a key={index} href={nav.href} className="navigation rounded-full">
+              {nav.title}
+            </a>
+            )
+          })
+         }
+          </nav>
+
+          {/* <nav className="navigation rounded-full" aria-label="main navigation">
             <a className="rounded-full" href="#services">
-              Services
+              Learn
             </a>
             <a className="rounded-full" href="#about">
-              About
+              Assessment
             </a>
-            <a className="rounded-full clientLoginTab" href="dashboard.html">
-              Client Login
-            </a>
-          </nav>
+          </nav> */}
         </div>
         <div className="header-actions">
           <ThemeToggle />
