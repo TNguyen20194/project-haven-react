@@ -2,7 +2,7 @@
 
 body {
       margin: 0;
-      font-family: "Poppins", system-ui, sans-serif;
+      font-family: "Poppins", "Roboto", system-ui, sans-serif;
       background: hsl(var(--background));
       color: var(--green-1);
 }

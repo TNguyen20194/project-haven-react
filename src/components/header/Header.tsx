@@ -27,6 +27,7 @@ const Header = () => {
             <a href="index.html">MindfulPath</a>
           </div>
         </div>
+
         <div>
          <nav className="navigation rounded-full" aria-label="main navigation">
             {
@@ -39,26 +40,13 @@ const Header = () => {
           })
          }
           </nav>
-
-          {/* <nav className="navigation rounded-full" aria-label="main navigation">
-            <a className="rounded-full" href="#services">
-              Learn
-            </a>
-            <a className="rounded-full" href="#about">
-              Assessment
-            </a>
-          </nav> */}
         </div>
+
         <div className="header-actions">
           <ThemeToggle />
-          <button
-            className="button button-nav header-cta rounded-full"
-            type="button"
-          >
-            Book a Session
-          </button>
+
+        <Button type="button" className="button button-nav header-cta rounded-full" children={"Book a session"} />
         </div>
-        <Button />
 
         {/* Mobile Button */}
         <button

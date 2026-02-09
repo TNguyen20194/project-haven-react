@@ -112,3 +112,18 @@ body.dark .theme-icon--moon {
   transform: translateY(1px);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
+
+.button {
+    --btn-transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    border-color: var(--white);
+    font-weight: var(--fw-medium);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

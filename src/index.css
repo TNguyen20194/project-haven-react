@@ -10,13 +10,6 @@ html {
 
 
 /* ==========>> HEADER <<==========  */
-body {
-      margin: 0;
-      font-family: "Poppins", system-ui, sans-serif;
-      background: hsl(var(--background));
-      color: var(--green-1);
-}
-
 .button {
     --btn-transition: background-color 0.2s ease;
     display: inline-flex;

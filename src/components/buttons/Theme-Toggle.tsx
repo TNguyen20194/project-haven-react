@@ -1,12 +1,22 @@
+import { useState } from "react";
+
 const ThemeToggle = () => {
+    const [theme, setTheme] = useState("light");
+
+    const toggleTheme = () => {
+      let isLight = theme === "light";
+
+      isLight ? setTheme("dark") : setTheme("light");
+    };
+
     return (
         <button
             id="themeToggle"
             className="theme-toggle rounded-full"
             type="button"
+            onClick={toggleTheme}
           >
-            {/* Light Icon */}
-            <svg
+            {theme === "light" ?  <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -27,8 +37,7 @@ const ThemeToggle = () => {
               <path d="M20 12h2"></path>
               <path d="m6.34 17.66-1.41 1.41"></path>
               <path d="m19.07 4.93-1.41 1.41"></path>
-            </svg>
-            {/* Dark Icon */}
+            </svg> :
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -42,7 +51,7 @@ const ThemeToggle = () => {
               className="lucide lucide-moon h-5 w-5 theme-icon theme-icon--moon"
             >
               <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-            </svg>
+            </svg>}
           </button>
     )
 };
