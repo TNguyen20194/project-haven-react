@@ -1,56 +1,33 @@
 import "./header.style.css";
 import Button from "../buttons/CTAbutton";
 import ThemeToggle from "../buttons/Theme-Toggle";
+import Navigations from "../navigations/Navigations"
 
-type Navigation = {
-  title: string;
-  href: string;
-}[];
-
-const navLinks: Navigation = [
-  {
-    title: "Learn",
-    href: "#",
-  },
-  {
-    title: "Assessment",
-    href: "#",
-  },
-];
 
 const Header = () => {
   return (
     <header>
       <div className="header-container">
+        {/* Logo */}
         <div className="nav">
           <div className="logo">
-            <a href="index.html">MindfulPath</a>
+            <a href="index.html" >MindfulPath</a>
           </div>
         </div>
 
-        <div>
-          <nav className="navigation rounded-full" aria-label="main navigation">
-            {navLinks.map((nav, index) => {
-              return (
-                <a
-                  key={index}
-                  href={nav.href}
-                  className="navigation rounded-full"
-                >
-                  {nav.title}
-                </a>
-              );
-            })}
-          </nav>
-        </div>
+        {/* Navigations */}
+        <Navigations />
 
+        {/* Theme Toggle + CTA */}
         <div className="header-actions">
           <ThemeToggle />
 
           <Button
             type="button"
             className="button button-nav header-cta rounded-full"
-          >Book a Therapist</Button>
+          >
+            Book a Therapist
+          </Button>
         </div>
 
         {/* Mobile Button */}

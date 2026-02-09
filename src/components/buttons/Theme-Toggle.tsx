@@ -17,19 +17,10 @@ const ThemeToggle = () => {
   useEffect(() => {
     document.body.classList.toggle("dark", theme === "dark");
     localStorage.setItem("theme", theme);
-  }, []);
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
   }, [theme]);
 
   return (
     <button
-      id="themeToggle"
       className="theme-toggle rounded-full"
       type="button"
       onClick={toggleTheme}
@@ -46,7 +37,7 @@ const ThemeToggle = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-sun h-5 w-5 theme-icon theme-icon--sun"
+          className="lucide lucide-sun h-5 w-5 theme-icon"
         >
           <circle cx="12" cy="12" r="4"></circle>
           <path d="M12 2v2"></path>
@@ -70,7 +61,7 @@ const ThemeToggle = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-moon h-5 w-5 theme-icon theme-icon--moon"
+          className="lucide lucide-moon h-5 w-5 theme-icon"
         >
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
         </svg>

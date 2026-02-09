@@ -1,3 +1,5 @@
+/* @import "../../index.css"; */
+
 /* ==========>> HEADER <<==========  */
 
 header {
@@ -15,7 +17,7 @@ header {
 }
 
 .logo a {
-    color: var(--green-1);
+    color: hsl(var(--green-1));
     font-weight: var(--fw-dark);
     font-size: 1.2rem;
 }
@@ -37,27 +39,27 @@ header {
 .navigation {
     display: flex;
     gap: 0.25rem;
-    background-color: var(--muted2);
+    background-color: hsl(var(--muted));
     padding: 0.375rem 0.5rem;
 }
 
 .navigation a {
     padding: 0.5rem 1rem;
-    color: var(--green-1);
+    color: hsl(var(--green-1));
     font-size: 0.875rem;
     font-weight: var(--fw-medium);
 }
 
 .navigation a:hover {
-    background-color: var(--soft-white2);
+    background-color: hsl(var(--soft-white));
 }
 
 .button-nav {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: hsl(var(--primary));
+    color: hsl(var(--white));
     padding: 0.5rem 1.5rem;
     font-size: 0.875rem;
-    font-weight: var(--fw-medium);
+    font-weight: hsl(var(--fw-medium));
     transition: var(--btn-transition);
 }
 
@@ -77,20 +79,19 @@ header {
     padding: 0;
     margin: 0;
     background-color: transparent;
-    color: var(--green-1);
+    color: hsl(var(--green-1));
     cursor: pointer;
     box-shadow: none;
 }
 
 .theme-toggle:hover {
-    background-color: var(--accent);
+    background-color: hsl(var(--accent));
 }
 
 .theme-icon {
     font-size: 1.1rem;
     line-height: 1;
 }
-
 
 .button-nav:hover, .button-cta:hover {
   background-color: #3E8888;
@@ -112,7 +113,7 @@ header {
     background: transparent;
     color: inherit;
     cursor: pointer;
-    border-color: var(--white);
+    border-color: hsl(var(--white));
     font-weight: var(--fw-medium);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

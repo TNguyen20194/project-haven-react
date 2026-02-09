@@ -1,0 +1,88 @@
+:root {
+  /* Base surfaces */
+  --background: 45 20% 97%;
+  --card: 40 15% 99%;
+
+  /* Text / neutral */
+  --white: 0 0% 100%;
+  --black: 0 0% 0%;
+  --soft-white: 0 0% 98.04%;
+
+  /* Brand + palette */
+  --primary: 180 44.94% 34.90%;
+  --secondary: 150 20.59% 86.67%;
+  --accent: 16.17 81.56% 72.35%;
+  --destructive: 0 100% 64.90%;
+
+  /* UI surfaces */
+  --muted: 150 17.65% 93.33%;
+  --border: 140 23.08% 97.45%;
+  --input: 153.33 17.65% 90%;
+
+  /* Optional supporting colors (keep only if you use them in components) */
+  --warm-beige: 27.27 37.93% 94.31%;
+  --soft-grey: 0 0% 22.35%;
+  --dark-grey: 0 0% 11.37%;
+  --green-1: 180 25.64% 15.29%;
+  --green-2: 87.10 42.47% 85.69%;
+  --green-3: 180 10.91% 43.14%;
+
+  /* Footer */
+  --fc-footer-heading: 150 25% 96.86%;
+  --fc-footer-text: 150 25% 96.86% / 0.698;
+
+  /* Font Weight */
+  --fw-light: 400;
+  --fw-medium: 500;
+  --fw-medium-2: 600;
+  --fw-dark: 700;
+
+  /* Sidebar */
+  --sidebar-background: 0 0% 98.04%;
+  --sidebar-foreground: 230 4.62% 25.49%;
+  --sidebar-primary: 240 5.88% 10%;
+  --sidebar-white: 0 0% 98.04%; /* renamed from --sidebar--white for consistency */
+  --sidebar-accent: 240 10% 96.08%;
+  --sidebar-accent-foreground: 240 5.88% 10%;
+  --sidebar-border: 222 25% 92.16%;
+  --sidebar-ring: 219.43 100% 65.69%;
+}
+
+body.dark {
+  /* Base surfaces */
+  --background: 200 15% 12%;
+  --card: 200 15% 15%;
+
+  /* Neutral */
+  --white: 207.27 24.44% 8.82%;
+  --soft-white: 200 15% 12%; /* replaced your extra --soft-white2 */
+
+  /* Brand */
+  --primary: 173.93 34.90% 50%;
+  --secondary: 180 37.21% 16.86%;
+  --accent: 16.17 81.56% 72.35%;
+  --destructive: 0 100% 64.90%;
+
+  /* UI */
+  --muted: 200 11.76% 20% / 1;
+  --border: 205.26 19.59% 19.02%;
+  --input: 200 11.76% 20%; /* added so inputs don’t stay light in dark mode */
+
+  /* Optional supporting colors */
+  --soft-grey: 208.80 14.29% 65.69%;
+  --green-1: 150 25% 96.86%;
+
+  /* Footer */
+  --fc-footer-heading: 150 25% 96.86%;
+  --fc-footer-text: 202.50 20% 68.63%;
+
+  /* Sidebar (dark) — only keep if you actually have a dark sidebar */
+  --sidebar-background: 200 15% 12%;
+  --sidebar-foreground: 208.80 14.29% 65.69%;
+  --sidebar-primary: 150 25% 96.86%;
+  --sidebar-white: 200 15% 12%;
+  --sidebar-accent: 205.26 19.59% 19.02%;
+  --sidebar-accent-foreground: 150 25% 96.86%;
+  --sidebar-border: 205.26 19.59% 19.02%;
+  --sidebar-ring: 219.43 100% 65.69%;
+}
