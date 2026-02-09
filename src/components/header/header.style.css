@@ -91,17 +91,6 @@ header {
     line-height: 1;
 }
 
-.theme-icon--moon {
-    display: none;
-}
-
-body.dark .theme-icon--sun {
-  display: none;
-}
-
-body.dark .theme-icon--moon {
-  display: inline;
-}
 
 .button-nav:hover, .button-cta:hover {
   background-color: #3E8888;

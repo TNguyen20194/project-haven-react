@@ -1,22 +1,22 @@
-import "./header.style.css"
+import "./header.style.css";
 import Button from "../buttons/CTAbutton";
 import ThemeToggle from "../buttons/Theme-Toggle";
 
 type Navigation = {
- title: string,
- href: string
-}[]
+  title: string;
+  href: string;
+}[];
 
 const navLinks: Navigation = [
   {
     title: "Learn",
-    href: "#"
+    href: "#",
   },
   {
     title: "Assessment",
-    href: "#"
-  }
-]
+    href: "#",
+  },
+];
 
 const Header = () => {
   return (
@@ -29,23 +29,28 @@ const Header = () => {
         </div>
 
         <div>
-         <nav className="navigation rounded-full" aria-label="main navigation">
-            {
-          navLinks.map((nav, index) => {
-            return (
-            <a key={index} href={nav.href} className="navigation rounded-full">
-              {nav.title}
-            </a>
-            )
-          })
-         }
+          <nav className="navigation rounded-full" aria-label="main navigation">
+            {navLinks.map((nav, index) => {
+              return (
+                <a
+                  key={index}
+                  href={nav.href}
+                  className="navigation rounded-full"
+                >
+                  {nav.title}
+                </a>
+              );
+            })}
           </nav>
         </div>
 
         <div className="header-actions">
           <ThemeToggle />
 
-        <Button type="button" className="button button-nav header-cta rounded-full" children={"Book a session"} />
+          <Button
+            type="button"
+            className="button button-nav header-cta rounded-full"
+          >Book a Therapist</Button>
         </div>
 
         {/* Mobile Button */}
