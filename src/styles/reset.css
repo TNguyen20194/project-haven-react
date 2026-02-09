@@ -41,9 +41,9 @@ img, picture, video, canvas, svg {
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+/* input, button, textarea, select {
   font: inherit;
-}
+} */
 
 /* 8. Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {

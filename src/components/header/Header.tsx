@@ -24,7 +24,7 @@ const Header = () => {
 
           <Button
             type="button"
-            className="button button-nav header-cta rounded-full"
+            variant="primary" size="md"
           >
             Book a Therapist
           </Button>

@@ -24,7 +24,7 @@ const Navigations = () => {
                 <a
                   key={index}
                   href={nav.href}
-                  className="navigation rounded-full"
+                  className="nav-link rounded-full"
                 >
                   {nav.title}
                 </a>
