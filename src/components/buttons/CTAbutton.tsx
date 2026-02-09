@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
 
 const variants = {
   primary:
-    "bg-[hsl(var(--primary))] text-[hsl(var(--white))] hover:bg-[hsl(var(--primary)/0.9)]",
+    "bg-[hsl(var(--primary))] text-[hsl(var(--white))] hover:bg-[hsl(var(--primary)/0.9)] dark:hover:text-[#f5f9f7]",
   secondary:
     "bg-[hsl(var(--secondary))] text-[hsl(var(--green-1))] hover:bg-[hsl(var(--secondary)/0.9)]",
   outline:
