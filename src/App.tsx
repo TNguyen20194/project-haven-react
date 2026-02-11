@@ -7,15 +7,12 @@ import { BrowserRouter, Routes, Route } from "react-router";
 function App() {
 
   return (
-    <div className="container">
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route index element={<HomePage />}/>
-      </Routes>
+      <HomePage />
       <Footer />
     </BrowserRouter>
-    </div>
+
   )
 }
 

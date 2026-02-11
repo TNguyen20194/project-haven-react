@@ -1,0 +1,75 @@
+/* ==========>> FOOTER <<==========  */
+
+.footer-container {
+    background-color: hsl(var(--green-1a));
+    padding: 3rem 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 2rem;
+}
+
+.footer-heading {
+    color: hsl(var(--fc-footer-heading));
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.footer-info, .contact-info {
+    color: hsl(var(--fc-footer-text));
+}
+
+.flex-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.flex-item:nth-of-type(2) {
+    margin-top: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    background-color: #f5F9F71A;
+    padding: 0.5rem;
+}
+
+.social-icon:hover {
+    background-color: rgb(247 250 248 / 0.2);
+}
+
+.badge__social {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: hsl(var(--fc-footer-heading));
+}
+
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgb(247 250 248 / 0.2);
+}
+
+/* ==========>> RESPONSIVE <<==========  */
+@media (max-width: 950px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 670px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}

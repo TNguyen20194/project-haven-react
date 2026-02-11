@@ -24,6 +24,7 @@
   --soft-grey: 0 0% 22.35%;
   --dark-grey: 0 0% 11.37%;
   --green-1: 180 25.64% 15.29%;
+  --green-1a: var(--green-1);
   --green-2: 87.10 42.47% 85.69%;
   --green-3: 180 10.91% 43.14%;
 
@@ -71,9 +72,10 @@ body.dark {
   /* Optional supporting colors */
   --soft-grey: 208.80 14.29% 65.69%;
   --green-1: 150 25% 96.86%;
+  --green-1a: 200 15% 12%;
 
   /* Footer */
-  --fc-footer-heading: 150 25% 96.86%;
+  --fc-footer-heading: 150 25% 97%;
   --fc-footer-text: 202.50 20% 68.63%;
 
   /* Sidebar (dark) — only keep if you actually have a dark sidebar */

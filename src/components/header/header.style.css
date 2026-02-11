@@ -54,15 +54,6 @@ header {
     background-color: hsl(var(--soft-white));
 }
 
-/* .header-cta {
-    background-color: hsl(var(--primary));
-    color: hsl(var(--white));
-    padding: 0.5rem 1.5rem;
-    font-size: 0.875rem;
-    font-weight: hsl(var(--fw-medium));
-    transition: var(--btn-transition);
-} */
-
 .header-actions {
     display: flex;
     align-items: center;
@@ -91,4 +82,23 @@ header {
 .theme-icon {
     font-size: 1.1rem;
     line-height: 1;
+}
+
+/* ----- RESPONSIVE ----- */
+
+@media (max-width: 770px) {
+    .navigation, .header-cta {
+        display: none;
+    }
+    .mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header-container {
+        padding-inline: 1rem;
+    }
+    .header-actions {
+        margin-left: auto;
+    }
 }
