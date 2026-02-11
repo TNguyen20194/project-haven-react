@@ -10,6 +10,7 @@
 
   /* Brand + palette */
   --primary: 180 44.94% 34.90%;
+  --primary-alt: 200 20% 10%;
   --secondary: 150 20.59% 86.67%;
   --accent: 16.17 81.56% 72.35%;
   --destructive: 0 100% 64.90%;
@@ -61,12 +62,14 @@ body.dark {
 
   /* Brand */
   --primary: 173.93 34.90% 50%;
+  --primary-alt: var(--green-1);
   --secondary: 180 37.21% 16.86%;
   --accent: 16.17 81.56% 72.35%;
   --destructive: 0 100% 64.90%;
 
   /* UI */
   --muted: 200 11.76% 20% / 1;
+  --muted-1: var(--muted);
   --border: 205.26 19.59% 19.02%;
   --input: 200 11.76% 20%; /* added so inputs don’t stay light in dark mode */
 

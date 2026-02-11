@@ -31,11 +31,6 @@ header {
   justify-content: space-between;
 }
 
-.hero-title {
-    font-size: 3.75rem;
-    line-height: 1.1;
-}
-
 .navigation {
     display: flex;
     gap: 0.25rem;

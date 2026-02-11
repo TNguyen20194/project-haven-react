@@ -1,0 +1,37 @@
+/* HERO SECTION */
+.hero {
+    padding: 8rem 1.5rem 5rem;
+}
+
+.hero-container {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    /* white-space: nowrap; */
+    font-size: 3.75rem;
+    line-height: 1.1;
+    margin-top: 2rem;
+    font-weight: var(--fw-dark);
+    color: hsl(var(--green-1));
+}
+
+.hero-text {
+    margin: 2rem auto 0 auto;
+    font-size: 1.25rem;
+    color: hsl(var(--primary-alt));
+    font-weight: var(--fw-light);
+}
+
+.text-primary {
+    color: hsl(var(--primary));
+}
+
+/* ==========>> RESPONSIVE <<==========  */
+@media (max-width: 670px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
