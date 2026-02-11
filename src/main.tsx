@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/reset.css"
-import "./token.css";
+import "./styles/token.css";
 import "./index.css";
 import App from "./App.tsx";
 
