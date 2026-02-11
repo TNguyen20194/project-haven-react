@@ -1,0 +1,12 @@
+.title-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: hsl(var(--primary));
+    background-color: hsl(var(--muted-1));
+    font-weight: var(--fw-medium);
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px rgba(50, 109, 109, 0.08);
+}

@@ -143,19 +143,6 @@
     text-align: center;
 }
 
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary);
-    background-color: var(--muted2);
-    font-weight: var(--fw-medium);
-    font-size: 0.875rem;
-    padding: 0.5rem 1.25rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 20px rgba(50, 109, 109, 0.08);
-}
-
 .hero-title {
     /* white-space: nowrap; */
     margin-top: 2rem;

@@ -4,9 +4,9 @@
 }
 
 /* 2. Remove default margin */
-* {
+/* * {
   margin: 0;
-}
+} */
 
 html, body, #root {
   height: 100%;
