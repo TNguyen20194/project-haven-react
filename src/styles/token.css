@@ -20,6 +20,7 @@
   --muted-1: 150 35% 90%;
   --border: 140 23.08% 97.45%;
   --input: 153.33 17.65% 90%;
+  --quote-bg: 180 26% 15% ;
 
   /* Optional supporting colors (keep only if you use them in components) */
   --warm-beige: 27.27 37.93% 94.31%;
@@ -72,6 +73,7 @@ body.dark {
   --muted-1: var(--muted);
   --border: 205.26 19.59% 19.02%;
   --input: 200 11.76% 20%; /* added so inputs don’t stay light in dark mode */
+   --quote-bg: var(--muted);
 
   /* Optional supporting colors */
   --soft-grey: 208.80 14.29% 65.69%;
