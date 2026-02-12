@@ -9,7 +9,7 @@ const HeroSection = () => {
             <div className="hero-container">
                <Badge icon={Heart} className="mb-[1.1rem]">Professional Mental Health Support</Badge>
 
-                <h1 className="hero-title">Your Journey to <span className="text-primary">Wellness</span> Starts Here</h1>
+                <h1 className="hero-title">Explore <span className="text-primary">Therapy</span> & Understand Your Mind</h1>
                 <p className="hero-text">Curious about therapy but not sure where to start? Explore what therapy is, take a free self-assessment, and discover resources to support your well-being.</p>
 
                 <Button type="button" variant="primary" size="lg" aria-label="Take the Free Assessment" className="mt-10">Take the Free Assessment</Button>

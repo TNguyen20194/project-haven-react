@@ -11,7 +11,7 @@ const CTABannerSection = () => {
           <CloudSun className="emblem text-[hsl(var(--white))] w-24 h-24"/>
         </div>
 
-        <h2 className="section-heading">
+        <h2 className="section-heading mb-6">
           Ready to Take the First Step?
         </h2>
 

@@ -12,9 +12,9 @@
 .hero-title {
     /* white-space: nowrap; */
     font-size: 3.75rem;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-top: 2rem;
-    font-weight: var(--fw-dark);
+    font-weight: var(--fw-medium-2);
     color: hsl(var(--green-1));
 }
 
