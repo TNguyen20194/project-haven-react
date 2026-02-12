@@ -7,6 +7,7 @@
     font-weight: var(--fw-medium);
     font-size: 0.875rem;
     padding: 0.5rem 1.25rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 20px rgba(50, 109, 109, 0.08);
+    box-shadow: 
+          0 1px 3px rgba(0, 0, 0, 0.04),
+    0 6px 14px rgba(0, 0, 0, 0.06);
 }

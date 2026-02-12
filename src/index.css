@@ -1,25 +1,21 @@
 @import "tailwindcss";
 
 
-/* ==========>> HEADER <<==========  */
-.badge {
-    width: 1rem;
-    height: 1rem;
-}
-
 .text-secondary {
     color: hsl(var(--green-1));
 }
 
 .section-heading {
-
+    --fs-section: 2.75rem;
+    --lh-section: 2.25rem;
     color: hsl(var(--green-1));
-    font-weight: var(--fw-dark);
+    font-weight: var(--fw-medium-2);
     font-size: var(--fs-section);
     line-height: var(--lh-section);
     text-align: center;
     margin-bottom: 2.5rem;
 }
+
 
 .section-heading__text {
     font-size: 1.125rem;
@@ -27,7 +23,7 @@
 }
 
 .inner-container {
-    max-width: 72rem;
+    max-width: 75rem;
     margin: 0 auto;
 }
 
