@@ -23,16 +23,16 @@ const variants = {
   primary:
     "bg-[hsl(var(--primary))] text-[hsl(var(--white))] hover:bg-[hsl(var(--primary)/0.9)] dark:hover:text-[#f5f9f7]",
   secondary:
-    "bg-[hsl(var(--secondary))] text-[hsl(var(--green-1))] hover:bg-[hsl(var(--secondary)/0.9)]",
+    "bg-[hsl(var(--secondary))] text-[hsl(var(--green-1))] hover:bg-[hsl(var(--white))]",
   outline:
-    "border border-[hsl(var(--border))] text-[hsl(var(--green-1))] hover:bg-[hsl(var(--muted))]",
+    "border border-[hsl(var(--border))] text-[hsl(var(--white))] hover:bg-[hsl(var(--muted)/0.9)] hover:text-[hsl(var(--green-1))]",
 };
 
 
   const sizes = {
     sm: "px-3 py-1.5 text-sm",
     md: "px-5 py-2.5 text-[14px]",
-    lg: "px-8 py-3.5 text-lg",
+    lg: "px-7 py-3.5 text-lg",
   };
 
   return (

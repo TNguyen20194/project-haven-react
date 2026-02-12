@@ -7,7 +7,7 @@
 
 .section-heading {
     --fs-section: 2.75rem;
-    --lh-section: 2.25rem;
+    --lh-section: 3.5rem;
     color: hsl(var(--green-1));
     font-weight: var(--fw-medium-2);
     font-size: var(--fs-section);
@@ -25,6 +25,24 @@
 .inner-container {
     max-width: 75rem;
     margin: 0 auto;
+}
+
+/* ==========>> EMBLEMS <<==========  */
+.emblem-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.75rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999%;
+    padding: 1rem;
+}
+
+.emblem {
+    font-size: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 /* MOBILE MENU */

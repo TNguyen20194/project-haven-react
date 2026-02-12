@@ -14,24 +14,6 @@
     margin: 0 auto;
 }
 
-.quote-icon-wrapper {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.75rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 9999%;
-    padding: 1rem;
-    background-color: hsl(var(--muted));
-}
-
-.quote-icon {
-    font-size: 1.5rem;
-    width: 3.5rem;
-    height: 3.5rem;
-}
-
 .quote-text {
     font-family: "Merriweather", system-ui, sans-serif;
     font-style: italic;
