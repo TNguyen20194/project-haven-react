@@ -4,6 +4,7 @@
 .text-secondary {
     color: hsl(var(--green-1));
 }
+/* ==========>> SECTIONS <<==========  */
 
 .section-heading {
     --fs-section: 2.75rem;
@@ -163,24 +164,6 @@ margin-top: 1.5rem;
 }
 
 /* JOURNEY */
-
-
-/* ----- RESPONSIVE ----- */
-
-@media (max-width: 770px) {
-    .service-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 670px) {
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* ======== AUTH PAGE ======== */
 .auth-page {

@@ -22,17 +22,18 @@ const CTABannerSection = () => {
         </p>
 
         <div className="flex items-center justify-center gap-4 pt-4 mt-9"> 
-            <span className="h-px w-10 bg-white/40"></span>
+            <span className="h-px w-10 bg-[hsl(var(--white)/0.5)]"></span>
             <Flower2 className="w-5 h-5 text-[hsl(var(--soft-white))]" />
-            <span className="h-[2px] w-10 bg-white/40"></span> 
+            <span className="h-[2px] w-10 bg-[hsl(var(--white)/0.5)]"></span> 
         </div>
 
-        <div className="flex align-center justify-center gap-4 mt-8">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8 ">
           <Button
             type="button"
             aria-label="Book a Consultation"
             variant="secondary"
             size="lg"
+            className="w-[294px]"
           >
             Book a Consultation
           </Button>

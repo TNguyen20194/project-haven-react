@@ -61,3 +61,16 @@
 .icon-sun {
     color: hsl(var(--accent));
 }
+
+/* ==========>> RESPONSIVE <<==========  */
+@media (max-width: 770px) {
+     .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 670px) {
+     .service-grid {
+    grid-template-columns: 1fr;
+    }
+}

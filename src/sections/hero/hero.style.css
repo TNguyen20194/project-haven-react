@@ -11,10 +11,11 @@
 
 .hero-title {
     /* white-space: nowrap; */
-    font-size: 3.75rem;
+    font-family: "Merriweather", "Poppins", sans-serif;
+    font-size: 4rem;
     line-height: 1.2;
     margin-top: 2rem;
-    font-weight: var(--fw-medium-2);
+    font-weight: var(--fw-dark);
     color: hsl(var(--green-1));
 }
 

@@ -36,7 +36,12 @@ const HowWeCanHelpSection = () => {
       <div className="service-container__inner">
         <Badge icon={Sparkles} className="mb-[2rem]">Discover What Therapy Can Offer</Badge>
         <h2 className="section-heading mb-5">What You'll Learn</h2>
-        <p className="mb-15">Whether you're simply curious or considering therapy, these resources can help you understand what to expect.</p>
+     
+         <p className="mx-auto max-w-[42rem] text-center text-[hsl(var(--primary-alt))] mb-12">
+            Whether you're simply curious or considering therapy, these resources can help you understand what to expect.
+          </p>
+ 
+
         <div className="service-grid">
           {
             educationCards.map(({icon:Icon, title, body, iconClass }) => {
