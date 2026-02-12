@@ -52,7 +52,7 @@
   --sidebar-ring: 219.43 100% 65.69%;
 }
 
-body.dark {
+:root[data-theme = "dark"]{
   /* Base surfaces */
   --background: 200 15% 12%;
   --card: 200 15% 15%;
