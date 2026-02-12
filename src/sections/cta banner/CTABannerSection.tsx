@@ -1,13 +1,13 @@
 import "./ctabanner.style.css";
 import Button from "../../components/buttons/CTAbutton";
-import { Flower2, Quote, CloudSun, SunIcon } from "lucide-react";
+import { Flower2, CloudSun, } from "lucide-react";
 
 const CTABannerSection = () => {
   return (
     <section className="resources-container">
       <div className="resources-container__inner">
         
-        <div className="emblem-wrapper bg-[hsl(var(--secondary)/0.5)]">
+        <div className="emblem-wrapper bg-[hsl(var(--secondary)/0.16)]">
           <CloudSun className="emblem text-[hsl(var(--white))] w-24 h-24"/>
         </div>
 
