@@ -4,9 +4,12 @@ import "./styles/reset.css"
 import "./styles/token.css";
 import "./index.css";
 import App from "./App.tsx";
+import { ThemeProvider } from "./hooks/ThemeContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <ThemeProvider>
       <App />
+    </ThemeProvider>
   </StrictMode>,
 );

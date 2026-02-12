@@ -1,23 +1,7 @@
-import { useEffect, useState } from "react";
+import { useTheme } from "../../hooks/ThemeContext";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light" || savedTheme === "dark") {
-      setTheme(savedTheme);
-    }
-  }, []);
-
-  useEffect(() => {
-    document.body.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
@@ -71,3 +55,10 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
+
+
+/*
+Create a theme provider to let React handle theme toggle instead of using document.body.classList
+
+
+*/

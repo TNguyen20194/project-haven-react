@@ -1,6 +1,6 @@
 import "./header.style.css";
 import Button from "../buttons/CTAbutton";
-import ThemeToggle from "../buttons/Theme-Toggle";
+import ThemeToggle from "../buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations"
 
 
