@@ -147,30 +147,6 @@ margin-top: 1.5rem;
 
 /* JOURNEY */
 
-.resources-container {
-    padding: 5rem 1.5rem;
-    background-color: var(--primary);
-    text-align: center;
-}
-
-.section-heading__resources {
-    color: var(--white);
-}
-
-.resources-text {
-    color: var(--white);
-    font-size: 1.25rem;
-}
-
-.button-cta__profile {
-    color: var(--green-1);
-    background-color: var(--secondary);
-    transition: var(--btn-transition);
-}
-
-.button-cta__profile:hover {
-    background-color: #1F4D4D;
-}
 
 /* ----- RESPONSIVE ----- */
 

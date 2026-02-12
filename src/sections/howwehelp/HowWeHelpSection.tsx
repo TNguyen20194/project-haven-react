@@ -41,7 +41,7 @@ const HowWeCanHelpSection = () => {
             educationCards.map(({icon:Icon, title, body, iconClass }) => {
               return (
               <div key={title} className="feature-card">
-                <div className="flex items-center mt-[1.25rem] justify-center w-15 h-15 rounded-2xl bg-[hsl(var(--muted))] border border-[hsl(var(--border))]">
+                <div className="flex items-center mt-[1rem] justify-center w-15 h-15 rounded-2xl bg-[hsl(var(--muted))] border border-[hsl(var(--border))]">
                 <Icon className={`h-7 w-7 ${iconClass ?? ""}`}/>
                 </div>
                 <h3>{title}</h3>

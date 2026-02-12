@@ -39,16 +39,22 @@
     font-size: var(--fs-h3);
     line-height: var(--lh-h3);
     margin-top: 1.25rem;
+    text-align: left;
 }
 
 .feature-card p {
     color: hsl(var(--green-1));
     margin-top: 1.25rem;
     font-weight: var(--fw-medium);
+    text-align: left;
 }
 
 /* Card Icon Styling */
-.icon-flower, .icon-tree {
+.icon-flower {
+    color: hsl(345, 55%, 64%)
+}
+
+.icon-tree {
     color: hsl(var(--primary));
 }
 

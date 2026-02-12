@@ -12,7 +12,7 @@ const HeroSection = () => {
                 <h1 className="hero-title">Your Journey to <span className="text-primary">Wellness</span> Starts Here</h1>
                 <p className="hero-text">Curious about therapy but not sure where to start? Explore what therapy is, take a free self-assessment, and discover resources to support your well-being.</p>
 
-                <Button type="button" variant="primary" size="lg" className="mt-10">Take the Free Assessment</Button>
+                <Button type="button" variant="primary" size="lg" aria-label="Take the Free Assessment" className="mt-10">Take the Free Assessment</Button>
             </div>
         </section>
     )
