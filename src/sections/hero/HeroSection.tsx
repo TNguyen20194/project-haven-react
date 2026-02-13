@@ -1,13 +1,13 @@
 import Button from "../../components/buttons/CTAbutton";
 import Badge from "../../components/badge/Badge";
-import { Heart } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import "./hero.style.css"
 
 const HeroSection = () => {
     return (
         <section className="hero">
             <div className="hero-container">
-               <Badge icon={Heart} iconClassName="text-[hsl(var(--pink))]" className="mb-[1.1rem]">Professional Mental Health Support</Badge>
+               <Badge icon={BookOpen} iconClassName="text-[hsl(var(--pink))]" className="mb-[1.1rem]">Free Mental Health Education</Badge>
 
                 <h1 className="hero-title">Explore <span className="text-primary">Therapy</span> & Understand Your Mind</h1>
                 <p className="hero-text">Curious about therapy but not sure where to start? Explore what therapy is, take a free self-assessment, and discover resources to support your well-being.</p>
