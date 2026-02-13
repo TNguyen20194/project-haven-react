@@ -1,17 +1,36 @@
+import { useEffect, useState } from "react";
 import "./header.style.css";
 import Button from "../buttons/CTAbutton";
 import ThemeToggle from "../buttons/ThemeToggle";
-import Navigations from "../navigations/Navigations"
-
+import Navigations from "../navigations/Navigations";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const MOBILE_MAX = 620;
+
+    const syncMenuWithViewport = () => {
+      const isMobile = window.innerWidth <= MOBILE_MAX;
+
+
+      if (!isMobile) setIsOpen(false);
+    };
+
+
+    syncMenuWithViewport();
+
+    window.addEventListener("resize", syncMenuWithViewport);
+    return () => window.removeEventListener("resize", syncMenuWithViewport);
+  }, []);
+
   return (
     <header>
       <div className="header-container">
         {/* Logo */}
         <div className="nav">
           <div className="logo">
-            <a href="index.html" >MindfulPath</a>
+            <a href="index.html">MindfulPath</a>
           </div>
         </div>
 
@@ -22,10 +41,7 @@ const Header = () => {
         <div className="header-actions">
           <ThemeToggle />
 
-          <Button
-            type="button"
-            variant="primary" size="md"
-          >
+          <Button type="button" variant="primary" size="md">
             Book a Therapist
           </Button>
         </div>
@@ -35,10 +51,12 @@ const Header = () => {
           className="mobile-menu-toggle"
           type="button"
           aria-label="Open main menu"
-          aria-expanded="false"
+          aria-expanded={isOpen}
           aria-controls="mobile-menu"
+          onClick={() => setIsOpen((prev) => !prev)}
         >
-          <span className="mobile-icon mobile-icon--open">
+          {/* Open icon */}
+          <span className={`mobile-icon ${isOpen ? "is-hidden" : ""}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -56,7 +74,8 @@ const Header = () => {
               <path d="M4 19h16" />
             </svg>
           </span>
-          <span className="mobile-icon mobile-icon--close">
+          {/* Close icon */}
+          <span className={`mobile-icon ${isOpen ? "" : "is-hidden"}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -75,6 +94,31 @@ const Header = () => {
           </span>
         </button>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && window.innerWidth <= 620 && (
+        <div className="mobile-menu">
+          <nav className="mobile-menu-links">
+            <a href="/learn" onClick={() => setIsOpen(false)}>
+              Learn
+            </a>
+            <a href="/assessment" onClick={() => setIsOpen(false)}>
+              Assessment
+            </a>
+          </nav>
+
+          <div className="mobile-menu-row">
+            <span className="mobile-menu-label">Theme</span>
+            <ThemeToggle />
+          </div>
+
+          <div className="mobile-menu-cta">
+            <Button type="button" variant="primary" size="md">
+              Book a Therapist
+            </Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

@@ -1,96 +1,146 @@
+/* =========================================
+   Theme tokens for shadcn + custom palette
+   Uses: <html data-theme="light|dark">
+========================================= */
+
+/* Shared tokens (not theme-dependent) */
 :root {
+  /* Font Weight */
+  --fw-light: 400;
+  --fw-medium: 500;
+  --fw-medium-2: 600;
+  --fw-dark: 700;
+}
+
+/* -----------------------------
+   LIGHT THEME
+------------------------------ */
+:root[data-theme="light"] {
   /* Base surfaces */
   --background: 45 20% 97%;
   --card: 40 15% 99%;
-
-  /* Text / neutral */
-  --white: 0 0% 100%;
-  --black: 0 0% 0%;
-  --soft-white: 0 0% 98.04%;
+  --popover: var(--card);
 
   /* Brand + palette */
-  --primary: 180 44.94% 34.90%;
+  --primary: 180 44.94% 34.9%;
   --primary-alt: 200 20% 10%;
   --secondary: 150 20.59% 86.67%;
   --accent: 16.17 81.56% 72.35%;
-  --destructive: 0 100% 64.90%;
+  --destructive: 0 100% 64.9%;
 
   /* UI surfaces */
   --muted: 150 17.65% 93.33%;
   --muted-1: 150 35% 90%;
   --border: 140 23.08% 97.45%;
   --input: 153.33 17.65% 90%;
-  --quote-bg: 180 26% 15% ;
+  --quote-bg: 180 26% 15%;
 
-  /* Optional supporting colors (keep only if you use them in components) */
+  /* Text / neutral (custom) */
+  --white: 0 0% 100%;
+  --black: 0 0% 0%;
+  --soft-white: 0 0% 98.04%;
+
+  /* Optional supporting colors */
   --warm-beige: 27.27 37.93% 94.31%;
   --soft-grey: 0 0% 22.35%;
   --dark-grey: 0 0% 11.37%;
   --green-1: 180 25.64% 15.29%;
   --green-1a: var(--green-1);
-  --green-2: 87.10 42.47% 85.69%;
+  --green-2: 87.1 42.47% 85.69%;
   --green-3: 180 10.91% 43.14%;
 
   /* Footer */
   --fc-footer-heading: 150 25% 96.86%;
   --fc-footer-text: 150 25% 96.86% / 0.698;
 
-  /* Font Weight */
-  --fw-light: 400;
-  --fw-medium: 500;
-  --fw-medium-2: 600;
-  --fw-dark: 700;
-
   /* Sidebar */
   --sidebar-background: 0 0% 98.04%;
   --sidebar-foreground: 230 4.62% 25.49%;
   --sidebar-primary: 240 5.88% 10%;
-  --sidebar-white: 0 0% 98.04%; /* renamed from --sidebar--white for consistency */
+  --sidebar-white: 0 0% 98.04%;
   --sidebar-accent: 240 10% 96.08%;
   --sidebar-accent-foreground: 240 5.88% 10%;
   --sidebar-border: 222 25% 92.16%;
   --sidebar-ring: 219.43 100% 65.69%;
+
+  /* ===========================
+     shadcn REQUIRED MAPPINGS
+     (these make shadcn components
+     match your palette)
+  ============================ */
+  --foreground: var(--primary-alt);
+  --card-foreground: var(--primary-alt);
+  --popover-foreground: var(--primary-alt);
+
+  --primary-foreground: 0 0% 98%;
+  --secondary-foreground: var(--green-1);
+  --muted-foreground: var(--soft-grey);
+  --accent-foreground: var(--primary-alt);
+  --destructive-foreground: 0 0% 98%;
+
+  --ring: var(--primary);
 }
 
-:root[data-theme = "dark"]{
+/* -----------------------------
+   DARK THEME
+------------------------------ */
+:root[data-theme="dark"] {
   /* Base surfaces */
   --background: 200 15% 12%;
   --card: 200 15% 15%;
-
-  /* Neutral */
-  --white: 207.27 24.44% 8.82%;
-  --soft-white: 200 15% 12%; /* replaced your extra --soft-white2 */
+  --popover: var(--card);
 
   /* Brand */
-  --primary: 173.93 34.90% 50%;
-  --primary-alt: var(--green-1);
+  --primary: 173.93 34.9% 50%;
   --secondary: 180 37.21% 16.86%;
   --accent: 16.17 81.56% 72.35%;
-  --destructive: 0 100% 64.90%;
+  --destructive: 0 100% 64.9%;
 
   /* UI */
-  --muted: 200 11.76% 20% / 1;
+  --muted: 200 11.76% 20%;
   --muted-1: var(--muted);
   --border: 205.26 19.59% 19.02%;
-  --input: 200 11.76% 20%; /* added so inputs don’t stay light in dark mode */
-   --quote-bg: var(--muted);
+  --input: 200 11.76% 20%;
+  --quote-bg: var(--muted);
 
   /* Optional supporting colors */
-  --soft-grey: 208.80 14.29% 65.69%;
+  --soft-grey: 208.8 14.29% 65.69%;
   --green-1: 150 25% 96.86%;
   --green-1a: 200 15% 12%;
 
+  /* Keep your existing neutral intent */
+  --white: 207.27 24.44% 8.82%;
+  --soft-white: 200 15% 12%;
+
+  /* If you still want "primary-alt" as light text in dark mode */
+  --primary-alt: var(--green-1);
+
   /* Footer */
   --fc-footer-heading: 150 25% 97%;
-  --fc-footer-text: 202.50 20% 68.63%;
+  --fc-footer-text: 202.5 20% 68.63%;
 
-  /* Sidebar (dark) — only keep if you actually have a dark sidebar */
+  /* Sidebar (dark) */
   --sidebar-background: 200 15% 12%;
-  --sidebar-foreground: 208.80 14.29% 65.69%;
+  --sidebar-foreground: 208.8 14.29% 65.69%;
   --sidebar-primary: 150 25% 96.86%;
   --sidebar-white: 200 15% 12%;
   --sidebar-accent: 205.26 19.59% 19.02%;
   --sidebar-accent-foreground: 150 25% 96.86%;
   --sidebar-border: 205.26 19.59% 19.02%;
   --sidebar-ring: 219.43 100% 65.69%;
+
+  /* ===========================
+     shadcn REQUIRED MAPPINGS
+  ============================ */
+  --foreground: var(--green-1);
+  --card-foreground: var(--green-1);
+  --popover-foreground: var(--green-1);
+
+  --primary-foreground: 200 15% 12%;
+  --secondary-foreground: var(--green-1);
+  --muted-foreground: var(--soft-grey);
+  --accent-foreground: 200 15% 12%;
+  --destructive-foreground: 0 0% 98%;
+
+  --ring: var(--primary);
 }
