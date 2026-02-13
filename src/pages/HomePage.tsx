@@ -1,7 +1,7 @@
 import HeroSection from "../sections/hero/HeroSection"
 import QuoteSection from "../sections/quote/QuoteSection"
 import HowWeCanHelpSection from "../sections/howwehelp/HowWeHelpSection"
-import AboutSection from "../sections/about/AboutSection"
+import WhatIsTherapySection from "../sections/what is therapy/WhatIsTherapySection"
 import CTABannerSection from "../sections/cta banner/CTABannerSection"
 
 const HomePage = () => {
@@ -14,7 +14,7 @@ const HomePage = () => {
                 <HowWeCanHelpSection />
             </section>
             <section id="about">
-                <AboutSection />
+                <WhatIsTherapySection />
             </section>
             <CTABannerSection />
         </div>
