@@ -17,7 +17,6 @@ const Header = () => {
       if (!isMobile) setIsOpen(false);
     };
 
-
     syncMenuWithViewport();
 
     window.addEventListener("resize", syncMenuWithViewport);

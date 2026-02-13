@@ -51,7 +51,7 @@
 
 /* Card Icon Styling */
 .icon-flower {
-    color: hsl(345, 55%, 64%)
+    color: hsl(var(--pink))
 }
 
 .icon-tree {

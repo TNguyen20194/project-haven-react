@@ -15,7 +15,7 @@
 /* -----------------------------
    LIGHT THEME
 ------------------------------ */
-:root[data-theme="light"] {
+:root[data-theme='light'] {
   /* Base surfaces */
   --background: 45 20% 97%;
   --card: 40 15% 99%;
@@ -27,6 +27,7 @@
   --secondary: 150 20.59% 86.67%;
   --accent: 16.17 81.56% 72.35%;
   --destructive: 0 100% 64.9%;
+  --pink: 345 55% 64%;
 
   /* UI surfaces */
   --muted: 150 17.65% 93.33%;
@@ -84,7 +85,7 @@
 /* -----------------------------
    DARK THEME
 ------------------------------ */
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
   /* Base surfaces */
   --background: 200 15% 12%;
   --card: 200 15% 15%;
@@ -95,6 +96,7 @@
   --secondary: 180 37.21% 16.86%;
   --accent: 16.17 81.56% 72.35%;
   --destructive: 0 100% 64.9%;
+  --pink: 345 55% 64%;
 
   /* UI */
   --muted: 200 11.76% 20%;

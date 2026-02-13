@@ -34,10 +34,10 @@ const HowWeCanHelpSection = () => {
   return (
     <section className="service-container">
       <div className="service-container__inner">
-        <Badge icon={Sparkles} className="mb-[2rem]">Discover What Therapy Can Offer</Badge>
+        <Badge icon={Sparkles} iconClassName="text-[hsl(var(--accent))]" className="mb-[2rem]">Discover What Therapy Can Offer</Badge>
         <h2 className="section-heading mb-5">What You'll Learn</h2>
      
-         <p className="mx-auto max-w-[42rem] text-center text-[hsl(var(--primary-alt))] mb-12">
+         <p className="mx-auto max-w-[42rem] text-center text-[hsl(var(--primary-alt))] mb-12 text-[1.12rem]">
             Whether you're simply curious or considering therapy, these resources can help you understand what to expect.
           </p>
  
