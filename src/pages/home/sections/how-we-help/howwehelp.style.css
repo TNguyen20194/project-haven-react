@@ -1,9 +1,8 @@
-.service-container {
-    padding: 4rem 1.5rem;
-    background-color: var(--muted);
+.resources {
+    background-color: hsl(var(--background-alt)/0.5);
 }
 
-.service-container__inner {
+.resources__inner {
     max-width: 75rem;
     margin: 0 auto;
     text-align: center;

@@ -5,10 +5,14 @@
 
 
 /* ==========>> SECTIONS <<==========  */
+.section-container {
+    padding: 4rem 1.5rem;
+}
 
 .section-heading {
     --fs-section: 2.75rem;
     --lh-section: 3.5rem;
+    font-family: "Lora";
     color: hsl(var(--green-1));
     font-weight: var(--fw-medium-2);
     font-size: var(--fs-section);
@@ -40,20 +44,6 @@
 }
 
 
-
-/* ABOUT */
-.about-container {
-    padding: 4rem 1.5rem;
-}
-
-.about-text {
-    color: var(--green-1);
-    font-weight: var(--fw-medium);
-}
-
-.about-text:nth-of-type(2) {
-margin-top: 1.5rem;
-}
 
 /* JOURNEY */
 

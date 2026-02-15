@@ -1,19 +1,18 @@
-.resources-container {
-  padding: 4rem 1.5rem;
+.consultation  {
   background-color: hsl(var(--primary));
   text-align: center;
 }
 
-.resources-container__inner {
+.consultation__inner {
   max-width: 56rem;
   margin: 0 auto;
 }
 
-.resources-container h2 {
+.consultation  h2 {
   color: hsl(var(--white));
 }
 
-.resources-container p {
+.consultation  p {
   color: hsl(var(--white));
   font-size: 1.25rem;
 }

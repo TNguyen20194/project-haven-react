@@ -1,0 +1,13 @@
+.therapy__inner {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+
+.therapy p {
+    color: hsl(var(--green-1));
+}
+
+.therapy p:nth-of-type(2) {
+margin-top: 1.5rem;
+}

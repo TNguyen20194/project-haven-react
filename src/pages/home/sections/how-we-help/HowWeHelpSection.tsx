@@ -38,8 +38,8 @@ const educationCards: Card[] = [
 
 const HowWeHelpSection = () => {
   return (
-    <section className="service-container">
-      <div className="service-container__inner">
+    <section className="resources section-container">
+      <div className="resources__inner">
         <Badge
           icon={Sparkles}
           iconClassName="text-[hsl(var(--accent))]"

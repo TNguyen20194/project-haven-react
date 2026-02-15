@@ -4,8 +4,8 @@ import { Flower2, CloudSun } from "lucide-react";
 
 const CTABannerSection = () => {
   return (
-    <section className="resources-container">
-      <div className="resources-container__inner">
+    <section className="consultation section-container">
+      <div className="consultation__inner">
         <div className="emblem-wrapper bg-[hsl(var(--secondary)/0.16)]">
           <CloudSun className="emblem text-[hsl(var(--white))] w-24 h-24" />
         </div>

@@ -1,11 +1,13 @@
+import "./whatistherapy.style.css";
 import Badge from "@/components/UI/badge/Badge";
 import { Heart } from "lucide-react";
+import flower from "@/assets/therapy-flower.jpg";
 
 const WhatIsTherapySection = () => {
   return (
-    <section id="about" className="about-container">
-      <div className="inner-container">
-        <div className="text-center">
+    <section className="therapy section-container">
+      <div className="therapy__inner">
+        <div className="mb-8 mx-auto text-center">
           <Badge
             icon={Heart}
             iconClassName="text-[hsl(var(--pink))]"
@@ -13,19 +15,41 @@ const WhatIsTherapySection = () => {
           >
             Understanding Therapy
           </Badge>
+          <h2 className="section-heading mb-5">What Is Therapy, Really?</h2>
         </div>
-        <h2 className="section-heading">What Is Therapy, Really?</h2>
-        <p className="section-heading__text about-text">
-          With over 15 years of experience in mental health counseling, our
-          practice specializes in anxiety, depression, trauma, and relationship
-          issues. We believe in creating a safe, non-judgmental space where you
-          can explore your thoughts and feelings at your own pace.
-        </p>
-        <p className="section-heading__text about-text">
-          Our approach combines evidence-based therapies including Cognitive
-          Behavioral Therapy (CBT), Mindfulness practices, and Person-Centered
-          techniques to support your unique healing journey.
-        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="order-2 md:order-1 grid place-items-center">
+            <div className="aspect-square w-full max-w-md">
+              <img
+                src={flower}
+                alt="what is therapy"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="order-1 md:order-2">
+            <p className="text-[1.12rem]">
+              Therapy is a{" "}
+              <span className="text-[hsl(var(--primary))] font-medium">
+                safe, confidential conversation
+              </span>{" "}
+              with a trained professional who helps you understand your
+              thoughts, feelings, and behaviors. It's not just for people in
+              crisis—it's for anyone who wants to grow, heal, or simply
+              understand themselves better.
+            </p>
+            <p className="text-[1.12rem]">
+              There are many types of therapy, from{" "}
+              <span className="text-[hsl(var(--primary))] font-medium">
+                Cognitive Behavioral Therapy (CBT)
+              </span>{" "}
+              to mindfulness-based approaches. The right fit depends on your
+              unique needs and goals—and that's completely okay to explore.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
