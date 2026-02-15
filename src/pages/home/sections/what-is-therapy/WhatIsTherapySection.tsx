@@ -1,7 +1,7 @@
-import Badge from "@/components/badge/Badge";
+import Badge from "@/components/UI/badge/Badge";
 import { Heart } from "lucide-react";
 
-const WhatIsTherapy = () => {
+const WhatIsTherapySection = () => {
   return (
     <section id="about" className="about-container">
       <div className="inner-container">
@@ -31,4 +31,4 @@ const WhatIsTherapy = () => {
   );
 };
 
-export default WhatIsTherapy;
+export default WhatIsTherapySection;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./header.style.css";
-import Button from "../buttons/CTAbutton";
-import ThemeToggle from "../buttons/ThemeToggle";
+import Button from "../../UI/buttons/CTAbutton";
+import ThemeToggle from "../../UI/buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations";
 
 const Header = () => {
@@ -12,7 +12,6 @@ const Header = () => {
 
     const syncMenuWithViewport = () => {
       const isMobile = window.innerWidth <= MOBILE_MAX;
-
 
       if (!isMobile) setIsOpen(false);
     };

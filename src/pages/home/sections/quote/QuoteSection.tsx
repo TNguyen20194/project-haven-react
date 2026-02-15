@@ -1,6 +1,6 @@
 import "./quote.style.css";
 import { Quote } from "lucide-react";
-import QuoteBlock from "../../components/quote/QuoteBlock";
+import QuoteBlock from "@/components/UI/quote/QuoteBlock";
 
 const QuoteSection = () => {
   return (
