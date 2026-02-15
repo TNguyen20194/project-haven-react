@@ -2,12 +2,13 @@ import "./whatistherapy.style.css";
 import Badge from "@/components/UI/badge/Badge";
 import { Heart } from "lucide-react";
 import flower from "@/assets/therapy-flower.jpg";
+import TrustedSection from "@/components/section/TrustedSection";
 
 const WhatIsTherapySection = () => {
   return (
     <section className="therapy section-container">
       <div className="therapy__inner">
-        <div className="mb-8 mx-auto text-center">
+        <div className="mb-8 mx-auto text-center mb-[3rem]">
           <Badge
             icon={Heart}
             iconClassName="text-[hsl(var(--pink))]"
@@ -48,6 +49,7 @@ const WhatIsTherapySection = () => {
               to mindfulness-based approaches. The right fit depends on your
               unique needs and goals—and that's completely okay to explore.
             </p>
+            <TrustedSection />
           </div>
         </div>
       </div>
