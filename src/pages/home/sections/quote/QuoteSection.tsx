@@ -1,14 +1,21 @@
 import "./quote.style.css";
 import { Quote } from "lucide-react";
 import QuoteBlock from "@/components/UI/quote/QuoteBlock";
+import IconBadge from "@/components/UI/feature-icon/IconBadge";
 
 const QuoteSection = () => {
   return (
     <section className="quote-section">
       <div className="quote-card">
-        <div className="emblem-wrapper bg-[hsl(var(--muted))]">
-          <Quote className="emblem text-primary w-24 h-24"/>
+
+        <div className="flex justify-center">
+          <IconBadge
+            icon={Quote}
+            iconClassName="w-8 h-8 text-primary"
+            wrapperClassName="w-16 h-16 rounded-full mb-6"
+          />
         </div>
+
         <QuoteBlock />
       </div>
     </section>

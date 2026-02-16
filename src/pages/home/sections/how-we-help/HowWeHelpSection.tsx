@@ -7,14 +7,16 @@ const HowWeHelpSection = () => {
   return (
     <section className="resources section-container">
       <div className="resources__inner">
-        <Badge
-          icon={Sparkles}
-          iconClassName="text-[hsl(var(--accent))]"
-          className="mb-[1.5rem]"
-        >
-          Discover What Therapy Can Offer
-        </Badge>
-        <h2 className="section-heading mb-5">What You'll Learn</h2>
+        <div className="mt-5">
+          <Badge
+            icon={Sparkles}
+            iconClassName="text-[hsl(var(--accent))]"
+            className="mb-[1.5rem]"
+          >
+            Discover What Therapy Can Offer
+          </Badge>
+          <h2 className="section-heading mb-5">What You'll Learn</h2>
+        </div>
 
         <p className="mx-auto max-w-[42rem] text-center text-[hsl(var(--primary-alt))] mb-12 text-[1.12rem]">
           Whether you're simply curious or considering therapy, these resources

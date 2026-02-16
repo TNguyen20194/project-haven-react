@@ -1,13 +1,15 @@
 import "./ctabanner.stye.css";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { Flower2, CloudSun } from "lucide-react";
+import IconBadge from "@/components/UI/feature-icon/IconBadge";
 
 const CTABannerSection = () => {
   return (
     <section className="consultation section-container">
       <div className="consultation__inner">
-        <div className="emblem-wrapper bg-[hsl(var(--secondary)/0.16)]">
-          <CloudSun className="emblem text-[hsl(var(--white))] w-24 h-24" />
+
+        <div className="flex justify-center">
+          <IconBadge icon={CloudSun} iconClassName="text-[hsl(var(--white))] w-8 h-8" wrapperClassName="bg-[hsl(var(--secondary)/0.16)] w-16 h-16 rounded-full border-none mb-6"/>
         </div>
 
         <h2 className="section-heading mb-6">Ready to Take the First Step?</h2>

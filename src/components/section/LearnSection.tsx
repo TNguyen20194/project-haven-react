@@ -1,10 +1,6 @@
-import {
-  Flower2,
-  Sun,
-  TreeDeciduous,
-  type LucideIcon,
-} from "lucide-react";
+import { Flower2, Sun, TreeDeciduous, type LucideIcon } from "lucide-react";
 
+import IconBadge from "../UI/feature-icon/IconBadge";
 
 interface Card {
   icon: LucideIcon;
@@ -18,36 +14,36 @@ const educationCards: Card[] = [
     icon: Flower2,
     title: "Free Self-Assessment",
     body: "Take a quick, anonymous questionnaire to reflect on your emotional well-being and get personalized educational insights",
-    iconClass: "icon-flower",
+    iconClass: "text-[hsl(var(--pink))]",
   },
   {
     icon: TreeDeciduous,
     title: "Understand Therapy Types",
     body: "Learn about different therapy approaches—CBT, mindfulness, talk therapy—and find what might resonate with you.",
-    iconClass: "icon-tree",
+    iconClass: "text-[hsl(var(--primary))]",
   },
   {
     icon: Sun,
     title: "Connect With a Therapist",
     body: "If you decide to explore therapy further, we make it easy to book a consultation with a licensed professional.",
-    iconClass: "icon-sun",
+    iconClass: "text-[hsl(var(--accent))]",
   },
 ];
 
 const EducationCard = () => {
+  return educationCards.map(({ icon, title, body, iconClass }) => {
     return (
-          educationCards.map(({ icon: Icon, title, body, iconClass }) => {
-            return (
-              <div key={title} className="feature-card">
-                <div className="flex items-center mt-[1rem] justify-center w-15 h-15 rounded-2xl bg-[hsl(var(--muted))] border border-[hsl(var(--border))]">
-                  <Icon className={`h-7 w-7 ${iconClass ?? ""}`} />
-                </div>
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </div>
-            );
-          })
-    )
+      <div key={title} className="feature-card">
+        <IconBadge 
+        icon={icon} 
+        iconClassName={`${iconClass} w-7 h-7`}
+        wrapperClassName="w-15 h-15 rounded-2xl mt-[1rem]"
+        />
+        <h3>{title}</h3>
+        <p>{body}</p>
+      </div>
+    );
+  });
 };
 
 export default EducationCard;

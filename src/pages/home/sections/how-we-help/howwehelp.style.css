@@ -48,19 +48,6 @@
     text-align: left;
 }
 
-/* Card Icon Styling */
-.icon-flower {
-    color: hsl(var(--pink))
-}
-
-.icon-tree {
-    color: hsl(var(--primary));
-}
-
-.icon-sun {
-    color: hsl(var(--accent));
-}
-
 /* ==========>> RESPONSIVE <<==========  */
 @media (max-width: 770px) {
      .service-grid {
