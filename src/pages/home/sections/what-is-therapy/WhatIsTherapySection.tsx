@@ -45,7 +45,7 @@ const WhatIsTherapySection = () => {
               There are many types of therapy, from{" "}
               <span className="text-[hsl(var(--primary))] font-medium">
                 Cognitive Behavioral Therapy (CBT)
-              </span>{" "}
+              </span>
               to mindfulness-based approaches. The right fit depends on your
               unique needs and goals—and that's completely okay to explore.
             </p>
