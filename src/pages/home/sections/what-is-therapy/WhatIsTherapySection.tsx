@@ -20,7 +20,7 @@ const WhatIsTherapySection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="order-2 md:order-1 grid place-items-center">
+          <div className="order-2 md:order-1 grid place-items-start">
             <div className="aspect-square w-full max-w-md">
               <img
                 src={flower}
