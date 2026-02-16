@@ -1,6 +1,16 @@
+import Header from "@/components/layout/header/Header";
+import Footer from "@/components/layout/footer/Footer";
+import UnderstandingTherapy from "./sections/UnderstandingTherapy";
+
 const Learn = () => {
     return (
-        <h1>Understanding Therapy</h1>
+        <div>
+        <Header />
+        <main>
+            <UnderstandingTherapy />
+        </main>
+        <Footer />
+        </div>
     )
 };
 

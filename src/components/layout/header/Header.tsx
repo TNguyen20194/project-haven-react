@@ -3,24 +3,25 @@ import "./header.style.css";
 import Button from "../../UI/buttons/CTAbutton";
 import ThemeToggle from "../../UI/buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations";
-import { NavLink } from "react-router";
+import { NavLink, Link, } from "react-router";
 
 const Header = () => {
+  const MOBILE_MAX = 620;
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_MAX)
 
   useEffect(() => {
-    const MOBILE_MAX = 620;
+    const onResize = () => {
+      const mobile = window.innerWidth <= MOBILE_MAX;
+      setIsMobile(mobile);
 
-    const syncMenuWithViewport = () => {
-      const isMobile = window.innerWidth <= MOBILE_MAX;
-
-      if (!isMobile) setIsOpen(false);
+      if(!mobile) setIsOpen(false);
     };
 
-    syncMenuWithViewport();
+    onResize();
 
-    window.addEventListener("resize", syncMenuWithViewport);
-    return () => window.removeEventListener("resize", syncMenuWithViewport);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   return (
@@ -28,11 +29,9 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <div className="nav">
-          <NavLink to="/" end>
-            <div className="logo">
-              <a href="index.html">MindfulPath</a>
-            </div>
-          </NavLink>
+          <Link to="/" className="logo">
+              MindfulPath
+          </Link>
         </div>
 
         {/* Navigations */}
@@ -97,9 +96,9 @@ const Header = () => {
       </div>
 
       {/* Mobile Dropdown Menu */}
-      {isOpen && window.innerWidth <= 620 && (
+      {isOpen && isMobile && (
         <div className="mobile-menu">
-          <nav className="mobile-menu-links">
+          <nav className="mobile-menu-links" aria-label="mobile navigation">
             <NavLink to="/learn" onClick={() => setIsOpen(false)}>
                 Learn
             </NavLink>

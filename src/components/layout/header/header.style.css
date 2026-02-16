@@ -13,7 +13,7 @@ header {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
-.logo a {
+.logo {
   color: hsl(var(--green-1));
   font-weight: var(--fw-dark);
   font-size: 1.2rem;

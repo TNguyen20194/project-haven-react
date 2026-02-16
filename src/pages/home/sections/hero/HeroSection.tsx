@@ -2,6 +2,7 @@ import Button from "@/components/UI/buttons/CTAbutton";
 import Badge from "@/components/UI/badge/Badge";
 import { BookOpen } from "lucide-react";
 import "./hero.style.css";
+import { Link } from "react-router";
 
 const HeroSection = () => {
   return (
@@ -26,13 +27,16 @@ const HeroSection = () => {
         </p>
 
         <Button
-          type="button"
+          asChild
           variant="primary"
           size="lg"
           aria-label="Take the Free Assessment"
           className="mt-10"
         >
+          <Link to="/assessment">
+
           Take the Free Assessment
+          </Link>
         </Button>
       </div>
     </section>

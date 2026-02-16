@@ -1,36 +1,40 @@
 import { NavLink } from "react-router";
 
-type Navigation = {
+type NavItem = {
   title: string;
   href: string;
 }[];
 
-const navLinks: Navigation = [
+const navLinks: NavItem = [
   {
     title: "Learn",
-    href: "learn",
+    href: "/learn",
   },
   {
     title: "Assessment",
-    href: "assessment",
+    href: "/assessment",
   },
 ];
 
-
 const Navigations = () => {
-    return (
-         <div>
-          <nav className="navigation rounded-full" aria-label="main navigation">
-            {navLinks.map(({title, href}, index) => {
-              return (
-                <NavLink key={index} to={`/${href}`} className="nav-link rounded-full">
-                  {title}
-                </NavLink>
-              );
-            })}
-          </nav>
-        </div>
-    )
+  return (
+    <div>
+      <nav className="navigation rounded-full" aria-label="main navigation">
+        {navLinks.map(({ title, href }) => {
+          return (
+            <NavLink
+              key={href}
+              to={href}
+              className={({isActive}) => `nav-link rounded-full ${isActive ? "text-primary": ""}`}
+            >
+              {title}
+            </NavLink>
+          );
+        })}
+      </nav>
+    </div>
+  );
 };
 
 export default Navigations;
+
