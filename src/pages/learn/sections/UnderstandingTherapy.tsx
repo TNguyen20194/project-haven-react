@@ -3,8 +3,8 @@ import { BookOpen } from "lucide-react";
 
 const UnderstandingTherapy = () => {
   return (
-    <section className="hero">
-      <div className="max-w-[56rem] mx-auto text-center">
+    <section className="pt-32 px-6 py-4 mb-8">
+      <div className="max-w-[46rem] mx-auto text-center">
         <Badge
           icon={BookOpen}
           iconClassName="text-[hsl(var(--blue))]"
