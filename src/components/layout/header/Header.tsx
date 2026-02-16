@@ -3,6 +3,7 @@ import "./header.style.css";
 import Button from "../../UI/buttons/CTAbutton";
 import ThemeToggle from "../../UI/buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations";
+import { NavLink } from "react-router";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +28,11 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <div className="nav">
-          <div className="logo">
-            <a href="index.html">MindfulPath</a>
-          </div>
+          <NavLink to="/" end>
+            <div className="logo">
+              <a href="index.html">MindfulPath</a>
+            </div>
+          </NavLink>
         </div>
 
         {/* Navigations */}
@@ -97,12 +100,13 @@ const Header = () => {
       {isOpen && window.innerWidth <= 620 && (
         <div className="mobile-menu">
           <nav className="mobile-menu-links">
-            <a href="/learn" onClick={() => setIsOpen(false)}>
-              Learn
-            </a>
-            <a href="/assessment" onClick={() => setIsOpen(false)}>
-              Assessment
-            </a>
+            <NavLink to="/learn" onClick={() => setIsOpen(false)}>
+                Learn
+            </NavLink>
+
+            <NavLink to="/assessment" onClick={() => setIsOpen(false)}>
+                Assessment
+            </NavLink>
           </nav>
 
           <div className="mobile-menu-row">

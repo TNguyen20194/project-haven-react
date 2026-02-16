@@ -1,16 +1,19 @@
 import "./whatistherapy.style.css";
 import Badge from "@/components/UI/badge/Badge";
-import { Heart } from "lucide-react";
+import { Flower } from "lucide-react";
 import flower from "@/assets/therapy-flower.jpg";
 import TrustedSection from "@/components/section/TrustedSection";
+
+const highlight = "text-[hsl(var(--primary))] font-medium";
 
 const WhatIsTherapySection = () => {
   return (
     <section className="therapy section-container">
-      <div className="therapy__inner">
-        <div className="mb-8 mx-auto text-center mb-[3rem]">
+      <div className="max-w-[64rem] mx-auto">
+        <div className="mx-auto text-center mb-[3rem]">
+
           <Badge
-            icon={Heart}
+            icon={Flower}
             iconClassName="text-[hsl(var(--pink))]"
             className="mb-[1.1rem]"
           >
@@ -30,10 +33,10 @@ const WhatIsTherapySection = () => {
             </div>
           </div>
 
-          <div className="order-1 md:order-2">
-            <p className="text-[1.12rem]">
+          <div className="order-1 md:order-2 text-[1.12rem]">
+            <p>
               Therapy is a{" "}
-              <span className="text-[hsl(var(--primary))] font-medium">
+              <span className={highlight}>
                 safe, confidential conversation
               </span>{" "}
               with a trained professional who helps you understand your
@@ -41,15 +44,17 @@ const WhatIsTherapySection = () => {
               crisis—it's for anyone who wants to grow, heal, or simply
               understand themselves better.
             </p>
-            <p className="text-[1.12rem]">
+            <p>
               There are many types of therapy, from{" "}
-              <span className="text-[hsl(var(--primary))] font-medium">
+              <span className={highlight}>
                 Cognitive Behavioral Therapy (CBT)
               </span>
               to mindfulness-based approaches. The right fit depends on your
               unique needs and goals—and that's completely okay to explore.
             </p>
+
             <TrustedSection />
+
           </div>
         </div>
       </div>

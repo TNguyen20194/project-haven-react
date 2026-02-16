@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 type Navigation = {
   title: string;
   href: string;
@@ -6,11 +8,11 @@ type Navigation = {
 const navLinks: Navigation = [
   {
     title: "Learn",
-    href: "#",
+    href: "learn",
   },
   {
     title: "Assessment",
-    href: "#",
+    href: "assessment",
   },
 ];
 
@@ -19,15 +21,11 @@ const Navigations = () => {
     return (
          <div>
           <nav className="navigation rounded-full" aria-label="main navigation">
-            {navLinks.map((nav, index) => {
+            {navLinks.map(({title, href}, index) => {
               return (
-                <a
-                  key={index}
-                  href={nav.href}
-                  className="nav-link rounded-full"
-                >
-                  {nav.title}
-                </a>
+                <NavLink key={index} to={`/${href}`} className="nav-link rounded-full">
+                  {title}
+                </NavLink>
               );
             })}
           </nav>

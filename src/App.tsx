@@ -1,15 +1,17 @@
 import "./App.css";
 import HomePage from "./pages/home/HomePage";
-import Header from "./components/layout/header/Header";
-import Footer from "./components/layout/footer/Footer";
+import Learn from "./pages/learn/Learn";
+import Assessment from "./pages/assessment/Assessment";
 import { BrowserRouter, Routes, Route } from "react-router";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <HomePage />
-      <Footer />
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/learn" element={<Learn />}/>
+        <Route path="/assessment" element={<Assessment />}/>
+      </Routes>
     </BrowserRouter>
   );
 }
