@@ -23,7 +23,7 @@ const UnderstandingTherapy = () => {
             className="w-full h-full rounded-full object-cover"
           />
         </div>
-        <p className="text-[hsl(var(--green-1))] text-[1.12rem]">
+        <p className="text-[hsl(var(--green-1))] text-[1.25rem]">
           Therapy can feel unfamiliar if you've never tried it. This page is
           here to help you understand what therapy is, how it works, and how it
           might help you.
