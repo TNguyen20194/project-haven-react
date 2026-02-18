@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div className="hero-container">
         <Badge
           icon={BookOpen}
-          iconClassName="text-[hsl(var(--blue))]"
+          iconClassName="text-[hsl(var(--coral))]"
           className="mb-[1.1rem]"
         >
           Free Mental Health Education
