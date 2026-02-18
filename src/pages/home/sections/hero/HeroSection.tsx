@@ -21,7 +21,7 @@ const HeroSection = () => {
           Your Mind
         </h1>
         <p className="hero-text">
-          Curious about therapy but not sure where to start? Explore what
+          Feeling overwhelmed, stuck, or unsure where to start? Explore what
           therapy is, take a free self-assessment, and discover resources to
           support your well-being.
         </p>
@@ -35,7 +35,7 @@ const HeroSection = () => {
         >
           <Link to="/assessment">
 
-          Take the Free Assessment
+         Start Your Free Assessment
           </Link>
         </Button>
       </div>

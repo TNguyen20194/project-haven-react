@@ -25,7 +25,8 @@ const Navigations = () => {
             <NavLink
               key={href}
               to={href}
-              className={({isActive}) => `nav-link rounded-full ${isActive ? "text-primary": ""}`}
+              end
+              className={({isActive}) => `nav-link rounded-full transition-colors duration-300 ease-in-out ${isActive ? "!text-[hsl(var(--coral))] !bg-[hsl(var(--soft-white))] shadow-sm": ""}`}
             >
               {title}
             </NavLink>

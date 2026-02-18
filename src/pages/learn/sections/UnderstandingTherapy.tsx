@@ -1,5 +1,6 @@
 import Badge from "@/components/UI/badge/Badge";
 import { BookOpen } from "lucide-react";
+import flower2 from "@/assets/therapy-flower-2.jpg";
 
 const UnderstandingTherapy = () => {
   return (
@@ -7,18 +8,28 @@ const UnderstandingTherapy = () => {
       <div className="max-w-[46rem] mx-auto text-center">
         <Badge
           icon={BookOpen}
-          iconClassName="text-[hsl(var(--coral))]"
+          iconClassName="text-[hsl(var(--blue))]"
           className="mb-[1.1rem]"
         >
           Educational Resource
         </Badge>
 
         <h2 className="section-heading mb-6">Understanding Therapy</h2>
+
+         <div className="aspect-square w-full max-w-sm my-10 mx-auto">
+          <img
+            src={flower2}
+            alt="Understanding Therapy"
+            className="w-full h-full rounded-full object-cover"
+          />
+        </div>
         <p className="text-[hsl(var(--green-1))] text-[1.12rem]">
           Therapy can feel unfamiliar if you've never tried it. This page is
           here to help you understand what therapy is, how it works, and how it
           might help you.
         </p>
+
+       
       </div>
     </section>
   );
