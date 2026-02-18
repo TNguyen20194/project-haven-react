@@ -5,7 +5,7 @@ const WhatToExpect = () => {
   return (
     <section className="p-12 mb-8 bg-[hsl(var(--background-alt)/0.5)]">
       <div className="max-w-[56rem] mx-auto">
-        <div className="flex items-center gap-2 mb-5">
+        <div className="flex items-center gap-3 mb-5">
         <IconBadge icon={Lightbulb} wrapperClassName="rounded-full w-12 h-12" iconClassName="text-[hsl(var(--primary))] h-7 w-7"/>
         <h3 className="sub-heading">What to Expect</h3>
         </div>

@@ -5,7 +5,7 @@ interface IconBadgeProps {
 }
 
 const default_wrapper =
-  "flex items-center justify-center bg-[hsl(var(--muted))] border border-[hsl(var(--border))]";
+  "flex items-center justify-center shrink-0 bg-[hsl(var(--muted))] border border-[hsl(var(--border))]";
 
 const default_icon = "w-5 h-5";
 

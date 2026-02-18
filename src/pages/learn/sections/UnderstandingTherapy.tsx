@@ -7,7 +7,7 @@ const UnderstandingTherapy = () => {
       <div className="max-w-[46rem] mx-auto text-center">
         <Badge
           icon={BookOpen}
-          iconClassName="text-[hsl(var(--blue))]"
+          iconClassName="text-[hsl(var(--coral))]"
           className="mb-[1.1rem]"
         >
           Educational Resource
