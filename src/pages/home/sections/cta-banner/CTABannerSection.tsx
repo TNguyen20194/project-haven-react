@@ -1,10 +1,15 @@
 import "./ctabanner.stye.css";
 import Button from "@/components/UI/buttons/CTAbutton";
-import { Flower2, CloudSun, type LucideIcon } from "lucide-react";
+import { Flower2, CloudSun, } from "lucide-react";
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { Link } from "react-router";
 
-const CTABannerSection = () => {
+interface CTABannerSectionProps {
+  title: string,
+  description: string
+}
+
+const CTABannerSection = ({title, description} : CTABannerSectionProps) => {
   return (
     <section className="consultation section-container">
       <div className="consultation__inner">
@@ -16,12 +21,10 @@ const CTABannerSection = () => {
           />
         </div>
 
-        <h2 className="section-heading mb-6">Ready to Take the First Step?</h2>
+        <h2 className="section-heading mb-6">{title}</h2>
 
         <p>
-          Take our free self-assessment to learn more about your mental
-          wellness, or book a consultation with a licensed therapist when you're
-          ready.
+          {description}
         </p>
 
         <div className="flex items-center justify-center gap-4 pt-4 mt-9">

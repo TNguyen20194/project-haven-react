@@ -3,21 +3,26 @@ import Footer from "@/components/layout/footer/Footer";
 import UnderstandingTherapy from "./sections/UnderstandingTherapy";
 import WhatToExpect from "./sections/WhattoExpect";
 import TypesOfTherapy from "./sections/TypesofTherapy";
-import ExploreFurther from "./sections/ExploreFurther";
+import MythsVsFacts from "./sections/MythsvsFacts";
+import CTABannerSection from "../home/sections/cta-banner/CTABannerSection";
 
 const Learn = () => {
-    return (
-        <div>
-        <Header />
-        <main>
-            <UnderstandingTherapy />
-            <WhatToExpect />
-            <TypesOfTherapy />
-            <ExploreFurther />
-        </main>
-        <Footer />
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      <main>
+        <UnderstandingTherapy />
+        <WhatToExpect />
+        <TypesOfTherapy />
+        <MythsVsFacts />
+        <CTABannerSection
+          title="Ready to Explore Further?"
+          description="Take our anonymous self-assessment to learn more about your well-being, or connect with a professional when you're ready."
+        />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default Learn;

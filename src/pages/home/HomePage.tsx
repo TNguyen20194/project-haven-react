@@ -15,7 +15,10 @@ const HomePage = () => {
         <QuoteSection />
         <HowWeHelpSection />
         <WhatIsTherapySection />
-        <CTABannerSection />
+        <CTABannerSection
+          title="Ready to Take the First Step?"
+          description="Take our free self-assessment to learn more about your mental wellness, or book a consultation with a licensed therapist when you're ready."
+        />
       </main>
       <Footer />
     </div>
