@@ -68,7 +68,7 @@ const TherapyCategoriesSection = () => {
           <h4 className="font-semibold text-[1.12rem] text-[hsl(var(--green-1))] text-left">{title}</h4>
         </div>
 
-        <p>{body}</p>
+        <p className="!font-normal">{body}</p>
       </div>
     );
   });

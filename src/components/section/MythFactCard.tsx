@@ -31,12 +31,12 @@ const MythFactCard = () => {
   return MythFactList.map(({ myth, fact }) => {
     return (
       <div key={myth} className="feature-card hover:shadow-none!">
-        <p className="font-semibold text-[hsl(var(--green-1))] text-left mt-0!">
-          <span className="text-[hsl(var(--coral))]">Myth:</span>{" "}
+        <p className="text-[hsl(var(--green-1))] text-left mt-0!">
+          <span className="font-semibold text-[hsl(var(--coral))]">Myth:</span>{" "}
           "{myth}"
         </p>
         <p>
-          <span className="text-primary font-semibold">Fact:</span> {fact}
+          <span className="text-primary font-semibold">Fact:</span> <span className="font-normal!">{fact}</span>
         </p>
       </div>
     );
