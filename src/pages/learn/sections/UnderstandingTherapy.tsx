@@ -4,7 +4,7 @@ import flower2 from "@/assets/therapy-flower-2.jpg";
 
 const UnderstandingTherapy = () => {
   return (
-    <section className="pt-32 px-6 py-4 mb-8">
+    <section className="px-6 py-15 mb-8">
       <div className="max-w-[46rem] mx-auto text-center">
         <Badge
           icon={BookOpen}

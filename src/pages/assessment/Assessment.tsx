@@ -1,6 +1,10 @@
+import Questionnaire from "./sections/Questionnair";
+
 const Assessment = () => {
     return (
-        <h1>Mental Wellness Self-Assessment</h1>
+        <main>
+            <Questionnaire />
+        </main>
     )
 };
 
