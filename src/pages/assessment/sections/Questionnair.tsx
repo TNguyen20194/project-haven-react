@@ -3,7 +3,7 @@ import { ClipboardCheck} from "lucide-react";
 
 const Questionnaire = () => {
   return (
-    <section className="px-6 py-12 bg-[hsl(var(--background-alt)/0.5)]">
+    <section className="px-6 py-10 min-h-[calc(100vh-var(--header-h))] bg-[hsl(var(--background-alt)/0.5)]">
       <div className="max-w-[56rem] mx-auto ">
         <div className="flex items-center gap-3 mb-5">
           <IconBadge
