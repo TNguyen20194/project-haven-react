@@ -17,12 +17,10 @@ const ExploreFurther = () => {
           />
         </div>
 
-        <h2 className="section-heading mb-6">Ready to Take the First Step?</h2>
+        <h2 className="section-heading mb-6">Ready to Explore Further?</h2>
 
         <p>
-          Take our free self-assessment to learn more about your mental
-          wellness, or book a consultation with a licensed therapist when you're
-          ready.
+          Take our anonymous self-assessment to learn more about your well-being, or connect with a professional when you're ready.
         </p>
 
         <div className="flex items-center justify-center gap-4 pt-4 mt-9">
@@ -34,7 +32,7 @@ const ExploreFurther = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8 ">
           <Button
             type="button"
-            aria-label="Book a Consultation"
+            aria-label="Take the Assessment"
             variant="secondary"
             size="lg"
             className="w-[294px]"
@@ -43,7 +41,7 @@ const ExploreFurther = () => {
           </Button>
           <Button
             asChild
-            aria-label="Take the Free Assessment"
+            aria-label="Book a Consultation"
             variant="outline"
             size="lg"
           >

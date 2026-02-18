@@ -1,27 +1,37 @@
-import "./ctabanner.stye.css";
-import Button from "@/components/UI/buttons/CTAbutton";
-import { Flower2, CloudSun, type LucideIcon } from "lucide-react";
-import IconBadge from "@/components/UI/feature-icon/IconBadge";
-import { Link } from "react-router";
+import Button from "../UI/buttons/CTAbutton";
+import IconBadge from "../UI/feature-icon/IconBadge";
+import { Flower2, type LucideIcon } from "lucide-react";
+import { Link } from "lucide-react";
 
-const CTABannerSection = () => {
-  return (
+interface SectionProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  primaryCta: { label: string; href: string};
+  secondaryCta: {label: string; href: string}
+};
+
+const CTASection = ({
+    icon,
+    title,
+    description,
+    primaryCta,
+    secondaryCta
+} : SectionProps) => {
     <section className="consultation section-container">
       <div className="consultation__inner">
         <div className="flex justify-center">
           <IconBadge
-            icon={CloudSun}
+            icon={icon}
             iconClassName="text-[hsl(var(--white))] w-8 h-8"
             wrapperClassName="bg-[hsl(var(--secondary)/0.16)] w-16 h-16 rounded-full border-none mb-6"
           />
         </div>
 
-        <h2 className="section-heading mb-6">Ready to Take the First Step?</h2>
+        <h2 className="section-heading mb-6">{title}</h2>
 
         <p>
-          Take our free self-assessment to learn more about your mental
-          wellness, or book a consultation with a licensed therapist when you're
-          ready.
+          {description}
         </p>
 
         <div className="flex items-center justify-center gap-4 pt-4 mt-9">
@@ -31,27 +41,29 @@ const CTABannerSection = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8 ">
-          <Button
+          { primaryCta && (
+            <Button
             type="button"
-            aria-label="Book a Consultation"
+            aria-label={primaryCta.label}
             variant="secondary"
             size="lg"
             className="w-[294px]"
           >
-            Book a Consultation
-          </Button>
-          <Button
+            {primaryCta.label}
+          </Button>)}
+          { secondaryCta && (
+            <Button
             asChild
-            aria-label="Take the Free Assessment"
+            aria-label={secondaryCta.label}
             variant="outline"
             size="lg"
           >
-            <Link to="/assessment">Take the Free Assessment</Link>
-          </Button>
+            <Link to={secondaryCta.href}>{secondaryCta.label}</Link>
+          </Button>)}
         </div>
       </div>
     </section>
-  );
 };
 
-export default CTABannerSection;
+export default CTASection;
+
