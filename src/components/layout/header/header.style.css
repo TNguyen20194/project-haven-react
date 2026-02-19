@@ -6,6 +6,7 @@ header {
   right: 0;
   left: 0;
   margin: 0 auto;
+  min-height: 81px;
   background-color: hsl(var(--background) / 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);

@@ -4,6 +4,7 @@ import Button from "../../UI/buttons/CTAbutton";
 import ThemeToggle from "../../UI/buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations";
 import { NavLink, Link, } from "react-router";
+import { NAV_LINK } from "@/config/navigation";
 
 const Header = () => {
   const MOBILE_MAX = 620;
@@ -99,13 +100,13 @@ const Header = () => {
       {isOpen && isMobile && (
         <div className="mobile-menu">
           <nav className="mobile-menu-links" aria-label="mobile navigation">
-            <NavLink to="/learn" onClick={() => setIsOpen(false)}>
-                Learn
-            </NavLink>
-
-            <NavLink to="/assessment" onClick={() => setIsOpen(false)}>
-                Assessment
-            </NavLink>
+            {
+              NAV_LINK.map(({title, href, end}) => (
+                <NavLink key={href} to={href} end={end} onClick={() => setIsOpen(false)}>
+                  {title}
+                </NavLink>
+              ))
+            }
           </nav>
 
           <div className="mobile-menu-row">
