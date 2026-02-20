@@ -28,7 +28,7 @@ const Questionnaire = () => {
 
         {/* Questionnaire */}
 
-      <div className="absolute bottom-10 right-10 aspect-square w-full max-w-sm">
+      <div className="absolute bottom-10 right-10 aspect-square w-full max-w-[300px]">
         <img
           src={flower3}
           alt="Explore Your Mental Wellness"
