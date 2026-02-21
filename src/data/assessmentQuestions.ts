@@ -89,7 +89,6 @@ type QuestionProps = {
     }[]
 }
 
-
 export const questions: QuestionProps[] = [
     {
         id: "q1",
