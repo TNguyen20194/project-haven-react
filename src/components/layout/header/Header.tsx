@@ -6,6 +6,15 @@ import Navigations from "../navigations/Navigations";
 import { NavLink, Link, } from "react-router";
 import { NAV_LINK } from "@/config/navigation";
 
+/*
+** Delete once implemented
+Features:
+ - On scroll:
+   -- Shrink height slightly
+
+
+*/
+
 const Header = () => {
   const MOBILE_MAX = 620;
   const [isOpen, setIsOpen] = useState(false);

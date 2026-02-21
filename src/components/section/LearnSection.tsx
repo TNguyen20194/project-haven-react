@@ -12,19 +12,19 @@ interface Card {
 const educationCards: Card[] = [
   {
     icon: Flower2,
-    title: "Free Self-Assessment",
+    title: "Take the Assessment",
     body: "Take a quick, anonymous questionnaire to reflect on your emotional well-being and get personalized educational insights",
     iconClass: "text-[hsl(var(--pink))]",
   },
   {
     icon: TreeDeciduous,
-    title: "Understand Therapy Types",
+    title: "Get Personalized Insights",
     body: "Learn about different therapy approaches—CBT, mindfulness, talk therapy—and find what might resonate with you.",
     iconClass: "text-[hsl(var(--primary))]",
   },
   {
     icon: Sun,
-    title: "Connect With a Therapist",
+    title: "Connect When You're Ready",
     body: "If you decide to explore therapy further, we make it easy to book a consultation with a licensed professional.",
     iconClass: "text-[hsl(var(--accent))]",
   },

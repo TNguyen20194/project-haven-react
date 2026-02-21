@@ -1,6 +1,6 @@
 import Badge from "@/components/UI/badge/Badge";
 import { BookOpen } from "lucide-react";
-import flower2 from "@/assets/therapy-flower-2.jpg";
+import flower2 from "@/assets/decorative/therapy-flower-2.jpg";
 
 const UnderstandingTherapy = () => {
   return (

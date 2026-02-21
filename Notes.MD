@@ -43,6 +43,14 @@
 
 ---
 
+## Features 
+- [ ] On scroll: shrink header height
+- [ ] Fade-in section on scroll
+- [ ] Add gradient to the green section
+- [ ] Slight inner shadow
+- [ ] Soft gradial glow behind CTA
+
+---
 # 🔐 Backend
 
 ## 1️⃣ Database Setup

@@ -1,6 +1,6 @@
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { ClipboardCheck } from "lucide-react";
-import flower3 from "@/assets/therapy-flower-3.jpg";
+import flower3 from "@/assets/decorative/therapy-flower-3.jpg";
 
 const Questionnaire = () => {
   return (

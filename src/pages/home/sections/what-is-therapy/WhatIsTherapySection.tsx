@@ -1,7 +1,7 @@
 import "./whatistherapy.style.css";
 import Badge from "@/components/UI/badge/Badge";
 import { Flower } from "lucide-react";
-import flower from "@/assets/therapy-flower.jpg";
+import flower from "@/assets/decorative/therapy-flower.jpg";
 import TrustedSection from "@/components/section/TrustedSection";
 
 const highlight = "text-[hsl(var(--primary))] font-medium";
