@@ -5,6 +5,7 @@ import Assessment from "./pages/assessment/Assessment";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Layout from "./components/layout/MainLayout";
 import AssessmentLayout from "./components/layout/AssessmentLayout";
+import AssessmentResult from "./pages/assessment/AssessmentResult";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
         <Route element={<AssessmentLayout />}>
           <Route path="/assessment" element={<Assessment />} />
+          <Route path="/assessment/result" element={<AssessmentResult />} />
         </Route>
       </Routes>
     </BrowserRouter>
