@@ -52,7 +52,7 @@ const ResultCard = () =>
               {label}
             </h4>
           </div>
-          <StatusPill status="Moderate" />
+          <StatusPill status="moderate" />
         </div>
         <div>
           <p>{/* Description */}</p>
