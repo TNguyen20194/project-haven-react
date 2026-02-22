@@ -4,9 +4,6 @@ const ResultCardList = () => {
   return(
     <div>
   <ResultCard />
-    <ResultCard />
-    <ResultCard />
-    <ResultCard />
     </div>
   
   );
