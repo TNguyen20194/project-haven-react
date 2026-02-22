@@ -1,7 +1,7 @@
 import UnderstandingTherapy from "./sections/UnderstandingTherapy";
 import WhatToExpect from "./sections/WhattoExpect";
 import TypesOfTherapy from "./sections/TypesofTherapy";
-import MythsVsFacts from "./sections/MythsvsFacts";
+import MythsVsFacts from "./sections/MythsVsFacts";
 import CTABannerSection from "../home/sections/cta-banner/CTABannerSection";
 
 const Learn = () => {
