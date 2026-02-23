@@ -3,7 +3,7 @@ import { Outlet } from "react-router";
 
 const AssessmentLayout = () => {
   return (
-    <main>
+    <main className="min-h-screen bg-[hsl(var(--background-alt)/0.5)] ">
       <Header />
       <Outlet />
     </main>

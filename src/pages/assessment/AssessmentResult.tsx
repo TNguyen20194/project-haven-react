@@ -5,7 +5,7 @@ import ResultCardList from "@/components/section/ResultCardList";
 
 const AssessmentResult = () => {
   return (
-    <section className="relative z-10 px-6 py-10 min-h-[calc(100vh-var(--header-h))] bg-[hsl(var(--background-alt)/0.5)] overflow-hidden">
+    <section className="relative z-10 px-6 py-10 overflow-hidden">
       <div className="relative z-10 max-w-[48rem] mx-auto ">
         <div className="flex items-center gap-3 mb-5">
           <IconBadge

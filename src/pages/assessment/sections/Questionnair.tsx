@@ -4,7 +4,7 @@ import flower3 from "@/assets/decorative/therapy-flower-3.jpg";
 
 const Questionnaire = () => {
   return (
-    <section className="relative  z-10 px-6 py-10 bg-[hsl(var(--background-alt)/0.5)] overflow-hidden">
+    <section className="relative z-10 px-6 py-10 overflow-hidden">
       {/* Background Layer */}
       {/* <div
         className="absolute rounded-full bottom-10 right-10 w-[350px] h-[350px] overflow-hidden bg-no-repeat bg-center bg-cover opacity-90 pointer-events-none"
