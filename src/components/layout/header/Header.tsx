@@ -3,7 +3,7 @@ import "./header.style.css";
 import Button from "../../UI/buttons/CTAbutton";
 import ThemeToggle from "../../UI/buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations";
-import { NavLink, Link, } from "react-router";
+import { NavLink, Link, } from "react-router-dom";
 import { NAV_LINK } from "@/config/navigation";
 
 /*
