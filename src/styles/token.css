@@ -5,7 +5,6 @@
 
 /* Shared tokens (not theme-dependent) */
 :root {
-  --header-h: 80px;
 
   /* Font Weight */
   --fw-light: 400;
