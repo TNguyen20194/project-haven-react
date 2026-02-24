@@ -5,7 +5,6 @@
 
 /* Shared tokens (not theme-dependent) */
 :root {
-
   /* Font Weight */
   --fw-light: 400;
   --fw-medium: 500;
@@ -31,9 +30,19 @@
   --destructive: 0 100% 64.9%;
   --pink: 345 55% 64%;
   --blue: 204 45% 51%;
---teal: 178 60% 42%;
+  --teal: 178 60% 42%;
   --coral: 8 65% 55%;
   --yellow: 48 70% 80%;
+
+  /* Status Color */
+    --low-text-green: 140 60% 27%;
+  --low-bg-green: 138 45% 87%;
+  --moderate-text-yellow: 45 100% 27%;
+  --moderate-bg-yellow: 48 75% 88%;
+    --elevated-text-orange: 22 100% 31%;
+  --elevated-bg-orange: 25 55% 87%;
+  --high-text-red: 4 70% 41%;
+  --high-bg-red: 0 55% 91%;
 
   /* UI surfaces */
   --muted: 150 17.65% 93.33%;
@@ -60,16 +69,6 @@
   --fc-footer-heading: 150 25% 96.86%;
   --fc-footer-text: 150 25% 96.86% / 0.698;
 
-  /* Sidebar */
-  --sidebar-background: 0 0% 98.04%;
-  --sidebar-foreground: 230 4.62% 25.49%;
-  --sidebar-primary: 240 5.88% 10%;
-  --sidebar-white: 0 0% 98.04%;
-  --sidebar-accent: 240 10% 96.08%;
-  --sidebar-accent-foreground: 240 5.88% 10%;
-  --sidebar-border: 222 25% 92.16%;
-  --sidebar-ring: 219.43 100% 65.69%;
-
   /* ===========================
      shadcn REQUIRED MAPPINGS
      (these make shadcn components
@@ -94,7 +93,7 @@
 :root[data-theme='dark'] {
   /* Base surfaces */
   --background: 200 15% 12%;
-   --background-alt: var(--muted-1);
+  --background-alt: var(--muted-1);
   --card: var(--background);
   --popover: var(--card);
 
@@ -107,7 +106,17 @@
   --blue: 204 45% 51%;
   --teal: 178 60% 42%;
   --coral: 8 65% 55%;
-    --yellow: 48 70% 80%;
+  --yellow: 48 70% 80%;
+
+  /* Status Color */
+     --low-text-green: 158 70% 67%;
+  --low-bg-green: 155 55% 16%;
+  --moderate-text-yellow: 45 95% 68%;
+  --moderate-bg-yellow: 42 60% 18%;
+    --elevated-text-orange: 34 95% 72%;
+  --elevated-bg-orange: 20 50% 15%;
+  --high-text-red: 356 65% 83%;
+  --high-bg-red: 356 48% 24%;
 
   /* UI */
   --muted: 200 11.76% 20%;
@@ -131,16 +140,6 @@
   /* Footer */
   --fc-footer-heading: 150 25% 97%;
   --fc-footer-text: 202.5 20% 68.63%;
-
-  /* Sidebar (dark) */
-  --sidebar-background: 200 15% 12%;
-  --sidebar-foreground: 208.8 14.29% 65.69%;
-  --sidebar-primary: 150 25% 96.86%;
-  --sidebar-white: 200 15% 12%;
-  --sidebar-accent: 205.26 19.59% 19.02%;
-  --sidebar-accent-foreground: 150 25% 96.86%;
-  --sidebar-border: 205.26 19.59% 19.02%;
-  --sidebar-ring: 219.43 100% 65.69%;
 
   /* ===========================
      shadcn REQUIRED MAPPINGS
