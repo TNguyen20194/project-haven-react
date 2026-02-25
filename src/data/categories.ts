@@ -18,7 +18,7 @@ export const categories: Category[] = [
     label: "Emotional Regulation",
     description: {
       low: "You seem to manage your emotions well. Mindfulness can further strengthen this.",
-      moderate: "Therapy techniques like DBT can offer structured support for emotional regulation.",
+      moderate: "Journaling and deep breathing exercises can help with occasional emotional overwhelm.",
         elevated: "Therapy techniques like DBT can offer structured support for emotional regulation.",
         high: "Speaking with a therapist about emotion regulation strategies could be very beneficial.",
     },
@@ -30,7 +30,7 @@ export const categories: Category[] = [
     label: "Sleep Health",
     description: {
        low: "Great sleep habits! Maintain your routine for continued wellness.",
-        moderate: "Sleep hygiene improvements and relaxation techniques may help significantly.",
+        moderate: "Try establishing a consistent bedtime routine and limiting screens before bed.",
         elevated: "Sleep hygiene improvements and relaxation techniques may help significantly.",
         high: "A therapist can help address underlying causes of sleep disturbances.",
     },
@@ -42,7 +42,7 @@ export const categories: Category[] = [
     label: "Anxiety",
     description: {
       low: "You appear to manage worry well. Mindfulness can help maintain this balance.",
-        moderate: "Sleep hygiene improvements and relaxation techniques may help significantly.",
+        moderate: "Grounding techniques and controlled breathing can help with situational anxiety.",
         elevated: "Cognitive Behavioral Therapy based approaches are effective for managing recurring anxiety patterns.",
         high: "Professional support can provide tools to manage persistent anxiety effectively.",
     },
@@ -54,7 +54,7 @@ export const categories: Category[] = [
     label: "Motivation & Interest",
     description: {
       low: "Your motivation levels are healthy. Keep engaging in activities you enjoy!",
-        moderate: "Behavioral activation techniques can help re-engage with meaningful activities.",
+        moderate: "Setting small, achievable goals can help rebuild motivation during low periods.",
         elevated: "Behavioral activation techniques can help re-engage with meaningful activities.",
         high: "A therapist can help explore what may be underlying your loss of interest.",
     },
@@ -66,7 +66,7 @@ export const categories: Category[] = [
     label: "Stress Coping",
     description: {
        low: "You have strong coping skills. Continue building on what works for you.",
-        moderate: "Learning structured stress management techniques could be very beneficial.",
+        moderate: "Exploring new coping strategies like exercise or creative outlets may help.",
         elevated: "Learning structured stress management techniques could be very beneficial.",
         high: "A therapist can help you develop healthier coping mechanisms tailored to you.",
     },
@@ -78,7 +78,7 @@ export const categories: Category[] = [
     label: "Relationships",
     description: {
           low: "Your relationships seem supportive. Nurturing them continues to benefit well-being.",
-        moderate: "Exploring relationship patterns in therapy can improve connection and understanding.",
+        moderate: "Communication skills practice can strengthen your connections during conflicts.",
         elevated: "Exploring relationship patterns in therapy can improve connection and understanding.",
         high: "Professional support can help navigate relationship difficulties and build healthier bonds.",
     },
@@ -90,7 +90,7 @@ export const categories: Category[] = [
     label: "Trauma Impact",
     description: {
       low: "Past events aren't currently affecting you significantly. That's a positive sign.",
-        moderate: "Trauma-informed therapy approaches like EMDR may be helpful for you.",
+        moderate: "Gentle self-care practices and grounding techniques can support trauma processing.",
         elevated: "Trauma-informed therapy approaches like EMDR may be helpful for you.",
         high: "Specialized trauma therapy can provide safe, structured support for healing.",
     },
@@ -102,8 +102,8 @@ export const categories: Category[] = [
     label: "Self Image",
     description: {
       low: "You have a generally positive self-image. Self-compassion practices can nurture this.",
-        moderate: "CBT techniques can help challenge and reframe persistent negative self-talk.",
-        elevated: "CBT techniques can help challenge and reframe persistent negative self-talk.",
+        moderate: "Positive affirmations and self-compassion exercises can help with self-doubt.",
+        elevated: "Cognitive Behavioral Therapy techniques can help challenge and reframe persistent negative self-talk.",
         high: "A therapist can help build a healthier, more compassionate self-relationship.",
     },
     iconClass: "text-[hsl(var(--pink))]"
