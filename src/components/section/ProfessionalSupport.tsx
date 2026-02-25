@@ -12,21 +12,26 @@ const ProfessionalSupport = () => {
         </div>
       </div>
       <div className="text-[hsl(var(--white))] text-[1rem] mt-4">
-        Based on your responses, you may benefit from speaking with a licensed therapist. There's no obligation—exploring your options is a positive step.
+        Based on your responses, you may benefit from speaking with a licensed
+        therapist. There's no obligation—exploring your options is a positive
+        step.
       </div>
 
       <Button
-          asChild
-          variant="secondary"
-          size="lg"
-          aria-label="Book a Free Consultation"
-          className="mt-8 text-shadow-xs"
+        asChild
+        variant="secondary"
+        size="lg"
+        aria-label="Book a Free Consultation"
+        className="mt-8 text-shadow-xs"
+      >
+        <a
+          href="https://julietran.janeapp.com/#staff_member/1"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <Link to="">
-
-         Book a Free Consultation
-          </Link>
-        </Button>
+          Book a Free Consultation
+        </a>
+      </Button>
     </div>
   );
 };

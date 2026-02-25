@@ -3,7 +3,7 @@ import "./header.style.css";
 import Button from "../../UI/buttons/CTAbutton";
 import ThemeToggle from "../../UI/buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations";
-import { NavLink, Link, } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { NAV_LINK } from "@/config/navigation";
 
 /*
@@ -18,14 +18,14 @@ Features:
 const Header = () => {
   const MOBILE_MAX = 620;
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_MAX)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_MAX);
 
   useEffect(() => {
     const onResize = () => {
       const mobile = window.innerWidth <= MOBILE_MAX;
       setIsMobile(mobile);
 
-      if(!mobile) setIsOpen(false);
+      if (!mobile) setIsOpen(false);
     };
 
     onResize();
@@ -40,7 +40,7 @@ const Header = () => {
         {/* Logo */}
         <div className="nav">
           <Link to="/" className="logo">
-              MindfulPath
+            MindfulPath
           </Link>
         </div>
 
@@ -52,7 +52,13 @@ const Header = () => {
           <ThemeToggle />
 
           <Button type="button" variant="primary" size="md">
-            Book a Therapist
+            <a
+              href="https://julietran.janeapp.com/#staff_member/1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Therapist
+            </a>
           </Button>
         </div>
 
@@ -109,13 +115,16 @@ const Header = () => {
       {isOpen && isMobile && (
         <div className="mobile-menu">
           <nav className="mobile-menu-links" aria-label="mobile navigation">
-            {
-              NAV_LINK.map(({title, href, end}) => (
-                <NavLink key={href} to={href} end={end} onClick={() => setIsOpen(false)}>
-                  {title}
-                </NavLink>
-              ))
-            }
+            {NAV_LINK.map(({ title, href, end }) => (
+              <NavLink
+                key={href}
+                to={href}
+                end={end}
+                onClick={() => setIsOpen(false)}
+              >
+                {title}
+              </NavLink>
+            ))}
           </nav>
 
           <div className="mobile-menu-row">
@@ -125,7 +134,13 @@ const Header = () => {
 
           <div className="mobile-menu-cta">
             <Button type="button" variant="primary" size="md">
-              Book a Therapist
+              <a
+                href="https://julietran.janeapp.com/#staff_member/1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Therapist
+              </a>
             </Button>
           </div>
         </div>

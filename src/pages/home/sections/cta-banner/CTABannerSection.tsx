@@ -1,15 +1,15 @@
 import "./ctabanner.stye.css";
 import Button from "@/components/UI/buttons/CTAbutton";
-import { Flower2, CloudSun, } from "lucide-react";
+import { Flower2, CloudSun } from "lucide-react";
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { Link } from "react-router";
 
 interface CTABannerSectionProps {
-  title: string,
-  description: string
+  title: string;
+  description: string;
 }
 
-const CTABannerSection = ({title, description} : CTABannerSectionProps) => {
+const CTABannerSection = ({ title, description }: CTABannerSectionProps) => {
   return (
     <section className="consultation section-container">
       <div className="consultation__inner">
@@ -23,9 +23,7 @@ const CTABannerSection = ({title, description} : CTABannerSectionProps) => {
 
         <h2 className="section-heading mb-6">{title}</h2>
 
-        <p>
-          {description}
-        </p>
+        <p>{description}</p>
 
         <div className="flex items-center justify-center gap-4 pt-4 mt-9">
           <span className="h-px w-10 bg-[hsl(var(--white)/0.5)]"></span>
@@ -41,7 +39,13 @@ const CTABannerSection = ({title, description} : CTABannerSectionProps) => {
             size="lg"
             className="w-[294px]"
           >
-            Book a Consultation
+            <a
+              href="https://julietran.janeapp.com/#staff_member/1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Consultation
+            </a>
           </Button>
           <Button
             asChild
