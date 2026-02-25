@@ -11,7 +11,7 @@ const ResultCardList = () => {
         // Calulate score to get status level and description
         // Pass status and description into child component
 
-        const score = mockScoresByCategory[category.id] ?? 0 ;
+        const score = mockScoresByCategory[category.id] ?? 0;
         const status = getStatus(score);
         const description = category.description[status];
 

@@ -2,6 +2,7 @@ import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { CircleCheck } from "lucide-react";
 import DisclaimerBanner from "@/components/section/DisclaimerBanner";
 import ResultCardList from "@/components/section/ResultCardList";
+import ProfessionalSupport from "@/components/section/ProfessionalSupport";
 
 const AssessmentResult = () => {
   return (
@@ -23,6 +24,8 @@ const AssessmentResult = () => {
         <DisclaimerBanner />
 
         <ResultCardList />
+
+        <ProfessionalSupport />
       </div>
     </section>
   );
