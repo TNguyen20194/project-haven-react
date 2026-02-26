@@ -44,3 +44,6 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
+// ADD scroll bar color
