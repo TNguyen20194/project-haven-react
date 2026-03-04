@@ -1,73 +1,138 @@
-# React + TypeScript + Vite
+# Therapy Education Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+This project is a free, accessible, evidence-based web application designed for a licensed psychotherapist.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app focuses on:
 
-## React Compiler
+- Therapy education
+- Symptom awareness
+- Safe self-guided exploration
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal is not to diagnose, but to help users:
 
-## Expanding the ESLint configuration
+- Identify potential mental health symptoms
+- Understand areas of concern
+- Learn evidence-based strategies
+- Connect with professional support when needed
+- Encouraging professional consultation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🎯 Core Objectives
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Make therapy education accessible to everyone
+2. Use evidence-based screening tools
+3. Provide structured, safe psychological guidance
+4. Encourage users to seek professional support
+5. Maintain ethical safety protocols
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📚 Therapy Education First
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Users are encouraged to:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Read educational content about therapy
+- Understand common mental health symptoms
+- Learn evidence-based coping strategies
+- Explore how professional therapy can help
+  
+Clear calls-to-action encourage:
+- Taking a free assessment
+- Booking a free 15-minute consultation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧪 Mental Health Assessment
+
+Users complete an evidence-based screening questionnaire.
+
+- Multiple-choice format
+- Structured scoring system
+- Psychologically informed categories
+
+The assessment evaluates multiple mental health domains.
+
+## 📊 Assessment Domains
+
+The assessment evaluates the following mental health domains:
+
+- Emotional Regulation
+- Sleep Health
+- Anxiety
+- Motivation & Interest
+- Stress Coping
+- Relationships
+- Trauma Impact
+- Self Image
+
+Each domain is graded based on user responses.
+
+## 📈 Results & Grading System
+
+After completion, users receive a structured results page.
+
+Each domain is graded as:
+
+🟢 Low Concern
+
+🟡 Moderate Concern
+
+🟠 Elevated Concern
+
+🔴 High Concern
+
+The grading helps users understand:
+
+- Which areas are stable
+- Which areas may require attention
+- Which areas may benefit from professional support
+
+## 📝 Personalized Suggestions
+
+If a category is graded above “Low Concern,” the user receives:
+
+- Evidence-based coping strategies
+- Educational explanations
+- Practical exercises or assignments
+- Behavioral recommendations
+- Suggested next steps
+
+The guidance is educational and supportive — not diagnostic.
+
+## 📧 Optional Email Results
+
+Users may choose to:
+
+- Enter their email voluntarily
+- Receive a summary of their assessment results
+
+Email submission is optional and not required to use the app.
+
+## 🔁 Retake Assessment
+
+Users may:
+
+- Redo the assessment at any time
+- Re-evaluate their symptoms
+- Use the tool as a reflection resource
+
+No account is required to retake the assessment.
+
+📅 Consultation Booking
+
+Throughout the experience, users are encouraged to:
+
+- Book a free 15-minute consultation
+- Speak directly with a specialist
+- Review their results in a professional setting
+
+## App Screenshots
+### *Home*
+<img src="/src/assets/project UI/homepage.jpg" alt="Home screen" width="600" />
+
+### *Understanding Therapy*
+<img src="/src/assets/project UI/understanding-therapy.jpg" alt="Understanding therapy" width="600" />
+
+### *Learn Page*
+<img src="/src/assets/project UI/learnpage.jpg" alt="Learn" width="600" />
+
+### *Result Page*
+<img src="/src/assets/project UI/result.jpg" alt="Result" width="600" />
