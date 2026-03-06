@@ -28,7 +28,7 @@ const Assessment = () => {
 
         <Questionnaire />
     </section>
-            
+
     )
 };
 

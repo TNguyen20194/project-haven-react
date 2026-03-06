@@ -2,6 +2,19 @@ import { Flower2, Heart, Waves, Sun, TreeDeciduous, Wind, HeartHandshake, Shield
 import type { StatusLevel } from "@/components/UI/status-pill/StatusPill";
 import type { LucideIcon } from "lucide-react";
 
+
+// Shared CategoryId type so questions and scoring stay type-safe
+export type CategoryId =
+  "emotional-regulation"
+  | "sleep-health"
+  | "anxiety"
+  | "motivation-interest"
+  | "stress-coping"
+  | "relationships"
+  | "trauma-impact"
+  | "self-image";
+
+
 export type Category = {
   id: string,
   icon: LucideIcon;
