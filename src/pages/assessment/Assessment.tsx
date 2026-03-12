@@ -24,9 +24,11 @@ const Assessment = () => {
           Answer a few questions to learn more about your mental wellness. This
           is completely anonymous and free.
         </p>
-      </div>
 
         <Questionnaire />
+      </div>
+
+        
     </section>
 
     )

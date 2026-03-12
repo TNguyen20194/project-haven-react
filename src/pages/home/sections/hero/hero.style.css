@@ -8,6 +8,28 @@
     justify-content: center;
 }
 
+.hero-illustration {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-therapist {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-blob {
+  position: absolute;
+  width: 520px;
+  top: 55px;
+  z-index: 1;
+  opacity: 0.9;
+}
+
 .hero-container {
     max-width: 56rem;
     margin: 0 auto;
@@ -19,7 +41,6 @@
     font-family: "Merriweather", "Poppins", sans-serif;
     font-size: 4rem;
     line-height: 1.2;
-    margin-top: 2rem;
     font-weight: var(--fw-dark);
     color: hsl(var(--green-1));
 }

@@ -3,20 +3,31 @@ import Badge from "@/components/UI/badge/Badge";
 import { BookOpen } from "lucide-react";
 import "./hero.style.css";
 import { Link } from "react-router";
+import therapistIllustration from "@/assets/therapist/therapist-1a.png";
+import blob from "@/assets/decorative/blob.png";
 
 const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero-container">
-       <div>
-         <Badge
-          icon={BookOpen}
-          iconClassName="text-[hsl(var(--coral))]"
-          className="mb-[1.1rem]"
-        >
-          Free Mental Health Education
-        </Badge>
-       </div>
+        <div>
+          <Badge
+            icon={BookOpen}
+            iconClassName="text-[hsl(var(--coral))]"
+            className="mb-[1.1rem]"
+          >
+            Free Mental Health Education
+          </Badge>
+        </div>
+
+        <div className="hero-illustration">
+          <img src={blob} alt="" className="hero-blob" />
+          <img
+            src={therapistIllustration}
+            alt="Therapist talking with a client"
+            className="hero-therapist"
+          />
+        </div>
 
         <h1 className="hero-title">
           Explore <span className="text-primary">Therapy</span> & Understand
@@ -33,12 +44,9 @@ const HeroSection = () => {
           variant="primary"
           size="lg"
           aria-label="Take the Free Assessment"
-          className="mt-30 text-shadow-md"
+          className="mt-15 text-shadow-md"
         >
-          <Link to="/assessment">
-
-         Start Your Free Assessment
-          </Link>
+          <Link to="/assessment">Start Your Free Assessment</Link>
         </Button>
       </div>
     </section>
@@ -46,6 +54,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
 
 // ADD scroll bar color
