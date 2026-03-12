@@ -8,13 +8,15 @@ const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero-container">
-        <Badge
+       <div>
+         <Badge
           icon={BookOpen}
           iconClassName="text-[hsl(var(--coral))]"
           className="mb-[1.1rem]"
         >
           Free Mental Health Education
         </Badge>
+       </div>
 
         <h1 className="hero-title">
           Explore <span className="text-primary">Therapy</span> & Understand
@@ -31,7 +33,7 @@ const HeroSection = () => {
           variant="primary"
           size="lg"
           aria-label="Take the Free Assessment"
-          className="mt-10 text-shadow-md"
+          className="mt-30 text-shadow-md"
         >
           <Link to="/assessment">
 

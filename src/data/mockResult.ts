@@ -6,5 +6,5 @@ export const mockScoresByCategory: Record<string, number> = {
     "stress-coping": 8,
     "relationships": 7,
     "trauma-impact": 9,
-    "self-image": 4
+    "self-image": 12
 }

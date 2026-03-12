@@ -29,7 +29,7 @@ export const questions: Question[] = [
             0: "Very quickly – I can self-soothe within minutes",
             1: "Fairly quickly – It takes some effort but I manage",
             2: "Slowly – It can take hours to feel calm again",
-            3: "I rarely calm down on my own without outside help"
+            3: "Very slowly – I struggle to calm down even after a long time"
         }
     },
     {
@@ -208,7 +208,7 @@ export const questions: Question[] = [
             0: "Often – I regularly anticipate things with excitement",
             1: "Sometimes – I enjoy planning but don't always feel excited",
             2: "Rarely – Very few things spark enthusiasm for me",
-            3: "Never – Nothing feels worth looking forward to"
+            3: "Almost never – I struggle to feel excited about future plans"
         }
     },
 
