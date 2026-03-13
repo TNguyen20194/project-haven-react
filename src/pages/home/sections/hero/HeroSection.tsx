@@ -44,7 +44,7 @@ const HeroSection = () => {
           variant="primary"
           size="lg"
           aria-label="Take the Free Assessment"
-          className="mt-15 text-shadow-md"
+          className="mt-10 text-shadow-md"
         >
           <Link to="/assessment">Start Your Free Assessment</Link>
         </Button>
