@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Progress } from "@/components/UI/progress";
-import { Toaster } from "@/components/UI/sonner";
+import { toast } from "sonner";
 import Button from "@/components/UI/buttons/CTAbutton";
 import {
   Card,
@@ -32,7 +32,8 @@ const Questionnaire = () => {
   const currentQuestion = questions[currentIndex];
   const currentAnswer = answers[currentQuestion.id] ?? "";
 
-  console.log(currentQuestion, answers)
+  
+  console.log(answers, currentQuestion, currentAnswer)
 
 
   const progress = Math.round(((currentIndex + 1) / questions.length) * 100);
@@ -152,6 +153,7 @@ const Questionnaire = () => {
         </CardFooter>
       </Card>
     </div>
+
   );
 };
 
