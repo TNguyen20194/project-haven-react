@@ -21,18 +21,58 @@ import {
   FieldLabel,
   FieldTitle,
 } from "@/components/UI/field";
+import { RadioGroup, RadioGroupItem } from "@/components/UI/radio-group";
+import { Label } from "@/components/ui/label";
+import { questions } from "@/data/questions";
 
 const Questionnaire = () => {
+  const currentIndex = 0;
+  const currentQuestion = questions[currentIndex];
+  
+  const progress = Math.round(((currentIndex + 1) / questions.length) * 100);
+  const options = Object.entries(currentQuestion.options).sort(([a], [b]) => Number(a) - Number(b));
+
   return (
-    <div>
-      <div className="mt-5">
-        <span>Progress</span>
-        <Progress className="h-3 rounded-full" />
+    <div className="mt-6">
+      <div className="space-y-2">
+        <div className="flex justify-between text-[hsl(var(--green-1))]">
+          <span>Progress</span>
+          <span><strong>{progress}%</strong></span>
+        </div>
+
+        <Progress
+          value={progress}
+          className="h-3 rounded-full h-3 bg-[#dfe5dc] [&>div]:bg-[hsl(var(--primary))]"
+        />
       </div>
-      <Card className="mt-5">
-        <CardHeader>
-          <CardTitle>Test</CardTitle>
+
+      <Card className="mt-8 rounded-[10px] border-2 border-[#dcded7] bg-[hsl(var(--background-alt))] shadow-md">
+        <CardHeader className="space-y-2 px-6 pb-4 pt-4">
+          <h4 className="text-[1.5rem] text-[hsl(var(--green-1))] font-semibold">
+            Question {currentIndex + 1}
+          </h4>
+          <p className="p-text leading-relaxed">
+          {currentQuestion.prompt}
+          </p>
         </CardHeader>
+
+        <CardContent className="space-y-4 px-6 pb-4">
+          <RadioGroup>
+            {
+              options.map(([value, label]) => (
+                <div>
+                  <RadioGroupItem>
+
+                  </RadioGroupItem>
+                  <Label>
+
+                  </Label>
+                </div>
+              ))
+            }
+          </RadioGroup>
+
+        </CardContent>
       </Card>
     </div>
   );

@@ -18,7 +18,7 @@ const Assessment = () => {
             wrapperClassName="rounded-full w-12 h-12"
             iconClassName="text-[hsl(var(--primary))] h-7 w-7"
           />
-          <h3 className="sub-heading">Explore Your Mental Wellness</h3>
+          <h2 className="section-heading">Explore Your Mental Wellness</h2>
         </div>
         <p className="p-text">
           Answer a few questions to learn more about your mental wellness. This
