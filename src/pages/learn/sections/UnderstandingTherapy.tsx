@@ -4,7 +4,7 @@ import flower2 from "@/assets/decorative/therapy-flower-2.webp";
 
 const UnderstandingTherapy = () => {
   return (
-    <section className="hero">
+    <section className="hero hero-secondary">
       <div className="hero-container max-w-[46rem]!">
         <Badge
           icon={BookOpen}
