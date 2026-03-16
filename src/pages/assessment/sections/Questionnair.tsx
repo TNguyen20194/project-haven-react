@@ -53,7 +53,7 @@ const Questionnaire = () => {
         />
       </div>
 
-      <Card className="mt-8 rounded-[10px] border-2 border-[#dcded7] bg-[hsl(var(--background-alt))] shadow-md">
+      <Card className="mt-8 rounded-[10px] border-1 border-[#dcded7] bg-hsl[var(--white)] shadow-md">
         <CardHeader className="space-y-2 px-6 pb-4 pt-4">
           <CardTitle>
             <h4 className="text-[1.5rem] text-[hsl(var(--green-1))] font-semibold">
@@ -75,10 +75,10 @@ const Questionnaire = () => {
               <Label
                 key={value}
                 htmlFor={`option-${value}`}
-                className={`flex cursor-pointer items-center gap-4 rounded-[10px] border px-5 py-4 transition ${
+                className={`flex cursor-pointer items-center gap-4 rounded-[10px] border px-5 py-4 bg-hsl[var(--white)] transition ${
                   selectedOption === value
-                    ? "border-[hsl(var(--primary))] bg-white"
-                    : "border-[#d9d9d3] bg-white hover:border-[hsl(var(--primary))]"
+                    ? "border-[hsl(var(--primary))] bg-[hsl(var(--background)/0.8)]"
+                    : "border-[#d9d9d3] hover:border-[hsl(var(--primary))] hover:bg-[hsl(var(--background-alt)))]"
                 }`}
               >
                 <RadioGroupItem value={value} id={`option-${value}`} />

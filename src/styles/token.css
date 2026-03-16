@@ -21,6 +21,7 @@
   --background-alt: 40 21% 93%;
   --card: 40 15% 99%;
   --popover: var(--card);
+  --white: 0 0% 100%;
 
   /* Brand + palette */
   --primary: 180 44.94% 34.9%;
@@ -96,6 +97,7 @@
   --background-alt: var(--muted-1);
   --card: var(--background);
   --popover: var(--card);
+  --white: var(--background-alt);
 
   /* Brand */
   --primary: 173.93 34.9% 50%;
