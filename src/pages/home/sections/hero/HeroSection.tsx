@@ -39,15 +39,27 @@ const HeroSection = () => {
           support your well-being.
         </p>
 
-        <Button
-          asChild
-          variant="primary"
-          size="lg"
-          aria-label="Take the Free Assessment"
-          className="mt-10 text-shadow-md"
-        >
-          <Link to="/assessment">Start Your Free Assessment</Link>
-        </Button>
+        <div className="grid justify-center gap-6 mt-12">
+          <Button
+            asChild
+            variant="primary"
+            size="lg"
+            aria-label="Take the Free Assessment"
+            className="text-shadow-md"
+          >
+            <Link to="/assessment">Start Your Free Assessment</Link>
+          </Button>
+
+          <Button
+            asChild
+            variant="secondary"
+            size="lg"
+            aria-label="Take the Free Assessment"
+            className="text-shadow-md hover:bg-[hsl(var(--primary)/0.3)]!"
+          >
+            <Link to="/learn">Learn What Therapy Is</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

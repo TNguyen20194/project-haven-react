@@ -86,7 +86,7 @@ const Questionnaire = () => {
         />
       </div>
 
-      <Card className="mt-8 rounded-[10px] border-1 border-[#dcded7] bg-hsl[var(--white)] shadow-md">
+      <Card className="mt-8 rounded-[10px] border border-[#dcded7] bg-[hsl(var(--white)] shadow-md">
         <CardHeader className="space-y-2 px-6 pb-4 pt-4">
           <CardTitle>
             <h4 className="text-[1.5rem] text-[hsl(var(--green-1))] font-semibold">
@@ -111,7 +111,7 @@ const Questionnaire = () => {
                 className={`flex cursor-pointer items-center gap-4 rounded-[10px] border px-5 py-4 bg-hsl[var(--white)] transition ${
                   currentAnswer === value
                     ? "border-[hsl(var(--primary))] bg-[hsl(var(--background)/0.8)]"
-                    : "border-[#d9d9d3] hover:border-[hsl(var(--primary))] hover:bg-[hsl(var(--background-alt)))]"
+                    : "border-[#d9d9d3] hover:border-[hsl(var(--primary))] hover:bg-[hsl(var(--background-alt))]"
                 }`}
               >
                 <RadioGroupItem
@@ -132,7 +132,7 @@ const Questionnaire = () => {
            variant="secondary"
           size="md"
           aria-label="Back button"
-          className="text-shadow-md text-[15px] w-[100px]"
+          className="text-shadow-md text-[15px] w-[100px] hover:bg-[hsl(var(--primary)/0.3)]!"
           onClick={handleBack}
           disabled={currentIndex === 0}
           type="button"
