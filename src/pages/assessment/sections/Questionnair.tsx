@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Progress } from "@/components/UI/progress";
 import { useForm } from "@tanstack/react-form";
 import { Toaster } from "@/components/UI/sonner";
@@ -28,16 +29,22 @@ import { questions } from "@/data/questions";
 const Questionnaire = () => {
   const currentIndex = 0;
   const currentQuestion = questions[currentIndex];
-  
+
+  const [selectedOption, setSelectedOption] = useState("");
+
   const progress = Math.round(((currentIndex + 1) / questions.length) * 100);
-  const options = Object.entries(currentQuestion.options).sort(([a], [b]) => Number(a) - Number(b));
+  const options = Object.entries(currentQuestion.options).sort(
+    ([a], [b]) => Number(a) - Number(b),
+  );
 
   return (
     <div className="mt-6">
       <div className="space-y-2">
         <div className="flex justify-between text-[hsl(var(--green-1))]">
           <span>Progress</span>
-          <span><strong>{progress}%</strong></span>
+          <span>
+            <strong>{progress}%</strong>
+          </span>
         </div>
 
         <Progress
@@ -48,30 +55,39 @@ const Questionnaire = () => {
 
       <Card className="mt-8 rounded-[10px] border-2 border-[#dcded7] bg-[hsl(var(--background-alt))] shadow-md">
         <CardHeader className="space-y-2 px-6 pb-4 pt-4">
-          <h4 className="text-[1.5rem] text-[hsl(var(--green-1))] font-semibold">
-            Question {currentIndex + 1}
-          </h4>
-          <p className="p-text leading-relaxed">
-          {currentQuestion.prompt}
-          </p>
+          <CardTitle>
+            <h4 className="text-[1.5rem] text-[hsl(var(--green-1))] font-semibold">
+              Question {currentIndex + 1}
+            </h4>
+          </CardTitle>
+          <CardDescription>
+            <p className="p-text leading-relaxed">{currentQuestion.prompt}</p>
+          </CardDescription>
         </CardHeader>
 
         <CardContent className="space-y-4 px-6 pb-4">
-          <RadioGroup>
-            {
-              options.map(([value, label]) => (
-                <div>
-                  <RadioGroupItem>
-
-                  </RadioGroupItem>
-                  <Label>
-
-                  </Label>
-                </div>
-              ))
-            }
+          <RadioGroup
+            value={selectedOption}
+            onValueChange={setSelectedOption}
+            className="space-y-4"
+          >
+            {options.map(([value, label]) => (
+              <Label
+                key={value}
+                htmlFor={`option-${value}`}
+                className={`flex cursor-pointer items-center gap-4 rounded-[10px] border px-5 py-4 transition ${
+                  selectedOption === value
+                    ? "border-[hsl(var(--primary))] bg-white"
+                    : "border-[#d9d9d3] bg-white hover:border-[hsl(var(--primary))]"
+                }`}
+              >
+                <RadioGroupItem value={value} id={`option-${value}`} />
+                <span className="text-[15px] text-[hsl(var(--green-1))] leading-relaxed">
+                  {label}
+                </span>
+              </Label>
+            ))}
           </RadioGroup>
-
         </CardContent>
       </Card>
     </div>
