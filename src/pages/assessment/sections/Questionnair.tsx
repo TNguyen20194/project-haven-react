@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Progress } from "@/components/UI/progress";
-import { useForm } from "@tanstack/react-form";
 import { Toaster } from "@/components/UI/sonner";
 import Button from "@/components/UI/buttons/CTAbutton";
 import {
@@ -27,15 +26,48 @@ import { Label } from "@/components/ui/label";
 import { questions } from "@/data/questions";
 
 const Questionnaire = () => {
-  const currentIndex = 0;
-  const currentQuestion = questions[currentIndex];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
 
-  const [selectedOption, setSelectedOption] = useState("");
+  const currentQuestion = questions[currentIndex];
+  const currentAnswer = answers[currentQuestion.id] ?? "";
+
+  console.log(currentQuestion, answers)
+
 
   const progress = Math.round(((currentIndex + 1) / questions.length) * 100);
   const options = Object.entries(currentQuestion.options).sort(
     ([a], [b]) => Number(a) - Number(b),
   );
+
+  const handleSelectOption = (value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [currentQuestion.id]: value,
+    }))
+  };
+  
+  const handleNext = () => {
+    if(!currentAnswer) {
+      toast.warning("Please answer the question", {
+        description: "This field is required to continue.",
+      });
+      return;
+    };
+
+    if(currentIndex < questions.length - 1) {
+      setCurrentIndex((prev) => prev + 1)
+    } else {
+      console.log("Assessment complete", answers)
+    }
+  };
+
+  const handleBack = () => {
+    if(currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1)
+    }
+  };
+
 
   return (
     <div className="mt-6">
@@ -49,7 +81,7 @@ const Questionnaire = () => {
 
         <Progress
           value={progress}
-          className="h-3 rounded-full h-3 bg-[#dfe5dc] [&>div]:bg-[hsl(var(--primary))]"
+          className="h-4 rounded-full bg-[#dfe5dc] [&>div]:bg-[hsl(var(--primary))]"
         />
       </div>
 
@@ -67,8 +99,8 @@ const Questionnaire = () => {
 
         <CardContent className="space-y-4 px-6 pb-4">
           <RadioGroup
-            value={selectedOption}
-            onValueChange={setSelectedOption}
+            value={currentAnswer}
+            onValueChange={handleSelectOption}
             className="space-y-4"
           >
             {options.map(([value, label]) => (
@@ -76,12 +108,16 @@ const Questionnaire = () => {
                 key={value}
                 htmlFor={`option-${value}`}
                 className={`flex cursor-pointer items-center gap-4 rounded-[10px] border px-5 py-4 bg-hsl[var(--white)] transition ${
-                  selectedOption === value
+                  currentAnswer === value
                     ? "border-[hsl(var(--primary))] bg-[hsl(var(--background)/0.8)]"
                     : "border-[#d9d9d3] hover:border-[hsl(var(--primary))] hover:bg-[hsl(var(--background-alt)))]"
                 }`}
               >
-                <RadioGroupItem value={value} id={`option-${value}`} />
+                <RadioGroupItem
+                value={value}
+                id={`option-${value}`}
+                className="accent-[hsl(var(--primary))]"
+                />
                 <span className="text-[15px] text-[hsl(var(--green-1))] leading-relaxed">
                   {label}
                 </span>
@@ -89,6 +125,31 @@ const Questionnaire = () => {
             ))}
           </RadioGroup>
         </CardContent>
+
+        <CardFooter className="flex justify-between px-6 pb-2">
+          <Button
+           variant="secondary"
+          size="md"
+          aria-label="Back button"
+          className="text-shadow-md text-[15px] w-[100px]"
+          onClick={handleBack}
+          disabled={currentIndex === 0}
+          type="button"
+          >
+            Back
+          </Button>
+
+          <Button
+          variant="primary"
+          size="md"
+          aria-label="Back button"
+          className="text-shadow-md text-[15px] w-[100px]"
+          onClick={handleNext}
+          type="button"
+          >
+           {currentIndex === questions.length - 1 ? "Finish" : "Next"}
+          </Button>
+        </CardFooter>
       </Card>
     </div>
   );

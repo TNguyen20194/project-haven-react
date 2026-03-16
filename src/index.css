@@ -40,9 +40,10 @@
     margin: 0 auto;
 }
 
-
-
-/* JOURNEY */
+ /* ==========>> RADIO <<==========  */
+ input[type="radio"] {
+  accent-color: hsl(var(--primary));
+}
 
 /* ======== AUTH PAGE ======== */
 .auth-page {
