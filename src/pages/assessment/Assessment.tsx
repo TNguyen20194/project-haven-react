@@ -3,14 +3,8 @@ import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { ClipboardCheck } from "lucide-react";
 
 const Assessment = () => {
-    return (
-        <section className="relative z-10 px-6 py-20 overflow-hidden">
-      {/* Background Layer */}
-      {/* <div
-        className="absolute rounded-full bottom-10 right-10 w-[350px] h-[350px] overflow-hidden bg-no-repeat bg-center bg-cover opacity-90 pointer-events-none"
-        style={{ backgroundImage: `url(${flower3})` }}
-      /> */}
-
+  return (
+    <section className="relative z-10 px-6 py-20 overflow-hidden">
       <div className="relative z-10 max-w-[56rem] mx-auto ">
         <div className="flex items-center gap-3 mb-5">
           <IconBadge
@@ -27,11 +21,8 @@ const Assessment = () => {
 
         <Questionnaire />
       </div>
-
-        
     </section>
-
-    )
+  );
 };
 
 export default Assessment;

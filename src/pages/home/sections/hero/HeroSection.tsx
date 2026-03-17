@@ -55,7 +55,7 @@ const HeroSection = () => {
             variant="secondary"
             size="lg"
             aria-label="Take the Free Assessment"
-            className="text-shadow-md hover:bg-[hsl(var(--primary)/0.3)]!"
+            className="hover:bg-[hsl(var(--primary)/0.3)]!"
           >
             <Link to="/learn">Learn What Therapy Is</Link>
           </Button>

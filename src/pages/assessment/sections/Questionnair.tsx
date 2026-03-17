@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Progress } from "@/components/UI/progress";
 import { toast } from "sonner";
 import Button from "@/components/UI/buttons/CTAbutton";
@@ -10,31 +11,53 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/UI/card";
-import { Input } from "@/components/UI/input";
-import {
-  Field,
-  FieldContent,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLegend,
-  FieldLabel,
-  FieldTitle,
-} from "@/components/UI/field";
 import { RadioGroup, RadioGroupItem } from "@/components/UI/radio-group";
-import { Label } from "@/components/ui/label";
+import { Label } from "@/components/UI/label";
 import { questions } from "@/data/questions";
 
+const STORAGE_KEY = "assessment-answers";
+const STORAGE_INDEX_KEY = "assessment-current-index";
+
 const Questionnaire = () => {
+  const navigate = useNavigate();
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const savedAnswers = localStorage.getItem(STORAGE_KEY);
+    const savedIndex = localStorage.getItem(STORAGE_INDEX_KEY);
+
+    if(savedAnswers) {
+      setAnswers(JSON.parse(savedAnswers));
+    };
+
+    if(savedIndex) {
+      setCurrentIndex(JSON.parse(savedIndex));
+    };
+
+  }, [])
 
   const currentQuestion = questions[currentIndex];
   const currentAnswer = answers[currentQuestion.id] ?? "";
 
-  
-  console.log(answers, currentQuestion, currentAnswer)
+  /*
+Example
 
+  answers = {
+    "emotional-regulation-1" : "2"
+    "emotional-regulation-2" : "0"
+    "emotional-regulation-3" : "1"
+    }
+
+  answers["emotional-regulation-1"] = "2"
+
+  currentQuestion.id = "emotional-regulation-1"
+  value = "2"
+
+  */
+
+  console.log(answers);
 
   const progress = Math.round(((currentIndex + 1) / questions.length) * 100);
   const options = Object.entries(currentQuestion.options).sort(
@@ -42,33 +65,41 @@ const Questionnaire = () => {
   );
 
   const handleSelectOption = (value: string) => {
-    setAnswers((prev) => ({
-      ...prev,
+    const updatedAnswers = {
+      ...answers,
       [currentQuestion.id]: value,
-    }))
+    };
+
+    setAnswers(updatedAnswers);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedAnswers));
   };
-  
+
   const handleNext = () => {
-    if(!currentAnswer) {
+    if (!currentAnswer) {
       toast.warning("Please answer the question", {
         description: "This field is required to continue.",
       });
       return;
-    };
+    }
 
-    if(currentIndex < questions.length - 1) {
-      setCurrentIndex((prev) => prev + 1)
+    if (currentIndex < questions.length - 1) {
+      const nextIndex = currentIndex + 1;
+      setCurrentIndex(nextIndex);
+      localStorage.setItem(STORAGE_INDEX_KEY, String(nextIndex));
     } else {
-      console.log("Assessment complete", answers)
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
+      localStorage.setItem(STORAGE_INDEX_KEY, String(currentIndex));
+      navigate("/assessment/result")
     }
   };
 
   const handleBack = () => {
-    if(currentIndex > 0) {
-      setCurrentIndex((prev) => prev - 1)
+    if (currentIndex > 0) {
+      const prevIndex = currentIndex - 1
+      setCurrentIndex(prevIndex);
+      localStorage.setItem(STORAGE_INDEX_KEY, String(prevIndex));
     }
   };
-
 
   return (
     <div className="mt-6">
@@ -86,7 +117,7 @@ const Questionnaire = () => {
         />
       </div>
 
-      <Card className="mt-8 rounded-[10px] border border-[#dcded7] bg-[hsl(var(--white)] shadow-md">
+      <Card className="mt-8 rounded-[10px] border border-[#dcded7] bg-[hsl(var(--white))] shadow-md">
         <CardHeader className="space-y-2 px-6 pb-4 pt-4">
           <CardTitle>
             <h4 className="text-[1.5rem] text-[hsl(var(--green-1))] font-semibold">
@@ -108,16 +139,16 @@ const Questionnaire = () => {
               <Label
                 key={value}
                 htmlFor={`option-${value}`}
-                className={`flex cursor-pointer items-center gap-4 rounded-[10px] border px-5 py-4 bg-hsl[var(--white)] transition ${
+                className={`flex cursor-pointer items-center gap-4 rounded-[10px] border px-5 py-4 bg-[hsl(var(--white))] transition ${
                   currentAnswer === value
                     ? "border-[hsl(var(--primary))] bg-[hsl(var(--background)/0.8)]"
                     : "border-[#d9d9d3] hover:border-[hsl(var(--primary))] hover:bg-[hsl(var(--background-alt))]"
                 }`}
               >
                 <RadioGroupItem
-                value={value}
-                id={`option-${value}`}
-                className="accent-[hsl(var(--primary))]"
+                  value={value}
+                  id={`option-${value}`}
+                  className="accent-[hsl(var(--primary))]"
                 />
                 <span className="text-[15px] text-[hsl(var(--green-1))] leading-relaxed">
                   {label}
@@ -129,31 +160,30 @@ const Questionnaire = () => {
 
         <CardFooter className="flex justify-between px-6 pb-2">
           <Button
-           variant="secondary"
-          size="md"
-          aria-label="Back button"
-          className="text-shadow-md text-[15px] w-[100px] hover:bg-[hsl(var(--primary)/0.3)]!"
-          onClick={handleBack}
-          disabled={currentIndex === 0}
-          type="button"
+            variant="secondary"
+            size="md"
+            aria-label="Back button"
+            className="text-[15px] w-[100px] hover:bg-[hsl(var(--primary)/0.3)]!"
+            onClick={handleBack}
+            disabled={currentIndex === 0}
+            type="button"
           >
             Back
           </Button>
 
           <Button
-          variant="primary"
-          size="md"
-          aria-label="Back button"
-          className="text-shadow-md text-[15px] w-[100px]"
-          onClick={handleNext}
-          type="button"
+            variant="primary"
+            size="md"
+            aria-label="Back button"
+            className="text-[15px] w-[100px]"
+            onClick={handleNext}
+            type="button"
           >
-           {currentIndex === questions.length - 1 ? "Finish" : "Next"}
+            {currentIndex === questions.length - 1 ? "Finish" : "Next"}
           </Button>
         </CardFooter>
       </Card>
     </div>
-
   );
 };
 
