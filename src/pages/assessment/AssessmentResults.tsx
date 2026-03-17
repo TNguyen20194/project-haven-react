@@ -4,10 +4,18 @@ import DisclaimerBanner from "@/components/section/DisclaimerBanner";
 import ResultCardList from "@/components/section/ResultCardList";
 import ProfessionalSupport from "@/components/section/ProfessionalSupport";
 import { useAssessmentStore } from "@/store/assessment.store";
+import { useNavigate } from "react-router";
 import Button from "@/components/UI/buttons/CTAbutton";
 
 const AssessmentResults = () => {
+  const resetAssessment = useAssessmentStore((state) => state.resetAssessment);
+  const navigate = useNavigate();
   const answers = useAssessmentStore((state) => state.answers);
+
+  const handleResetAssessment = () => {
+    resetAssessment();
+    navigate("/assessment");
+  };
 
   console.log(answers);
 
@@ -33,12 +41,13 @@ const AssessmentResults = () => {
 
         <ProfessionalSupport />
 
-         <div className="text-center mt-10">
+        <div className="text-center mt-10">
           <Button
             variant="secondary"
             size="md"
             aria-label="Retake Assessment"
             className="hover:bg-[hsl(var(--accent))]! hover:text-[hsl(var(--white))]! hover:dark:text-[hsl(var(--green-1-reversed))]!"
+            onClick={handleResetAssessment}
           >
             Retake Assessment
           </Button>
