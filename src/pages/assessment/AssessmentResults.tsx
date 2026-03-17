@@ -10,14 +10,12 @@ import Button from "@/components/UI/buttons/CTAbutton";
 const AssessmentResults = () => {
   const resetAssessment = useAssessmentStore((state) => state.resetAssessment);
   const navigate = useNavigate();
-  const answers = useAssessmentStore((state) => state.answers);
+
 
   const handleResetAssessment = () => {
     resetAssessment();
     navigate("/assessment");
   };
-
-  console.log(answers);
 
   return (
     <section className="relative z-10 px-6 py-10 overflow-hidden">

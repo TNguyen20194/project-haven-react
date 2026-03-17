@@ -8,10 +8,16 @@ type ResultCardProps = {
   label: string;
   description: string;
   status: StatusLevel;
-  iconClass?: string
+  iconClass?: string;
 };
 
-const ResultCard = ({ icon, label, description, status, iconClass }: ResultCardProps) => (
+const ResultCard = ({
+  icon,
+  label,
+  description,
+  status,
+  iconClass,
+}: ResultCardProps) => (
   <div className="p-5 bg-[hsl(var(--background))] shadow-sm rounded-lg">
     <div className="flex flex-col gap-6 justify-between items-center sm:flex-row">
       <div className="flex items-center gap-2">
@@ -25,7 +31,6 @@ const ResultCard = ({ icon, label, description, status, iconClass }: ResultCardP
         </h4>
       </div>
 
-      {/*  <StatusPill status={calculateStatus}/> */}
       <StatusPill status={status} />
     </div>
     <div className="text-[hsl(var(--green-1))] text-[1rem] mt-5">

@@ -48,8 +48,6 @@ Example
 
   */
 
-  console.log(answers);
-
   const progress = Math.round(((currentIndex + 1) / questions.length) * 100);
   const options = Object.entries(currentQuestion.options).sort(
     ([a], [b]) => Number(a) - Number(b),

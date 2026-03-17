@@ -1,9 +1,15 @@
 import ResultCard from "./result-card/ResultCard";
 import { categories } from "@/data/categories";
-import { mockScoresByCategory } from "@/data/mockResult";
+import { questions } from "@/data/questions";
+import { useAssessmentStore } from "@/store/assessment.store";
+import { getCategoryScore } from "@/utilities/getCategoryScore";
 import { getStatus } from "@/utilities/getStatus";
 
 const ResultCardList = () => {
+   const answers = useAssessmentStore((state) => state.answers);
+
+   console.log(answers)
+
   return (
     <div className="space-y-5">
         {categories.map((category) => {
@@ -11,7 +17,7 @@ const ResultCardList = () => {
         // Calulate score to get status level and description
         // Pass status and description into child component
 
-        const score = mockScoresByCategory[category.id] ?? 0;
+        const score = getCategoryScore(category.id, questions, answers);
         const status = getStatus(score);
         const description = category.description[status];
 

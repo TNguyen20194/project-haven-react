@@ -27,10 +27,7 @@ export const useAssessmentStore = create<AssessmenStore>() (
                 })),
 
             resetIndex: () =>
-                set((state) => ({
-                    currentIndex: 0,
-                    answers: state.answers,
-                })),
+                set({ currentIndex: 0 }),
 
             resetAssessment: () =>
                 set({
