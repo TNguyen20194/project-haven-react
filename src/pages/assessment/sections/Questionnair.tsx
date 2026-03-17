@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useAssessmentStore } from "@/store/assessment.store";
 import { useNavigate } from "react-router-dom";
 import { Progress } from "@/components/UI/progress";
 import { toast } from "sonner";
@@ -15,28 +15,15 @@ import { RadioGroup, RadioGroupItem } from "@/components/UI/radio-group";
 import { Label } from "@/components/UI/label";
 import { questions } from "@/data/questions";
 
-const STORAGE_KEY = "assessment-answers";
-const STORAGE_INDEX_KEY = "assessment-current-index";
-
 const Questionnaire = () => {
   const navigate = useNavigate();
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const currentIndex = useAssessmentStore((state) => state.currentIndex);
+  const answers = useAssessmentStore((state) => state.answers);
 
-  useEffect(() => {
-    const savedAnswers = localStorage.getItem(STORAGE_KEY);
-    const savedIndex = localStorage.getItem(STORAGE_INDEX_KEY);
-
-    if(savedAnswers) {
-      setAnswers(JSON.parse(savedAnswers));
-    };
-
-    if(savedIndex !== null) {
-      setCurrentIndex(Number(savedIndex));
-    };
-
-  }, [])
+  const setCurrentIndex = useAssessmentStore((state) => state.setCurrentIndex);
+  const setAnswers = useAssessmentStore((state) => state.setAnswers);
+  const resetIndex = useAssessmentStore((state) => state.resetIndex);
 
   const currentQuestion = questions[currentIndex];
   const currentAnswer = answers[currentQuestion.id] ?? "";
@@ -65,13 +52,7 @@ Example
   );
 
   const handleSelectOption = (value: string) => {
-    const updatedAnswers = {
-      ...answers,
-      [currentQuestion.id]: value,
-    };
-
-    setAnswers(updatedAnswers);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedAnswers));
+    setAnswers(currentQuestion.id, value);
   };
 
   const handleNext = () => {
@@ -83,21 +64,16 @@ Example
     }
 
     if (currentIndex < questions.length - 1) {
-      const nextIndex = currentIndex + 1;
-      setCurrentIndex(nextIndex);
-      localStorage.setItem(STORAGE_INDEX_KEY, String(nextIndex));
+      setCurrentIndex(currentIndex + 1);
     } else {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
-      localStorage.removeItem(STORAGE_INDEX_KEY);
-      navigate("/assessment/result")
+      resetIndex();
+      navigate("/assessment/results")
     }
   };
 
   const handleBack = () => {
     if (currentIndex > 0) {
-      const prevIndex = currentIndex - 1
-      setCurrentIndex(prevIndex);
-      localStorage.setItem(STORAGE_INDEX_KEY, String(prevIndex));
+      setCurrentIndex(currentIndex - 1);
     }
   };
 

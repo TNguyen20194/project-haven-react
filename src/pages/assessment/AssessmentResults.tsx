@@ -3,8 +3,13 @@ import { CircleCheck } from "lucide-react";
 import DisclaimerBanner from "@/components/section/DisclaimerBanner";
 import ResultCardList from "@/components/section/ResultCardList";
 import ProfessionalSupport from "@/components/section/ProfessionalSupport";
+import { useAssessmentStore } from "@/store/assessment.store";
+import Button from "@/components/UI/buttons/CTAbutton";
 
-const AssessmentResult = () => {
+const AssessmentResults = () => {
+  const answers = useAssessmentStore((state) => state.answers);
+
+  console.log(answers);
 
   return (
     <section className="relative z-10 px-6 py-10 overflow-hidden">
@@ -27,9 +32,20 @@ const AssessmentResult = () => {
         <ResultCardList />
 
         <ProfessionalSupport />
+
+         <div className="text-center mt-10">
+          <Button
+            variant="secondary"
+            size="md"
+            aria-label="Retake Assessment"
+            className="hover:bg-[hsl(var(--accent))]! hover:text-[hsl(var(--white))]! hover:dark:text-[hsl(var(--green-1-reversed))]!"
+          >
+            Retake Assessment
+          </Button>
+        </div>
       </div>
     </section>
   );
 };
 
-export default AssessmentResult;
+export default AssessmentResults;

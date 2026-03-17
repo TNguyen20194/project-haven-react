@@ -63,6 +63,7 @@
   --dark-grey: 0 0% 11.37%;
   --green-1: 180 25.64% 15.29%;
   --green-1a: var(--green-1);
+  --green-1-reversed: var(--green-1);
   --green-2: 87.1 42.47% 85.69%;
   --green-3: 180 10.91% 43.14%;
 

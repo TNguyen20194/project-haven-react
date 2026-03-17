@@ -6,6 +6,7 @@ type AssessmenStore = {
     answers: Record<string, string>;
     setCurrentIndex: (index: number) => void;
     setAnswers: (questionId: string, value: string) => void;
+    resetIndex: () => void;
     resetAssessment: () => void;
 };
 
@@ -15,18 +16,33 @@ export const useAssessmentStore = create<AssessmenStore>() (
             currentIndex: 0,
             answers: {},
 
-            setCurrentIndex: (index) => ({ currentIndex: index}),
+            setCurrentIndex: (index) => set({ currentIndex: index }),
 
-            setAnswers: (questionId, value) => 
+            setAnswers: (questionId, value) =>
                 set((state) => ({
                     answers: {
                         ...state.answers,
-                        [questionId]: value
+                        [questionId]: value,
                     },
                 })),
-        })
-    )
-)
+
+            resetIndex: () =>
+                set((state) => ({
+                    currentIndex: 0,
+                    answers: state.answers,
+                })),
+
+            resetAssessment: () =>
+                set({
+                    currentIndex: 0,
+                    answers: {}
+                }),
+        }),
+        {
+            name: "assessment-storage"
+        },
+    ),
+);
 
 
 
