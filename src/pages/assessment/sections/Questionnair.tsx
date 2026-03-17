@@ -1,4 +1,5 @@
 import { useAssessmentStore } from "@/store/assessment.store";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Progress } from "@/components/UI/progress";
 import { toast } from "sonner";
@@ -14,8 +15,11 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/UI/radio-group";
 import { Label } from "@/components/UI/label";
 import { questions } from "@/data/questions";
+import { Loader2 } from "lucide-react";
 
 const Questionnaire = () => {
+  const [isFinishing, setIsFinishing] = useState(false);
+
   const navigate = useNavigate();
 
   const currentIndex = useAssessmentStore((state) => state.currentIndex);
@@ -66,8 +70,31 @@ Example
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      resetIndex();
-      navigate("/assessment/results")
+      setIsFinishing(true);
+
+      const toastId = toast.loading("Preparing your results...", {
+        description: (
+          <span className="text-[hsl(var(--green-1))]/80">
+            Please wait a moment
+          </span>
+        ),
+        icon: (
+          <Loader2 className="h-5 w-5 animate-spin text-[hsl(var(--white))] shrink-0" />
+        ),
+        duration: 2500,
+      });
+
+      setTimeout(() => {
+        resetIndex();
+
+        toast.success("Your results are ready.", {
+          id: toastId,
+          description: "Loading your results now.",
+          duration: 2000,
+        });
+
+        navigate("/assessment/results");
+      }, 2000);
     }
   };
 
@@ -139,9 +166,9 @@ Example
             variant="secondary"
             size="md"
             aria-label="Back button"
-            className="text-[15px] w-[100px] hover:bg-[hsl(var(--primary)/0.3)]!"
+            className="text-[15px] w-[130px] hover:bg-[hsl(var(--primary)/0.3)]!"
             onClick={handleBack}
-            disabled={currentIndex === 0}
+            disabled={currentIndex === 0 || isFinishing}
             type="button"
           >
             Back
@@ -151,11 +178,16 @@ Example
             variant="primary"
             size="md"
             aria-label="Back button"
-            className="text-[15px] w-[100px]"
+            className="text-[15px] w-[130px]"
             onClick={handleNext}
+            disabled={isFinishing}
             type="button"
           >
-            {currentIndex === questions.length - 1 ? "Finish" : "Next"}
+            {isFinishing
+              ? "Analyzing..."
+              : currentIndex === questions.length - 1
+                ? "See Results"
+                : "Next"}
           </Button>
         </CardFooter>
       </Card>

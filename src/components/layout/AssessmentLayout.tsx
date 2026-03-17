@@ -13,8 +13,10 @@ const AssessmentLayout = () => {
           classNames: {
             toast: "rounded-2xl shadow-lg border-none px-6 py-5",
             warning: "!bg-[#EF4444] !text-white !border-none",
-            title: "!text-[16px] !font-semibold !text-white",
-            description: "!text-[16px] !text-white/90",
+            loading: "!bg-[hsl(var(--moderate-bg-yellow))] !text-[hsl(var(--green-1))] !border-none",
+            success: "!bg-[hsl(var(--primary))] !text-white !border-none",
+            title: "!text-[16px] !font-semibold",
+            description: "!text-[16px]",
           },
         }}
       />
