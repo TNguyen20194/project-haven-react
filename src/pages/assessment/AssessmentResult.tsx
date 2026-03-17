@@ -5,6 +5,7 @@ import ResultCardList from "@/components/section/ResultCardList";
 import ProfessionalSupport from "@/components/section/ProfessionalSupport";
 
 const AssessmentResult = () => {
+
   return (
     <section className="relative z-10 px-6 py-10 overflow-hidden">
       <div className="relative z-10 max-w-[48rem] mx-auto ">

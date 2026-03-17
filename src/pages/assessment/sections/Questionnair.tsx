@@ -32,8 +32,8 @@ const Questionnaire = () => {
       setAnswers(JSON.parse(savedAnswers));
     };
 
-    if(savedIndex) {
-      setCurrentIndex(JSON.parse(savedIndex));
+    if(savedIndex !== null) {
+      setCurrentIndex(Number(savedIndex));
     };
 
   }, [])
@@ -88,7 +88,7 @@ Example
       localStorage.setItem(STORAGE_INDEX_KEY, String(nextIndex));
     } else {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
-      localStorage.setItem(STORAGE_INDEX_KEY, String(currentIndex));
+      localStorage.removeItem(STORAGE_INDEX_KEY);
       navigate("/assessment/result")
     }
   };
