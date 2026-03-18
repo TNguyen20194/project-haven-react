@@ -1,6 +1,5 @@
 import Badge from "@/components/UI/badge/Badge";
 import { BookOpen } from "lucide-react";
-import flower2 from "@/assets/decorative/therapy-flower-2.webp";
 import groupTherapy from "@/assets/therapist/group-therapy2.webp"
 
 const UnderstandingTherapy = () => {
