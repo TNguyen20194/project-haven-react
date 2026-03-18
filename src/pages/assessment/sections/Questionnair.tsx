@@ -16,6 +16,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/UI/radio-group";
 import { Label } from "@/components/UI/label";
 import { questions } from "@/data/questions";
 import { Loader2 } from "lucide-react";
+import DisclaimerBanner from "@/components/section/DisclaimerBanner";
 
 const Questionnaire = () => {
   const [isFinishing, setIsFinishing] = useState(false);
@@ -189,6 +190,17 @@ Example
           </Button>
         </CardFooter>
       </Card>
+
+      <DisclaimerBanner
+        wrapperClassName="border border-[hsl(var(--border))] mt-10"
+        textClassName="!text-sm text-[hsl(var(--green-1))]/80"
+        description={
+          <>
+            This self-assessment is designed to help you reflect on your
+            well-being. It is not a clinical diagnosis.
+          </>
+        }
+      />
     </div>
   );
 };

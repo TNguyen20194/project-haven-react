@@ -10,6 +10,8 @@ export const getCategoryScore = (
 
   let total = 0;
 
+  console.log("category questions: ", categoryQuestions)
+
   categoryQuestions.forEach((question) => {
     const answer = answers[question.id] || 0;
 

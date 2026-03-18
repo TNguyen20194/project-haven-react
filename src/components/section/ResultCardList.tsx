@@ -8,8 +8,6 @@ import { getStatus } from "@/utilities/getStatus";
 const ResultCardList = () => {
    const answers = useAssessmentStore((state) => state.answers);
 
-   console.log(answers)
-
   return (
     <div className="space-y-5">
         {categories.map((category) => {
@@ -20,6 +18,8 @@ const ResultCardList = () => {
         const score = getCategoryScore(category.id, questions, answers);
         const status = getStatus(score);
         const description = category.description[status];
+
+        console.log("Category: ", category, "Score:", score)
 
         return (
             <ResultCard

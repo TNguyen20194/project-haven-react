@@ -5,16 +5,23 @@ import ResultCardList from "@/components/section/ResultCardList";
 import ProfessionalSupport from "@/components/section/ProfessionalSupport";
 import { useAssessmentStore } from "@/store/assessment.store";
 import { useNavigate } from "react-router";
+import { Loader2 } from "lucide-react";
 import Button from "@/components/UI/buttons/CTAbutton";
+import { useState } from "react";
 
 const AssessmentResults = () => {
+  const [isResetting, setIsResetting] = useState(false);
+
   const resetAssessment = useAssessmentStore((state) => state.resetAssessment);
   const navigate = useNavigate();
 
-
   const handleResetAssessment = () => {
-    resetAssessment();
-    navigate("/assessment");
+    setIsResetting(true);
+
+    setTimeout(() => {
+      resetAssessment();
+      navigate("/assessment");
+    }, 2000);
   };
 
   return (
@@ -33,7 +40,20 @@ const AssessmentResults = () => {
           purposes only and is not a diagnosis.
         </p>
 
-        <DisclaimerBanner />
+        <DisclaimerBanner
+          description={
+            <>
+              This self-assessment is for educational and informational purposes
+              only. It is not a clinical diagnosis or a substitute for
+              professional medical advice.
+              <br />
+              <br />
+              If you are experiencingdistress or concerns about your mental
+              health, we encourage you to speak with a licensed mental health
+              professional.
+            </>
+          }
+        />
 
         <ResultCardList />
 
@@ -46,8 +66,16 @@ const AssessmentResults = () => {
             aria-label="Retake Assessment"
             className="hover:bg-[hsl(var(--accent))]! hover:text-[hsl(var(--white))]! hover:dark:text-[hsl(var(--green-1-reversed))]!"
             onClick={handleResetAssessment}
+            disabled={isResetting}
           >
-            Retake Assessment
+            {isResetting ? (
+              <span className="flex items-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Resetting...
+              </span>
+            ) : (
+              "Retake Assessment"
+            )}
           </Button>
         </div>
       </div>
