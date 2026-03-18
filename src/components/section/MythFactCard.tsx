@@ -1,10 +1,12 @@
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 interface MythFactCardProps {
   icon?: React.ReactElement;
   myth: string;
   fact: string;
 }
 
-const MythFactList: MythFactCardProps[] = [
+const mythFactList: MythFactCardProps[] = [
   {
     myth: "Therapy is only for people with severe mental illness.",
     fact: "Therapy benefits anyone looking to improve their well-being, manage stress, navigate life changes, or simply understand themselves better.",
@@ -27,20 +29,51 @@ const MythFactList: MythFactCardProps[] = [
   },
 ];
 
-const MythFactCard = () => {
-  return MythFactList.map(({ myth, fact }) => {
-    return (
-      <div key={myth} className="feature-card hover:shadow-none!">
-        <p className="text-[hsl(var(--green-1))] text-left mt-0!">
-          <span className="font-semibold text-[hsl(var(--coral))]">Myth:</span>{" "}
-          "{myth}"
-        </p>
-        <p>
-          <span className="text-primary font-semibold">Fact:</span> <span className="font-normal!">{fact}</span>
-        </p>
-      </div>
-    );
-  });
+const mythFactCard = () => {
+  const [openMyth, setOpenMyth] = useState<string | null>(null);
+
+  const handleToggle = (myth: string) => {
+    setOpenMyth((prev) => (prev === myth ? null : myth));
+  };
+
+  return (
+    <div className="space-y-4">
+      {mythFactList.map(({ myth, fact }) => {
+        const isOpen = openMyth === myth;
+
+        return (
+          <button
+            key={myth}
+            type="button"
+            onClick={() => handleToggle(myth)}
+            className="feature-card w-full text-left hover:shadow-none"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <p className="text-[hsl(var(--green-1))] text-left mt-0!">
+                <span className="font-semibold text-[hsl(var(--coral))]">
+                  Myth:
+                </span>{" "}
+                "{myth}"
+              </p>
+
+              <ChevronDown
+                className={`h-5 w-5 shrink-0 mt-1 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+              />
+            </div>
+
+            <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 mt-4 " : "grid-rows-[0fr] opacity-0 mt-0"}`}>
+                <div className="overflow-hidden">
+                  <p className="translate-y-0">
+                    <span className="font-semibold text-primary">Fact:</span>{" "}
+                    <span className="font-normal">{fact}</span>
+                  </p>
+                </div>
+            </div>
+          </button>
+        );
+      })}
+    </div>
+  );
 };
 
-export default MythFactCard;
+export default mythFactCard;
