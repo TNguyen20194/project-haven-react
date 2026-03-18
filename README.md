@@ -134,5 +134,8 @@ Throughout the experience, users are encouraged to:
 ### *Learn Page*
 <img src="/src/assets/project UI/learnpage.jpg" alt="Learn" width="600" />
 
+### *Assessment Page*
+<img src="/src/assets/project UI/assessment.jpg" alt="Assessment" width="600" />
+
 ### *Result Page*
-<img src="/src/assets/project UI/result.jpg" alt="Result" width="600" />
+<img src="/src/assets/project UI/result2.jpg" alt="Result" width="600" />
