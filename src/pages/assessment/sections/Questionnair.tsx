@@ -177,7 +177,10 @@ Example
           <Button
             variant="primary"
             size="md"
-            aria-label="Back button"
+            aria-label={
+              currentIndex === questions.length - 1
+                ? "See Results"
+                : "Next"}
             className="text-[15px] w-[130px]"
             onClick={handleNext}
             disabled={isFinishing}
