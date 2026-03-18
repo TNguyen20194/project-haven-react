@@ -4,7 +4,7 @@ import { ClipboardCheck } from "lucide-react";
 
 const Assessment = () => {
   return (
-    <section className="relative z-10 px-6 py-20 overflow-hidden">
+    <section className="relative z-10 px-6 py-10 overflow-hidden">
       <div className="relative z-10 max-w-[56rem] mx-auto ">
         <div className="flex items-center gap-3 mb-5">
           <IconBadge
