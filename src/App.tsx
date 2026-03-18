@@ -7,7 +7,6 @@ import Layout from "./components/layout/MainLayout";
 import AssessmentLayout from "./components/layout/AssessmentLayout";
 import AssessmentResult from "./pages/assessment/AssessmentResults";
 import ScrollToTop from "./components/scroll-to-top/ScrollToTop";
-import ResultsNotFound from "./pages/assessment/ResultsNotFound";
 
 function App() {
   return (
@@ -22,8 +21,6 @@ function App() {
         <Route element={<AssessmentLayout />}>
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/assessment/results" element={<AssessmentResult />} />
-          {/* TESTING */}
-          <Route path="/assessment/resultsnotfound" element={<ResultsNotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

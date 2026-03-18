@@ -8,6 +8,8 @@ import { useNavigate } from "react-router";
 import { Loader2 } from "lucide-react";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { useState } from "react";
+import { questions } from "@/data/questions";
+import ResultsNotFound from "./ResultsNotFound";
 
 const AssessmentResults = () => {
   const [isResetting, setIsResetting] = useState(false);
@@ -15,13 +17,23 @@ const AssessmentResults = () => {
   const resetAssessment = useAssessmentStore((state) => state.resetAssessment);
   const navigate = useNavigate();
 
+  // Check if assessment is completed
+  // If not, direct to ResultsNotFound page
+  const answers = useAssessmentStore((state) => state.answers);
+  const hasCompletedAssessment =
+    Object.keys(answers).length === questions.length;
+
+  if (!hasCompletedAssessment) {
+    return <ResultsNotFound />;
+  }
+
   const handleResetAssessment = () => {
     setIsResetting(true);
 
     setTimeout(() => {
       resetAssessment();
       navigate("/assessment");
-    }, 2000);
+    }, 500);
   };
 
   return (
@@ -48,7 +60,7 @@ const AssessmentResults = () => {
               professional medical advice.
               <br />
               <br />
-              If you are experiencingdistress or concerns about your mental
+              If you are experiencing distress or concerns about your mental
               health, we encourage you to speak with a licensed mental health
               professional.
             </>

@@ -13,16 +13,15 @@ const ResultsNotFound = () => {
 
     setTimeout(() => {
       navigate("/assessment");
-    }, 2000);
+    }, 500);
   };
 
   return (
     <section className="relative z-10 px-6 py-10 overflow-hidden">
       <div className="relative z-10 max-w-[48rem] mx-auto text-center space-y-6">
         <h2 className="section-heading">No Results Yet</h2>
-        <p className="p-text">
-          We could not find any completed assessment results. Please take the
-          assessment to view your results.
+        <p className="p-text leading-relaxed">
+          We could not find any completed assessment results. <br/>Please take our self-assessment questionnaire to see your personalized results.
         </p>
         <Button
           variant="primary"

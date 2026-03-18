@@ -80,7 +80,7 @@ Example
         icon: (
           <Loader2 className="h-5 w-5 animate-spin text-[hsl(var(--white))] shrink-0" />
         ),
-        duration: 2500,
+        duration: 2000,
       });
 
       setTimeout(() => {
@@ -89,11 +89,11 @@ Example
         toast.success("Your results are ready.", {
           id: toastId,
           description: "Loading your results now.",
-          duration: 2000,
+          duration: 1800,
         });
 
         navigate("/assessment/results");
-      }, 2000);
+      }, 1800);
     }
   };
 
