@@ -3,7 +3,7 @@ import {
   MessageCircle,
   Heart,
   Users,
-  Sparkles,
+  Leaf,
   Shield,
   type LucideIcon,
 } from "lucide-react";
@@ -20,37 +20,37 @@ const therapyCards: TherapyCatergory[] = [
   {
     icon: Brain,
     title: "Cognitive Behavioral Therapy (CBT)",
-    body: "Focuses on identifying and changing negative thought patterns. CBT helps you recognize how your thoughts influence your feelings and behaviors, and teaches practical strategies to reframe unhelpful thinking.",
-    iconClass: "text-[hsl(var(--teal))]"
+    body: "Focuses on identifying and changing unhelpful thought patterns. CBT helps you understand how thoughts, emotions, and behaviors are connected, and teaches practical skills to develop more balanced thinking.",
+    iconClass: "text-[hsl(var(--accent))]"
   },
   {
     icon: MessageCircle,
-    title: "Talk Therapy (Psychotherapy)",
-    body: "A conversational approach where you explore your thoughts, feelings, and experiences with a trained professional. It's the most common form of therapy and can address a wide range of concerns.",
+    title: "Psychotherapy (Talk Therapy)",
+    body: "A collaborative process where you explore thoughts, emotions, and experiences with a trained professional. It is widely used to support a range of mental health concerns.",
     iconClass: "text-[hsl(var(--coral))]"
   },
   {
     icon: Heart,
     title: "Dialectical Behavior Therapy (DBT)",
-    body: "Combines cognitive techniques with mindfulness practices. DBT is especially helpful for managing intense emotions, improving relationships, and building distress tolerance skills.",
+    body: "Combines cognitive techniques with mindfulness practices. DBT is often used to help manage intense emotions, improve relationships, and build coping skills such as distress tolerance.",
     iconClass: "text-[hsl(var(--pink))]"
   },
   {
     icon: Users,
     title: "Group Therapy",
-    body: "Involves one or more therapists working with several people at the same time. It provides a supportive environment where you can share experiences, learn from others, and practice social skills.",
+    body: "Involves working with one or more therapists alongside others. It provides a supportive space to share experiences, learn from peers, and practice interpersonal skills.",
      iconClass: "text-[hsl(var(--primary))]"
   },
   {
-    icon: Sparkles,
-    title: "Mindfulness-Based Therapy",
-    body: "Incorporates meditation and awareness exercises to help you stay present. It's effective for stress reduction, anxiety, depression, and developing a healthier relationship with your thoughts.",
-    iconClass: "text-[hsl(var(--accent))]"
+    icon: Leaf,
+    title: "Mindfulness-Based Approaches",
+    body: "Use meditation and awareness practices to help you stay present. These approaches can support stress reduction, emotional regulation, and a healthier relationship with thoughts.",
+    iconClass: "text-[hsl(var(--teal))]"
   },
   {
     icon: Shield,
     title: "Trauma-Informed Therapy",
-    body: "Specifically designed to address the impact of traumatic experiences. Approaches like EMDR and somatic experiencing help process trauma safely and build resilience.",
+    body: "An approach that recognizes the impact of trauma on mental health. It focuses on safety, trust, and empowerment while supporting individuals in processing difficult experiences.",
     iconClass: "text-[hsl(var(--blue))]"
   },
 ];
