@@ -2,6 +2,8 @@ import { Check, type LucideIcon } from "lucide-react";
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { UserSearch } from "lucide-react";
 import groupTherapy from "@/assets/therapist/group-therapy3.webp";
+import Button from "@/components/UI/buttons/CTAbutton";
+import { Link } from "react-router";
 
 interface TherapyCatergory {
   icon: LucideIcon;
@@ -45,7 +47,7 @@ const therapyCards: TherapyCatergory[] = [
 
 const HowTherapyMightHelp = () => {
   return (
-    <section className="py-8">
+    <section className="p-10">
       <div className="max-w-[56rem] mx-auto">
         <div className="flex items-center justify-center gap-3 mb-5">
           <IconBadge
@@ -81,10 +83,29 @@ const HowTherapyMightHelp = () => {
           })}
         </div>
 
-        <p className="text-[hsl(var(--green-1))] text-[1.12rem] mt-10">
-          Therapy can provide a supportive space to reflect, gain insight, and
-          build healthier coping strategies.
-        </p>
+        <div className="mt-8 rounded-[1.5rem] border border-[hsl(var(--teal))]/10 bg-white/70 px-6 py-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] backdrop-blur-sm sm:px-8">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-xl font-semibold tracking-tight text-[hsl(var(--green-1))]">
+                You don’t have to figure this out alone.
+              </p>
+              <p className="mt-2 text-[1rem] leading-7 text-[hsl(var(--green-1))]/80">
+                Take a short assessment to get a clearer starting point and find
+                support that fits your needs.
+              </p>
+            </div>
+
+            <Button
+              asChild
+              variant="primary"
+              size="md"
+              aria-label="Take a Short Assessment"
+              className="shrink-0 px-6 !text-[1rem] shadow-md text-center"
+            >
+              <Link to="/assessment">Take a Short Assessment</Link>
+            </Button>
+          </div>
+        </div>
 
         <div className="w-full max-w-2xl mt-10 mx-auto">
           <img

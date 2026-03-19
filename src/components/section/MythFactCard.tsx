@@ -52,7 +52,7 @@ const mythFactCard = () => {
             key={id}
             type="button"
             onClick={() => handleToggle(id)}
-            className="feature-card w-full text-left hover:shadow-none"
+            className="feature-card w-full text-left"
           >
             <div className="flex items-start justify-between gap-4">
               <p className="text-[hsl(var(--green-1))] text-left mt-0!">
