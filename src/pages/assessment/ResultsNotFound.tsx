@@ -13,7 +13,7 @@ const ResultsNotFound = () => {
 
     setTimeout(() => {
       navigate("/assessment");
-    }, 500);
+    }, 600);
   };
 
   return (

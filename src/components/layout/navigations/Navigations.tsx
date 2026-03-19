@@ -8,7 +8,7 @@ const Navigations = () => {
         {NAV_LINK.map(({ title, href, end }) => {
           return (
             <NavLink
-              key={href}
+              key={title}
               to={href}
               end={end}
               className={({isActive}) => `nav-link rounded-full transition-colors duration-200 ease-in-out ${isActive ? "!text-[hsl(var(--coral))] !bg-[hsl(var(--soft-white))] shadow-sm": ""}`}

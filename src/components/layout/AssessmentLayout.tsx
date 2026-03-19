@@ -9,7 +9,7 @@ const AssessmentLayout = () => {
       <Toaster
         position="bottom-right"
         toastOptions={{
-          duration: 3000,
+          duration: 1500,
           classNames: {
             toast: "rounded-2xl shadow-lg border-none px-6 py-5",
             warning: "!bg-[#EF4444] !text-white !border-none",

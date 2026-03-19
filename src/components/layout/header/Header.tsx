@@ -117,7 +117,7 @@ const Header = () => {
           <nav className="mobile-menu-links" aria-label="mobile navigation">
             {NAV_LINK.map(({ title, href, end }) => (
               <NavLink
-                key={href}
+                key={title}
                 to={href}
                 end={end}
                 onClick={() => setIsOpen(false)}
