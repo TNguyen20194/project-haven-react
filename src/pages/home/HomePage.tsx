@@ -8,8 +8,8 @@ const HomePage = () => {
   return (
       <main>
         <HeroSection />
-        <QuoteSection />
         <HowWeHelpSection />
+        <QuoteSection />
         <WhatIsTherapySection />
         {/* FAQ Page */}
         <CTABannerSection

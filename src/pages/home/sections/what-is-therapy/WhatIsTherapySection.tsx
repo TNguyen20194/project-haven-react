@@ -3,6 +3,8 @@ import Badge from "@/components/UI/badge/Badge";
 import { Flower } from "lucide-react";
 import flower from "@/assets/decorative/therapy-flower.webp";
 import TrustedSection from "@/components/section/TrustedSection";
+import Button from "@/components/UI/buttons/CTAbutton";
+import { Link } from "react-router";
 
 const highlight = "text-[hsl(var(--primary))] font-medium";
 
@@ -11,7 +13,6 @@ const WhatIsTherapySection = () => {
     <section className="therapy section-container">
       <div className="max-w-[64rem] mx-auto">
         <div className="mx-auto text-center mb-[3rem]">
-
           <Badge
             icon={Flower}
             iconClassName="text-[hsl(var(--pink))]"
@@ -36,9 +37,7 @@ const WhatIsTherapySection = () => {
           <div className="order-1 md:order-2 text-[1.12rem]">
             <p>
               Therapy is a{" "}
-              <span className={highlight}>
-                safe, confidential conversation
-              </span>{" "}
+              <span className={highlight}>safe, confidential conversation</span>{" "}
               with a trained professional who helps you understand your
               thoughts, feelings, and behaviors. It's not just for people in
               crisis—it's for anyone who wants to grow, heal, or simply
@@ -54,9 +53,19 @@ const WhatIsTherapySection = () => {
             </p>
 
             <TrustedSection />
-
           </div>
         </div>
+
+         <div className="text-center mt-12">
+            <Button
+              asChild
+              variant="primary"
+              size="lg"
+              aria-label="Take the Free Assessment"
+            >
+              <Link to="/assessment">Take the Free Assessment</Link>
+            </Button>
+          </div>
       </div>
     </section>
   );
