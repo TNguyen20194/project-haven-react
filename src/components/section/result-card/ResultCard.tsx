@@ -18,7 +18,7 @@ const ResultCard = ({
   status,
   iconClass,
 }: ResultCardProps) => (
-  <div className="p-5 bg-[hsl(var(--background))] shadow-sm rounded-lg">
+  <div className="p-5 bg-[hsl(var(--background))] border border-black/5 hover:dark:border-white/8 shadow-sm rounded-lg transition-all duration-300 ease-out hover:bg-[hsl(var(--primary)/0.15)] hover:shadow-md">
     <div className="flex flex-col gap-6 justify-between items-center sm:flex-row">
       <div className="flex items-center gap-2">
         <IconBadge
