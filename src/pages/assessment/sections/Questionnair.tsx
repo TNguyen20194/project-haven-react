@@ -128,7 +128,7 @@ Example
             </h4>
           </CardTitle>
           <CardDescription>
-            <p className="p-text leading-relaxed">{currentQuestion.prompt}</p>
+            <p className="p-text !text-[1.25rem] text-[hsl(var(--green-1))] leading-relaxed">{currentQuestion.prompt}</p>
           </CardDescription>
         </CardHeader>
 
@@ -153,7 +153,7 @@ Example
                   id={`option-${value}`}
                   className="!text-[hsl(var(--primary))]"
                 />
-                <span className="text-[15px] text-[hsl(var(--green-1))] leading-relaxed">
+                <span className="text-[15px] text-[hsl(var(--green-1))] leading-relaxed font-normal">
                   {label}
                 </span>
               </Label>
