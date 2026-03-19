@@ -59,12 +59,12 @@ Example
   };
 
   const handleNext = () => {
-    if (!currentAnswer) {
-      toast.warning("Please answer the question", {
-        description: "This field is required to continue.",
-      });
-      return;
-    }
+    // if (!currentAnswer) {
+    //   toast.warning("Please answer the question", {
+    //     description: "This field is required to continue.",
+    //   });
+    //   return;
+    // }
 
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1);
@@ -124,11 +124,13 @@ Example
         <CardHeader className="space-y-2 px-6 pb-4 pt-4">
           <CardTitle>
             <h4 className="text-[1.5rem] text-[hsl(var(--green-1))] font-semibold">
-              Question {currentIndex + 1}
+              Question {currentIndex + 1} /{questions.length}
             </h4>
           </CardTitle>
           <CardDescription>
-            <p className="p-text !text-[1.25rem] text-[hsl(var(--green-1))] leading-relaxed">{currentQuestion.prompt}</p>
+            <p className="p-text !text-[1.25rem] text-[hsl(var(--green-1))] leading-relaxed">
+              {currentQuestion.prompt}
+            </p>
           </CardDescription>
         </CardHeader>
 
@@ -166,7 +168,12 @@ Example
             variant="secondary"
             size="md"
             aria-label="Back button"
-            className="text-[15px] w-[130px] hover:bg-[hsl(var(--primary)/0.3)]!"
+            className="text-[15px] w-[130px]
+              hover:bg-[hsl(var(--primary)/0.3)]!
+              disabled:bg-[#c8cec3]
+              disabled:text-white
+              disabled:cursor-not-allowed
+              disabled:hover:bg-[#c8cec3]!"
             onClick={handleBack}
             disabled={currentIndex === 0 || isFinishing}
             type="button"
@@ -178,12 +185,15 @@ Example
             variant="primary"
             size="md"
             aria-label={
-              currentIndex === questions.length - 1
-                ? "See Results"
-                : "Next"}
-            className="text-[15px] w-[130px]"
+              currentIndex === questions.length - 1 ? "See Results" : "Next"
+            }
+            className={`text-[15px] w-[130px] ${
+              !currentAnswer
+                ? "!bg-[#c8cec3] text-white cursor-not-allowed"
+                : "bg-[hsl(var(--primary))] text-white hover:bg-[hsl(var(--primary)/0.9)]"
+            }`}
             onClick={handleNext}
-            disabled={isFinishing}
+            disabled={isFinishing || !currentAnswer}
             type="button"
           >
             {isFinishing
