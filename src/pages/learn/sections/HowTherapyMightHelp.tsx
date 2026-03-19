@@ -14,25 +14,25 @@ const therapyCards: TherapyCatergory[] = [
   {
     icon: Check,
     id: "therapy-1",
-    body: "you feel overwhelmed, anxious, or emotionally drained",
+    body: "you’ve been feeling overwhelmed, anxious, or emotionally drained",
     iconClass: "text-[hsl(var(--teal))]",
   },
   {
     icon: Check,
     id: "therapy-2",
-    body: "stress is affecting your sleep, focus, or relationships",
+    body: "stress is starting to affect your sleep, focus, or relationships",
     iconClass: "text-[hsl(var(--teal))]",
   },
   {
     icon: Check,
     id: "therapy-3",
-    body: "you feel stuck in repeating patterns",
+    body: "you notice patterns in your thoughts or behaviors that are hard to change",
     iconClass: "text-[hsl(var(--teal))]",
   },
   {
     icon: Check,
     id: "therapy-4",
-    body: "you're navigating a life transition (career change, loss, family changes)",
+    body: "you’re going through a life transition (career, loss, family changes)",
     iconClass: "text-[hsl(var(--teal))]",
   },
   {
@@ -53,7 +53,7 @@ const HowTherapyMightHelp = () => {
             wrapperClassName="rounded-full w-12 h-12"
             iconClassName="text-[hsl(var(--primary))] h-7 w-7"
           />
-          <h3 className="sub-heading">How to Know if Therapy Might Help</h3>
+          <h3 className="sub-heading">If This Feels Familiar</h3>
         </div>
         <p className="text-[hsl(var(--green-1))] text-[1.12rem]">
           You don't need to be in crisis to benefit from therapy. Many people
@@ -61,25 +61,29 @@ const HowTherapyMightHelp = () => {
           help understanding.
         </p>
 
-        <div className="mt-10 space-y-5">
-          {therapyCards.map(({ icon, id, body, iconClass }) => {
+        <div className="mt-10 max-w-5xl rounded-[1.5rem] border border-black/5 bg-white/75 shadow-[0_8px_30px_rgba(0,0,0,0.05)] backdrop-blur-sm overflow-hidden">
+          {therapyCards.map(({ icon, id, body, iconClass }, index) => {
+            const isLastItem = index === therapyCards.length - 1;
+
             return (
-              <div key={id} className="feature-card !p-3">
-                <div className="flex items-center justify-items-start gap-3">
-                  <IconBadge
-                    icon={icon}
-                    iconClassName={`"w-6 h-6 ${iconClass}`}
-                    wrapperClassName="w-10 h-10 rounded-full"
-                  />
-                  <p className="!font-normal !mt-0">{body}</p>
-                </div>
+              <div
+                key={id}
+                className={`group flex items-center gap-5 px-8 py-6 transition-colors duration-200 hover:bg-[hsl(var(--teal))]/9 ${!isLastItem ? "border-b border-b-black/5" : ""}`}
+              >
+                <IconBadge
+                  icon={icon}
+                  iconClassName={`w-4 h-4 ${iconClass}`}
+                  wrapperClassName="w-10 h-10 rounded-full transition-colors duration-200  group-hover:bg-[hsl(var(--teal))]/20"
+                />
+                <p className="font-normal mt-0 leading-8">{body}</p>
               </div>
             );
           })}
         </div>
 
         <p className="text-[hsl(var(--green-1))] text-[1.12rem] mt-10">
-         Therapy can provide a supportive space to reflect, gain insight, and build healthier coping strategies.
+          Therapy can provide a supportive space to reflect, gain insight, and
+          build healthier coping strategies.
         </p>
 
         <div className="w-full max-w-2xl mt-10 mx-auto">
