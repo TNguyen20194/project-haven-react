@@ -151,7 +151,7 @@ Example
                 <RadioGroupItem
                   value={value}
                   id={`option-${value}`}
-                  className="accent-[hsl(var(--primary))]"
+                  className="!text-[hsl(var(--primary))]"
                 />
                 <span className="text-[15px] text-[hsl(var(--green-1))] leading-relaxed">
                   {label}
