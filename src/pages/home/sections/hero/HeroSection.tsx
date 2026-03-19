@@ -39,13 +39,13 @@ const HeroSection = () => {
           support your well-being.
         </p>
 
-        <div className="grid justify-center gap-6 mt-12">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-15">
           <Button
             asChild
             variant="primary"
             size="lg"
             aria-label="Take the Free Assessment"
-            className="text-shadow-md"
+            className="text-shadow-md w-[304px]"
           >
             <Link to="/assessment">Start Your Free Assessment</Link>
           </Button>
@@ -55,7 +55,7 @@ const HeroSection = () => {
             variant="secondary"
             size="lg"
             aria-label="Take the Free Assessment"
-            className="hover:bg-[hsl(var(--primary)/0.3)]!"
+            className="hover:bg-[hsl(var(--primary)/0.3)]! w-[304px]"
           >
             <Link to="/learn">Learn What Therapy Is</Link>
           </Button>

@@ -11,6 +11,7 @@ const Learn = () => {
       <main>
         <UnderstandingTherapy />
         <WhatToExpect />
+        <HowTherapyMightHelp />
         <TypesOfTherapy />
         <MythsVsFacts />
         <CTABannerSection
