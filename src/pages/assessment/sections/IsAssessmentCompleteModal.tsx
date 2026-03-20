@@ -41,11 +41,18 @@ const IsAssessmentCompleteModal = ({
         </p>
 
         <AlertDialogFooter className="mt-4 flex flex-col gap-3 sm:flex-row sm:justify-end">
-          <Button variant="secondary" onClick={onRetake} type="button">
+          <Button 
+          variant="secondary" 
+          onClick={onRetake} 
+          type="button" 
+          className="hover:bg-[hsl(var(--primary)/0.3)]!">
             Retake Assessment
           </Button>
 
-          <Button variant="primary" onClick={onViewResult} type="button">
+          <Button 
+          variant="primary" 
+          onClick={onViewResult} 
+          type="button">
             View Results
           </Button>
         </AlertDialogFooter>
