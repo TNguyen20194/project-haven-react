@@ -8,8 +8,9 @@ import { useNavigate } from "react-router";
 import { Loader2 } from "lucide-react";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { useState } from "react";
-import { questions } from "@/data/questions";
 import ResultsNotFound from "./ResultsNotFound";
+import IsAssessmentCompleteModal from "./sections/IsAssessmentCompleteModal";
+import { isAssessmentComlete } from "@/utilities/isAssessmentComplete";
 
 const AssessmentResults = () => {
   const [isResetting, setIsResetting] = useState(false);
@@ -20,8 +21,7 @@ const AssessmentResults = () => {
   // Check if assessment is completed
   // If not, direct to ResultsNotFound page
   const answers = useAssessmentStore((state) => state.answers);
-  const hasCompletedAssessment =
-    Object.keys(answers).length === questions.length;
+  const hasCompletedAssessment = isAssessmentComlete(answers);
 
   if (!hasCompletedAssessment) {
     return <ResultsNotFound />;
