@@ -88,10 +88,10 @@ const HowTherapyMightHelp = () => {
         <div className="mt-8 rounded-[1.5rem] border border-[hsl(var(--teal))]/10 bg-white/70 px-6 py-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] backdrop-blur-sm sm:px-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
-              <p className="text-xl font-semibold tracking-tight text-[hsl(var(--green-1))]">
+              <p className="p-text! text-xl font-semibold tracking-tight">
                 You don’t have to figure this out alone.
               </p>
-              <p className="mt-2 text-[1rem] leading-7 text-[hsl(var(--green-1))]/80">
+              <p className="p-text! mt-2 text-[1rem] leading-7">
                 Take a short assessment to get a clearer starting point and find
                 support that fits your needs.
               </p>
