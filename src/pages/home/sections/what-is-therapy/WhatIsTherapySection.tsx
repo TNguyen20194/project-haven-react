@@ -2,6 +2,7 @@ import "./whatistherapy.style.css";
 import Badge from "@/components/UI/badge/Badge";
 import { Flower } from "lucide-react";
 import flower from "@/assets/decorative/therapy-flower.webp";
+import therapyMind from "@/assets/therapist/therapy-mind.webp";
 import TrustedSection from "@/components/section/TrustedSection";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { Link } from "react-router";
@@ -23,13 +24,13 @@ const WhatIsTherapySection = () => {
           <h2 className="section-heading mb-5">What Is Therapy, Really?</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="order-2 md:order-1 grid place-items-start">
-            <div className="aspect-square w-full max-w-md">
+            <div className="w-full max-w-sm mx-auto">
               <img
-                src={flower}
-                alt="what is therapy"
-                className="w-full h-full rounded-full object-cover"
+                src={therapyMind}
+                alt="Growing mind in bloom"
+                className="w-full h-full"
               />
             </div>
           </div>

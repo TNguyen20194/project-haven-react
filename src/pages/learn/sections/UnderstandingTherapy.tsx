@@ -1,6 +1,6 @@
 import Badge from "@/components/UI/badge/Badge";
 import { BookOpen } from "lucide-react";
-import groupTherapy from "@/assets/therapist/group-therapy2.webp"
+import groupTherapy from "@/assets/therapist/group-therapy1.webp"
 
 const UnderstandingTherapy = () => {
   return (

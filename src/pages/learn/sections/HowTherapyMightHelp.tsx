@@ -75,7 +75,7 @@ const HowTherapyMightHelp = () => {
                 <IconBadge
                   icon={icon}
                   iconClassName={`w-4 h-4 ${iconClass}`}
-                  wrapperClassName="w-10 h-10 rounded-full transition-colors duration-200  group-hover:bg-[hsl(var(--teal))]/20"
+                  wrapperClassName="w-10 h-10 rounded-full transition-colors duration-200 "
                 />
                 <p className="font-normal mt-0 leading-8">{body}</p>
               </div>
