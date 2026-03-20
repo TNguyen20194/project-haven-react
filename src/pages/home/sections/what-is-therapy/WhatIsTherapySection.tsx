@@ -1,15 +1,16 @@
 import "./whatistherapy.style.css";
 import Badge from "@/components/UI/badge/Badge";
 import { Flower } from "lucide-react";
-import flower from "@/assets/decorative/therapy-flower.webp";
 import therapyMind from "@/assets/therapist/therapy-mind.webp";
 import TrustedSection from "@/components/section/TrustedSection";
 import Button from "@/components/UI/buttons/CTAbutton";
-import { Link } from "react-router";
+import { useAssessmentEntry } from "@/hooks/AssessmentEntryContext";
 
 const highlight = "text-[hsl(var(--primary))] font-medium";
 
 const WhatIsTherapySection = () => {
+  const { handleAssessmentEntry } = useAssessmentEntry();
+
   return (
     <section className="therapy section-container">
       <div className="max-w-[64rem] mx-auto">
@@ -59,12 +60,12 @@ const WhatIsTherapySection = () => {
 
          <div className="text-center mt-12">
             <Button
-              asChild
               variant="primary"
               size="lg"
               aria-label="Take the Free Assessment"
+              onClick={handleAssessmentEntry}
             >
-              <Link to="/assessment">Take the Free Assessment</Link>
+              Take the Free Assessment
             </Button>
           </div>
       </div>

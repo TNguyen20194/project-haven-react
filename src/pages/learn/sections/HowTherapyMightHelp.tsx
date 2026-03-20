@@ -3,7 +3,7 @@ import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { UserSearch } from "lucide-react";
 import groupTherapy from "@/assets/therapist/group-therapy3.webp";
 import Button from "@/components/UI/buttons/CTAbutton";
-import { Link } from "react-router";
+import { useAssessmentEntry } from "@/hooks/AssessmentEntryContext";
 
 interface TherapyCatergory {
   icon: LucideIcon;
@@ -46,6 +46,8 @@ const therapyCards: TherapyCatergory[] = [
 ];
 
 const HowTherapyMightHelp = () => {
+   const { handleAssessmentEntry } = useAssessmentEntry();
+
   return (
     <section className="p-10">
       <div className="max-w-[56rem] mx-auto">
@@ -96,13 +98,13 @@ const HowTherapyMightHelp = () => {
             </div>
 
             <Button
-              asChild
               variant="primary"
               size="md"
               aria-label="Take a Short Assessment"
               className="shrink-0 px-6 !text-[1rem] shadow-md text-center"
+              onClick={handleAssessmentEntry}
             >
-              <Link to="/assessment">Take a Short Assessment</Link>
+              Take a Short Assessment
             </Button>
           </div>
         </div>
