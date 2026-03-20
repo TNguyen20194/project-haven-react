@@ -1,7 +1,6 @@
 import Questionnaire from "./sections/Questionnair";
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { ClipboardCheck } from "lucide-react";
-import IsAssessmentCompleteModal from "./sections/IsAssessmentCompleteModal";
 
 const Assessment = () => {
   return (
@@ -21,8 +20,6 @@ const Assessment = () => {
         </p>
 
         <Questionnaire />
-
-        <IsAssessmentCompleteModal/>  
       </div>
     </section>
   );

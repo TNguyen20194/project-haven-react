@@ -3,8 +3,11 @@ import "./header.style.css";
 import Button from "../../UI/buttons/CTAbutton";
 import ThemeToggle from "../../UI/buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { NAV_LINK } from "@/config/navigation";
+import { useAssessmentStore } from "@/store/assessment.store";
+import IsAssessmentCompleteModal from "@/pages/assessment/sections/IsAssessmentCompleteModal";
+import { isAssessmentComplete } from "@/utilities/isAssessmentComplete";
 
 /*
 ** Delete once implemented
@@ -19,6 +22,14 @@ const Header = () => {
   const MOBILE_MAX = 620;
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_MAX);
+  const [isAssessmentModalOpen, setIsAssessmentModalOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const answers = useAssessmentStore((state) => state.answers);
+  const resetAssessment = useAssessmentStore((state) => state.resetAssessment);
+
+  const hasCompletedAssessment = isAssessmentComplete(answers);
 
   useEffect(() => {
     const onResize = () => {
@@ -34,7 +45,31 @@ const Header = () => {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  const handleAssessmentClick = () => {
+    if (hasCompletedAssessment) {
+      setIsAssessmentModalOpen(true);
+      return;
+    }
+
+    navigate("/assessment");
+    setIsOpen(false);
+  };
+
+  const handleViewResult = () => {
+    setIsAssessmentModalOpen(false);
+    navigate("/assessment/results");
+    setIsOpen(false);
+  };
+
+  const handleRetake = () => {
+    resetAssessment();
+    setIsAssessmentModalOpen(false);
+    navigate("/assessment");
+    setIsOpen(false);
+  };
+
   return (
+    <>
     <header>
       <div className="header-container">
         {/* Logo */}
@@ -45,7 +80,7 @@ const Header = () => {
         </div>
 
         {/* Navigations */}
-        <Navigations />
+        <Navigations onAssessmentClick={handleAssessmentClick} />
 
         {/* Theme Toggle + CTA */}
         <div className="header-actions">
@@ -115,16 +150,30 @@ const Header = () => {
       {isOpen && isMobile && (
         <div className="mobile-menu">
           <nav className="mobile-menu-links" aria-label="mobile navigation">
-            {NAV_LINK.map(({ title, href, end }) => (
-              <NavLink
-                key={title}
-                to={href}
-                end={end}
-                onClick={() => setIsOpen(false)}
-              >
-                {title}
-              </NavLink>
-            ))}
+            {NAV_LINK.map(({ title, href, end }) => {
+              if (href === "/assessment") {
+                return (
+                  <button
+                    key={title}
+                    type="button"
+                    onClick={handleAssessmentClick}
+                  >
+                    {title}
+                  </button>
+                );
+              }
+
+              return (
+                <NavLink
+                  key={title}
+                  to={href}
+                  end={end}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {title}
+                </NavLink>
+              );
+            })}
           </nav>
 
           <div className="mobile-menu-row">
@@ -146,6 +195,14 @@ const Header = () => {
         </div>
       )}
     </header>
+
+    <IsAssessmentCompleteModal
+    open={isAssessmentModalOpen}
+    onOpenChange={setIsAssessmentModalOpen}
+    onViewResult={handleViewResult}
+    onRetake={handleRetake}
+    />
+    </>
   );
 };
 
