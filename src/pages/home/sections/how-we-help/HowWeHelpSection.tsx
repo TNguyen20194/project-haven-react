@@ -7,7 +7,7 @@ const HowWeHelpSection = () => {
   return (
     <section className="resources section-container">
       <div className="resources__inner">
-        <div className="mt-5">
+        <div>
           <Badge
             icon={Sparkles}
             iconClassName="text-[hsl(var(--accent))]"

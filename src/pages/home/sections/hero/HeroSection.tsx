@@ -5,8 +5,11 @@ import "./hero.style.css";
 import { Link } from "react-router";
 import therapistIllustration from "@/assets/therapist/therapist-1a.png";
 import blob from "@/assets/decorative/blob.png";
+import { useAssessmentEntry } from "@/hooks/AssessmentEntryContext";
 
 const HeroSection = () => {
+  const { handleAssessmentEntry } = useAssessmentEntry();
+
   return (
     <section className="hero">
       <div className="hero-container">
@@ -41,13 +44,13 @@ const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-15">
           <Button
-            asChild
             variant="primary"
             size="lg"
             aria-label="Take the Free Assessment"
             className="text-shadow-md w-[304px]"
+            onClick={handleAssessmentEntry}
           >
-            <Link to="/assessment">Start Your Free Assessment</Link>
+           Start Your Free Assessment
           </Button>
 
           <Button

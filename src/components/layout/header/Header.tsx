@@ -3,11 +3,9 @@ import "./header.style.css";
 import Button from "../../UI/buttons/CTAbutton";
 import ThemeToggle from "../../UI/buttons/ThemeToggle";
 import Navigations from "../navigations/Navigations";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { NAV_LINK } from "@/config/navigation";
-import { useAssessmentStore } from "@/store/assessment.store";
-import IsAssessmentCompleteModal from "@/pages/assessment/sections/IsAssessmentCompleteModal";
-import { isAssessmentComplete } from "@/utilities/isAssessmentComplete";
+import { useAssessmentEntry } from "@/hooks/AssessmentEntryContext";
 
 /*
 ** Delete once implemented
@@ -22,14 +20,8 @@ const Header = () => {
   const MOBILE_MAX = 620;
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_MAX);
-  const [isAssessmentModalOpen, setIsAssessmentModalOpen] = useState(false);
 
-  const navigate = useNavigate();
-
-  const answers = useAssessmentStore((state) => state.answers);
-  const resetAssessment = useAssessmentStore((state) => state.resetAssessment);
-
-  const hasCompletedAssessment = isAssessmentComplete(answers);
+  const { handleAssessmentEntry } = useAssessmentEntry();
 
   useEffect(() => {
     const onResize = () => {
@@ -46,142 +38,27 @@ const Header = () => {
   }, []);
 
   const handleAssessmentClick = () => {
-    if (hasCompletedAssessment) {
-      setIsAssessmentModalOpen(true);
-      return;
-    }
-
-    navigate("/assessment");
-    setIsOpen(false);
-  };
-
-  const handleViewResult = () => {
-    setIsAssessmentModalOpen(false);
-    navigate("/assessment/results");
-    setIsOpen(false);
-  };
-
-  const handleRetake = () => {
-    resetAssessment();
-    setIsAssessmentModalOpen(false);
-    navigate("/assessment");
+    handleAssessmentEntry();
     setIsOpen(false);
   };
 
   return (
-    <>
-    <header>
-      <div className="header-container">
-        {/* Logo */}
-        <div className="nav">
-          <Link to="/" className="logo">
-            MindfulPath
-          </Link>
-        </div>
-
-        {/* Navigations */}
-        <Navigations onAssessmentClick={handleAssessmentClick} />
-
-        {/* Theme Toggle + CTA */}
-        <div className="header-actions">
-          <ThemeToggle />
-
-          <Button type="button" variant="primary" size="md">
-            <a
-              href="https://julietran.janeapp.com/#staff_member/1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a Therapist
-            </a>
-          </Button>
-        </div>
-
-        {/* Mobile Button */}
-        <button
-          className="mobile-menu-toggle"
-          type="button"
-          aria-label="Open main menu"
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          {/* Open icon */}
-          <span className={`mobile-icon ${isOpen ? "is-hidden" : ""}`}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-menu-icon lucide-menu"
-            >
-              <path d="M4 5h16" />
-              <path d="M4 12h16" />
-              <path d="M4 19h16" />
-            </svg>
-          </span>
-          {/* Close icon */}
-          <span className={`mobile-icon ${isOpen ? "" : "is-hidden"}`}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-x-icon lucide-x"
-            >
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
-          </span>
-        </button>
-      </div>
-
-      {/* Mobile Dropdown Menu */}
-      {isOpen && isMobile && (
-        <div className="mobile-menu">
-          <nav className="mobile-menu-links" aria-label="mobile navigation">
-            {NAV_LINK.map(({ title, href, end }) => {
-              if (href === "/assessment") {
-                return (
-                  <button
-                    key={title}
-                    type="button"
-                    onClick={handleAssessmentClick}
-                  >
-                    {title}
-                  </button>
-                );
-              }
-
-              return (
-                <NavLink
-                  key={title}
-                  to={href}
-                  end={end}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {title}
-                </NavLink>
-              );
-            })}
-          </nav>
-
-          <div className="mobile-menu-row">
-            <span className="mobile-menu-label">Theme</span>
-            <ThemeToggle />
+      <header>
+        <div className="header-container">
+          {/* Logo */}
+          <div className="nav">
+            <Link to="/" className="logo">
+              MindfulPath
+            </Link>
           </div>
 
-          <div className="mobile-menu-cta">
+          {/* Navigations */}
+          <Navigations onAssessmentClick={handleAssessmentClick} />
+
+          {/* Theme Toggle + CTA */}
+          <div className="header-actions">
+            <ThemeToggle />
+
             <Button type="button" variant="primary" size="md">
               <a
                 href="https://julietran.janeapp.com/#staff_member/1"
@@ -192,17 +69,105 @@ const Header = () => {
               </a>
             </Button>
           </div>
-        </div>
-      )}
-    </header>
 
-    <IsAssessmentCompleteModal
-    open={isAssessmentModalOpen}
-    onOpenChange={setIsAssessmentModalOpen}
-    onViewResult={handleViewResult}
-    onRetake={handleRetake}
-    />
-    </>
+          {/* Mobile Button */}
+          <button
+            className="mobile-menu-toggle"
+            type="button"
+            aria-label="Open main menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            {/* Open icon */}
+            <span className={`mobile-icon ${isOpen ? "is-hidden" : ""}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-menu-icon lucide-menu"
+              >
+                <path d="M4 5h16" />
+                <path d="M4 12h16" />
+                <path d="M4 19h16" />
+              </svg>
+            </span>
+            {/* Close icon */}
+            <span className={`mobile-icon ${isOpen ? "" : "is-hidden"}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-x-icon lucide-x"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {isOpen && isMobile && (
+          <div className="mobile-menu">
+            <nav className="mobile-menu-links" aria-label="mobile navigation">
+              {NAV_LINK.map(({ title, href, end }) => {
+                if (href === "/assessment") {
+                  return (
+                    <button
+                      key={title}
+                      type="button"
+                      onClick={handleAssessmentClick}
+                    >
+                      {title}
+                    </button>
+                  );
+                }
+
+                return (
+                  <NavLink
+                    key={title}
+                    to={href}
+                    end={end}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {title}
+                  </NavLink>
+                );
+              })}
+            </nav>
+
+            <div className="mobile-menu-row">
+              <span className="mobile-menu-label">Theme</span>
+              <ThemeToggle />
+            </div>
+
+            <div className="mobile-menu-cta">
+              <Button type="button" variant="primary" size="md">
+                <a
+                  href="https://julietran.janeapp.com/#staff_member/1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a Therapist
+                </a>
+              </Button>
+            </div>
+          </div>
+        )}
+      </header>
   );
 };
 

@@ -7,10 +7,12 @@ import Layout from "./components/layout/MainLayout";
 import AssessmentLayout from "./components/layout/AssessmentLayout";
 import AssessmentResult from "./pages/assessment/AssessmentResults";
 import ScrollToTop from "./components/scroll-to-top/ScrollToTop";
+import { AssessmentEntryProvider } from "./hooks/AssessmentEntryContext";
 
 function App() {
   return (
     <BrowserRouter>
+    <AssessmentEntryProvider>
      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
@@ -23,6 +25,7 @@ function App() {
           <Route path="/assessment/results" element={<AssessmentResult />} />
         </Route>
       </Routes>
+      </AssessmentEntryProvider>
     </BrowserRouter>
   );
 }

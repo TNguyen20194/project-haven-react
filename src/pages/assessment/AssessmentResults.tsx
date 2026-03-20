@@ -4,7 +4,7 @@ import DisclaimerBanner from "@/components/section/DisclaimerBanner";
 import ResultCardList from "@/components/section/ResultCardList";
 import ProfessionalSupport from "@/components/section/ProfessionalSupport";
 import { useAssessmentStore } from "@/store/assessment.store";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { useState } from "react";
