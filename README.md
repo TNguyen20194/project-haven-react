@@ -127,10 +127,12 @@ Throughout the experience, users are encouraged to:
 ## App Screenshots
 ### *Home*
 <img src="/src/assets/project UI/homepage.jpg" alt="Home screen" width="600" />
+<br><br>
+<img src="/src/assets/project UI/what-is-therapy.jpg" alt="What is therapy" width="600" />
 
 ### *Understanding Therapy*
 <img src="/src/assets/project UI/understanding-therapy.jpg" alt="Understanding therapy" width="600" />
-
+<br><br>
 <img src="/src/assets/project UI/understanding-therapy-2.jpg" alt="Understanding therapy" width="600" />
 
 ### *Assessment Page*
