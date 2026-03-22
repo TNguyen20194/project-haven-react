@@ -131,8 +131,7 @@ Throughout the experience, users are encouraged to:
 ### *Understanding Therapy*
 <img src="/src/assets/project UI/understanding-therapy.jpg" alt="Understanding therapy" width="600" />
 
-### *Learn Page*
-<img src="/src/assets/project UI/learnpage.jpg" alt="Learn" width="600" />
+<img src="/src/assets/project UI/understanding-therapy-2.jpg" alt="Understanding therapy" width="600" />
 
 ### *Assessment Page*
 <img src="/src/assets/project UI/assessment.jpg" alt="Assessment" width="600" />
