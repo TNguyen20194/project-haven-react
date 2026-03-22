@@ -1,6 +1,9 @@
 import { Flower2, Sun, TreeDeciduous, type LucideIcon } from "lucide-react";
-
 import IconBadge from "../UI/feature-icon/IconBadge";
+import { motion } from "motion/react";
+import {
+  fadeUp
+} from "@/lib/animations";
 
 interface Card {
   icon: LucideIcon;
@@ -33,7 +36,10 @@ const educationCards: Card[] = [
 const EducationCard = () => {
   return educationCards.map(({ icon, title, body, iconClass }) => {
     return (
-      <div key={title} className="feature-card">
+      <motion.div 
+      key={title} 
+      className="feature-card"
+      >
         <IconBadge 
         icon={icon} 
         iconClassName={`${iconClass} w-7 h-7`}
@@ -41,7 +47,7 @@ const EducationCard = () => {
         />
         <h3>{title}</h3>
         <p>{body}</p>
-      </div>
+      </motion.div>
     );
   });
 };

@@ -6,14 +6,28 @@ import { Link } from "react-router";
 import therapistIllustration from "@/assets/therapist/therapist-1a.png";
 import blob from "@/assets/decorative/blob.png";
 import { useAssessmentEntry } from "@/hooks/AssessmentEntryContext";
+import { motion } from "motion/react";
+import {
+  sectionVariants,
+  fadeUp,
+  defaultViewport,
+} from "@/lib/animations";
 
 const HeroSection = () => {
   const { handleAssessmentEntry } = useAssessmentEntry();
 
   return (
     <section className="hero">
-      <div className="hero-container">
-        <div>
+      <motion.div 
+      className="hero-container"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={defaultViewport}
+      >
+        <motion.div
+        variants={fadeUp}
+        >
           <Badge
             icon={BookOpen}
             iconClassName="text-[hsl(var(--coral))]"
@@ -21,28 +35,40 @@ const HeroSection = () => {
           >
             Free Mental Health Education
           </Badge>
-        </div>
+        </motion.div>
 
-        <div className="hero-illustration">
+        <motion.div 
+        className="hero-illustration"
+        variants={fadeUp}
+        >
           <img src={blob} alt="" className="hero-blob" />
           <img
             src={therapistIllustration}
             alt="Therapist talking with a client"
             className="hero-therapist"
           />
-        </div>
+        </motion.div>
 
-        <h1 className="hero-title">
+        <motion.h1 
+        className="hero-title"
+        variants={fadeUp}
+        >
           Explore <span className="text-primary">Therapy</span> & Understand
           Your Mind
-        </h1>
-        <p className="hero-text">
+        </motion.h1>
+        <motion.p 
+        className="hero-text"
+        variants={fadeUp}
+        >
           Feeling overwhelmed, stuck, or unsure where to start? Explore what
           therapy is, take a free self-assessment, and discover resources to
           support your well-being.
-        </p>
+        </motion.p>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-15">
+        <motion.div 
+        className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-15"
+        variants={fadeUp}
+        >
           <Button
             variant="primary"
             size="lg"
@@ -62,8 +88,8 @@ const HeroSection = () => {
           >
             <Link to="/learn">Learn What Therapy Is</Link>
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
