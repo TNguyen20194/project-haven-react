@@ -2,58 +2,22 @@ import Badge from "@/components/UI/badge/Badge";
 import { BookOpen } from "lucide-react";
 import groupTherapy from "@/assets/therapist/group-therapy1.webp";
 import { motion } from "motion/react";
-import type { Variants } from "motion/react";
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const fadeUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariant: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.96,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
+import {
+  sectionVariants,
+  fadeUp,
+  imageReveal,
+  defaultViewport,
+} from "@/lib/animations";
 
 const UnderstandingTherapy = () => {
   return (
     <section className="hero hero-secondary">
       <motion.div
         className="hero-container max-w-[46rem]!"
-        variants={containerVariants}
+        variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={defaultViewport}
       >
         <motion.div variants={fadeUp}>
           <Badge
@@ -71,7 +35,7 @@ const UnderstandingTherapy = () => {
 
         <motion.div
           className="w-full max-w-2xl my-10 mx-auto"
-          variants={imageVariant}
+          variants={imageReveal}
         >
           <img
             src={groupTherapy}

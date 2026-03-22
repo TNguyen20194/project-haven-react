@@ -1,41 +1,22 @@
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { Lightbulb } from "lucide-react";
 import { motion } from "motion/react";
-import type { Variants } from "motion/react";
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.20,
-    },
-  },
-};
-
-const fadeUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
+import {
+  sectionVariants,
+  fadeUp,
+  defaultViewport,
+} from "@/lib/animations";
 
 const WhatToExpect = () => {
   return (
     <section className="p-12 mb-8 bg-[hsl(var(--background-alt)/0.5)]">
       <motion.div
         className="max-w-[56rem] mx-auto"
-        variants={containerVariants}
+        variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={defaultViewport}
       >
         <motion.div className="flex items-center gap-3 mb-5" variants={fadeUp}>
           <IconBadge

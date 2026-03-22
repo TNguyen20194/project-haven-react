@@ -45,8 +45,8 @@ export const listContainer: Variants = {
     hidden: {},
     visible: {
         transition: {
-            staggerChildren: 0.88,
-            delayChildren: 0.04,
+            staggerChildren: 0.05,
+            delayChildren: 0.02,
         },
     },
 };
@@ -54,7 +54,7 @@ export const listContainer: Variants = {
 export const listItem: Variants = {
     hidden: {
         opacity: 0,
-        x: -14,
+        x: -10,
         y: 6,
     },
     visible: {
@@ -62,7 +62,7 @@ export const listItem: Variants = {
         x: 0,
         y: 0,
         transition: {
-            duration: 0.2,
+            duration: 0.3,
             ease: "easeOut",
         },
     },

@@ -5,92 +5,15 @@ import groupTherapy from "@/assets/therapist/group-therapy3.webp";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { useAssessmentEntry } from "@/hooks/AssessmentEntryContext";
 import { motion } from "motion/react";
-import type { Variants } from "motion/react";
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.16,
-    },
-  },
-};
-
-const fadeUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.55,
-      ease: "easeOut",
-    },
-  },
-};
-
-const listVariant: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.05,
-    },
-  },
-};
-
-const itemVariant: Variants = {
-  hidden: {
-    opacity: 0,
-    x: -18,
-    y: 8,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    transition: {
-      duration: 0.45,
-      ease: "easeOut",
-    },
-  },
-};
-
-const ctaVariant: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 18,
-    scale: 0.985,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.55,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariant: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.985,
-    y: 16,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      duration: 0.65,
-      ease: "easeOut",
-    },
-  },
-};
+import {
+  sectionVariants,
+  fadeUp,
+  listContainer,
+  listItem,
+  ctaReveal,
+  imageReveal,
+  defaultViewport,
+} from "@/lib/animations";
 
 interface TherapyCatergory {
   icon: LucideIcon;
@@ -139,10 +62,10 @@ const HowTherapyMightHelp = () => {
     <section className="p-10">
       <motion.div
         className="max-w-[56rem] mx-auto"
-        variants={containerVariants}
+        variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={defaultViewport}
       >
         <motion.div
           className="flex items-center justify-center gap-3 mb-5"
@@ -168,8 +91,8 @@ const HowTherapyMightHelp = () => {
           className="mt-10 max-w-5xl rounded-[1.5rem] border border-black/5 bg-white/75 shadow-[0_8px_30px_rgba(0,0,0,0.05)] backdrop-blur-sm overflow-hidden"
           initial="hidden"
           whileInView="visible"
-          variants={listVariant}
-          viewport={{ once: true, amount: 0.2 }}
+          variants={listContainer}
+          viewport={defaultViewport}
         >
           {therapyCards.map(({ icon, id, body, iconClass }, index) => {
             const isLastItem = index === therapyCards.length - 1;
@@ -178,7 +101,7 @@ const HowTherapyMightHelp = () => {
               <motion.div
                 key={id}
                 className={`group flex items-center gap-5 px-8 py-6 transition-colors duration-200 hover:bg-[hsl(var(--teal))]/9 ${!isLastItem ? "border-b border-b-black/5" : ""}`}
-                variants={itemVariant}
+                variants={listItem}
               >
                 <IconBadge
                   icon={icon}
@@ -193,7 +116,10 @@ const HowTherapyMightHelp = () => {
 
         <motion.div
           className="mt-8 rounded-[1.5rem] border border-[hsl(var(--teal))]/10 bg-white/70 px-6 py-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] backdrop-blur-sm sm:px-8"
-          variants={ctaVariant}
+          variants={ctaReveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
         >
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
@@ -220,7 +146,10 @@ const HowTherapyMightHelp = () => {
 
         <motion.div
           className="w-full max-w-2xl mt-10 mx-auto"
-          variants={imageVariant}
+          variants={imageReveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
         >
           <img
             src={groupTherapy}
