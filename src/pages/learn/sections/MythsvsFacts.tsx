@@ -1,4 +1,6 @@
+import { useState } from "react";
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
+import { mythFactList } from "@/data/mythFactList";
 import { Scale } from "lucide-react";
 import MythFactCard from "@/components/section/MythFactCard";
 import { motion } from "motion/react";
@@ -10,6 +12,12 @@ import {
 } from "@/lib/animations";
 
 const MythsVsFacts = () => {
+  const [openMyth, setOpenMyth] = useState<string | null>(null);
+
+  const handleToggle = (id: string) => {
+    setOpenMyth((prev) => (prev === id ? null : id));
+  };
+
   return (
     <section className="p-14 bg-[hsl(var(--background-alt)/0.5)]">
       <motion.div
@@ -39,7 +47,16 @@ const MythsVsFacts = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <div className="grid gap-5">
-            <MythFactCard />
+            {mythFactList.map(({ id, myth, fact }) => (
+              <MythFactCard
+                key={id}
+                id={id}
+                myth={myth}
+                fact={fact}
+                isOpen={openMyth === id}
+                onToggle={handleToggle}
+              />
+            ))}
           </div>
         </motion.div>
       </motion.div>
