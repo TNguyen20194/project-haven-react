@@ -5,6 +5,7 @@ import therapyMind from "@/assets/therapist/therapy-mind.webp";
 import TrustedSection from "@/components/section/TrustedSection";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { useAssessmentEntry } from "@/hooks/AssessmentEntryContext";
+import { features } from "@/data/trustedSection";
 
 const highlight = "text-[hsl(var(--primary))] font-medium";
 
@@ -54,20 +55,32 @@ const WhatIsTherapySection = () => {
               unique needs and goals—and that's completely okay to explore.
             </p>
 
-            <TrustedSection />
+            <div className="space-y-4">
+              {features.map(
+                ({ id, title, description, icon, iconClassName }) => (
+                  <TrustedSection
+                    key={id}
+                    title={title}
+                    description={description}
+                    icon={icon}
+                    iconClassName={iconClassName}
+                  />
+                ),
+              )}
+            </div>
           </div>
         </div>
 
-         <div className="text-center mt-12">
-            <Button
-              variant="primary"
-              size="lg"
-              aria-label="Take the Free Assessment"
-              onClick={handleAssessmentEntry}
-            >
-              Take the Free Assessment
-            </Button>
-          </div>
+        <div className="text-center mt-12">
+          <Button
+            variant="primary"
+            size="lg"
+            aria-label="Take the Free Assessment"
+            onClick={handleAssessmentEntry}
+          >
+            Take the Free Assessment
+          </Button>
+        </div>
       </div>
     </section>
   );
