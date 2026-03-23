@@ -36,7 +36,7 @@ const CTABannerSection = ({ title, description }: CTABannerSectionProps) => {
             aria-label="Book a Consultation"
             variant="secondary"
             size="lg"
-            className="w-[294px]"
+            className="w-[260px]"
           >
             <a
               href="https://julietran.janeapp.com/#staff_member/1"

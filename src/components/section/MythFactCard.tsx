@@ -31,7 +31,7 @@ const mythFactCard = ({
         </p>
 
         <ChevronDown
-          className={`h-5 w-5 shrink-0 mt-1 transition-transform duration-300 
+          className={`h-5 w-5 shrink-0 mt-1 transition-transform duration-300 text-[hsl(var(--green-1))]!
                   ${isOpen ? "rotate-180" : ""}`}
         />
       </div>

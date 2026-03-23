@@ -73,7 +73,7 @@ const HeroSection = () => {
             variant="primary"
             size="lg"
             aria-label="Take the Free Assessment"
-            className="text-shadow-md w-[304px]"
+            className="text-shadow-md w-[270px]"
             onClick={handleAssessmentEntry}
           >
            Start Your Free Assessment
@@ -84,7 +84,7 @@ const HeroSection = () => {
             variant="secondary"
             size="lg"
             aria-label="Take the Free Assessment"
-            className="hover:bg-[hsl(var(--primary)/0.3)]! w-[304px]"
+            className="hover:bg-[hsl(var(--primary)/0.3)]! w-[270px]"
           >
             <Link to="/learn">Learn What Therapy Is</Link>
           </Button>

@@ -76,6 +76,7 @@ const WhatIsTherapySection = () => {
             variant="primary"
             size="lg"
             aria-label="Take the Free Assessment"
+            className="w-[260px]"
             onClick={handleAssessmentEntry}
           >
             Take the Free Assessment
