@@ -6,9 +6,9 @@ import { motion } from "motion/react";
 import {
   sectionVariants,
   fadeUp,
-  listContainer,
   defaultViewport,
 } from "@/lib/animations";
+import { educationCard } from "@/data/educationCard";
 
 const HowWeHelpSection = () => {
   return (
@@ -39,11 +39,22 @@ const HowWeHelpSection = () => {
           can help you understand what to expect.
         </motion.p>
 
-        <motion.div
-          className="service-grid"
-          variants={fadeUp}
+        <motion.div 
+        className="service-grid" 
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{once: true, amount: 0.3}}
         >
-          <EducationCard />
+          {educationCard.map(({ id, icon, title, body, iconClass }) => (
+            <EducationCard
+              key={id}
+              icon={icon}
+              title={title}
+              body={body}
+              iconClass={iconClass}
+            />
+          ))}
         </motion.div>
       </motion.div>
     </section>
