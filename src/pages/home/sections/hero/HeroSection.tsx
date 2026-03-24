@@ -73,7 +73,7 @@ const HeroSection = () => {
             variant="primary"
             size="lg"
             aria-label="Take the Free Assessment"
-            className="text-shadow-md w-[270px]"
+            className="w-[270px]"
             onClick={handleAssessmentEntry}
           >
            Start Your Free Assessment

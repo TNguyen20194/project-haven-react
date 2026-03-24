@@ -65,7 +65,6 @@ const AssessmentResults = () => {
             </>
           }
         />
-
         <ResultCardList />
 
         <ProfessionalSupport />

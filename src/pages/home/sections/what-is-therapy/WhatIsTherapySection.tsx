@@ -6,6 +6,14 @@ import TrustedSection from "@/components/section/TrustedSection";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { useAssessmentEntry } from "@/hooks/AssessmentEntryContext";
 import { features } from "@/data/trustedSection";
+import { motion } from "motion/react";
+import {
+  sectionVariants,
+  fadeUp,
+  imageReveal,
+  defaultViewport,
+  listContainer,
+} from "@/lib/animations";
 
 const highlight = "text-[hsl(var(--primary))] font-medium";
 
@@ -14,8 +22,17 @@ const WhatIsTherapySection = () => {
 
   return (
     <section className="therapy section-container">
-      <div className="max-w-[64rem] mx-auto">
-        <div className="mx-auto text-center mb-[3rem]">
+      <motion.div 
+      className="max-w-[64rem] mx-auto"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={defaultViewport}
+      >
+        <motion.div 
+        className="mx-auto text-center mb-[3rem]"
+        variants={fadeUp}
+        >
           <Badge
             icon={Flower}
             iconClassName="text-[hsl(var(--pink))]"
@@ -24,38 +41,48 @@ const WhatIsTherapySection = () => {
             Understanding Therapy
           </Badge>
           <h2 className="section-heading mb-5">What Is Therapy, Really?</h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="order-2 md:order-1 grid place-items-start">
-            <div className="w-full max-w-sm mx-auto">
+            <motion.div 
+            className="w-full max-w-sm mx-auto"
+            variants={imageReveal}
+            >
               <img
                 src={therapyMind}
                 alt="Growing mind in bloom"
                 className="w-full h-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div className="order-1 md:order-2 text-[1.12rem]">
-            <p>
+            <motion.p
+            variants={fadeUp}
+            >
               Therapy is a{" "}
               <span className={highlight}>safe, confidential conversation</span>{" "}
               with a trained professional who helps you understand your
               thoughts, feelings, and behaviors. It's not just for people in
               crisis—it's for anyone who wants to grow, heal, or simply
               understand themselves better.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+            variants={fadeUp}
+            >
               There are many types of therapy, from{" "}
               <span className={highlight}>
                 Cognitive Behavioral Therapy (CBT)
               </span>
               to mindfulness-based approaches. The right fit depends on your
               unique needs and goals—and that's completely okay to explore.
-            </p>
+            </motion.p>
 
-            <div className="space-y-4">
+            <motion.div 
+            className="space-y-4"
+            variants={listContainer}
+            >
               {features.map(
                 ({ id, title, description, icon, iconClassName }) => (
                   <TrustedSection
@@ -67,11 +94,14 @@ const WhatIsTherapySection = () => {
                   />
                 ),
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
 
-        <div className="text-center mt-12">
+        <motion.div 
+        className="text-center mt-12"
+        variants={fadeUp}
+        >
           <Button
             variant="primary"
             size="lg"
@@ -81,8 +111,8 @@ const WhatIsTherapySection = () => {
           >
             Take the Free Assessment
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

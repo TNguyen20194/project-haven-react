@@ -1,4 +1,8 @@
 import IconBadge from "../UI/feature-icon/IconBadge";
+import { motion } from "motion/react";
+import {
+  listItem
+} from "@/lib/animations";
 
 interface FeatureCardProps {
   title: string;
@@ -14,7 +18,10 @@ const TrustedSection = ({
   iconClassName,
 }: FeatureCardProps) => {
   return (
-      <div className="grid grid-cols-[auto_1fr] gap-4 items-start">
+      <motion.div 
+      className="grid grid-cols-[auto_1fr] gap-4 items-start"
+      variants={listItem}
+      >
         <IconBadge
           icon={icon}
           iconClassName={iconClassName}
@@ -24,7 +31,7 @@ const TrustedSection = ({
           <h4 className="font-semibold text-[hsl(var(--green-1))]">{title}</h4>
           <p>{description}</p>
         </div>
-      </div>
+      </motion.div>
   );
 };
 
