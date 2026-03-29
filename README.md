@@ -18,6 +18,25 @@ The goal is not to diagnose, but to help users:
 - Connect with professional support when needed
 - Encouraging professional consultation
 
+## 💻 Technologies
+### Frontend
+- React (TypeScript)
+- Tailwind CSS
+- Zustand (state management)
+- React Router
+
+### UI & Components
+- shadcn/ui
+- Lucide Icons
+
+### Backend
+- Node.js
+- Express (TypeScript)
+- REST API architecture
+
+### Database & Auth
+- Supabase (PostgreSQL, Auth, API)
+
 ## 🎯 Core Objectives
 
 1. Make therapy education accessible to everyone
