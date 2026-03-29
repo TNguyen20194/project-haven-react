@@ -18,6 +18,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />}/>
           <Route path="/learn" element={<Learn />} />
+          {/* Add "About me" page for the therapist */}
         </Route>
 
         <Route element={<AssessmentLayout />}>
