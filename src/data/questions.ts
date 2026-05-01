@@ -8,6 +8,12 @@ export type Question = {
     options: Record<number, string>
 }
 
+export type appQuestion = {
+    id: string,
+    prompt: string,
+    options: Record<number, string>
+}
+
 export const questions: Question[] = [
     // Emotional Regulation
     {
@@ -489,6 +495,119 @@ export const questions: Question[] = [
             1: "Somewhat easily – I appreciate them but feel a little awkward",
             2: "With difficulty – I tend to dismiss compliments or downplay achievements",
             3: "I can't – Compliments feel undeserved and I reject them"
+        }
+    },
+]
+
+export const appQuestions: appQuestion[] = [
+     {
+        id: "question-1",
+        prompt: "I feel overwhelmed by my daily responsibilities.",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-2",
+        prompt: "I have difficulty relaxing or unwinding.",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-3",
+        prompt: "I feel nervous, anxious, or on edge.",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-4",
+        prompt: "I feel low, unmotivated, or emotionally drained.",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-5",
+        prompt: "I have enough energy to get through the day.",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-6",
+        prompt: "I find it hard to focus or stay productive.",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-7",
+        prompt: "I have trouble falling or staying asleep.",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-8",
+        prompt: "I wake up feeling rested.",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-9",
+        prompt: "I take time for myself (self-care, hobbies, rest).",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
+        }
+    },
+    {
+        id: "question-10",
+        prompt: "I feel connected to others (friends, family, or community).",
+        options: {
+            1: "Not at all",
+            2: "Rarely",
+            3: "Sometimes",
+            4: "Often",
+            5: "Almost always"
         }
     },
 ]
