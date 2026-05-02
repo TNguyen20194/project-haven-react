@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-type AssessmenStore = {
+type AssessmentStore = {
     currentIndex: number;
     answers: Record<string, string>;
     setCurrentIndex: (index: number) => void;
@@ -10,7 +10,7 @@ type AssessmenStore = {
     resetAssessment: () => void;
 };
 
-export const useAssessmentStore = create<AssessmenStore>() (
+export const useAssessmentStore = create<AssessmentStore>() (
     persist(
         (set) => ({
             currentIndex: 0,

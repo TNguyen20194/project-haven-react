@@ -14,7 +14,7 @@ import {
 } from "@/components/UI/card";
 import { RadioGroup, RadioGroupItem } from "@/components/UI/radio-group";
 import { Label } from "@/components/UI/label";
-import { questions, appQuestions } from "@/data/questions";
+import { appQuestions } from "@/data/questions";
 import { Loader2 } from "lucide-react";
 import DisclaimerBanner from "@/components/section/DisclaimerBanner";
 
