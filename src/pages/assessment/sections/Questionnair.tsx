@@ -30,7 +30,7 @@ const Questionnaire = () => {
   const setAnswers = useAssessmentStore((state) => state.setAnswers);
   const resetIndex = useAssessmentStore((state) => state.resetIndex);
 
-  const currentQuestion = questions[currentIndex];
+  const currentQuestion = appQuestions[currentIndex];
   const currentAnswer = answers[currentQuestion.id] ?? "";
 
   /*
@@ -49,7 +49,7 @@ Example
 
   */
 
-  const progress = Math.round(((currentIndex + 1) / questions.length) * 100);
+  const progress = Math.round(((currentIndex + 1) / appQuestions.length) * 100);
   const options = Object.entries(currentQuestion.options).sort(
     ([a], [b]) => Number(a) - Number(b),
   );
@@ -59,14 +59,7 @@ Example
   };
 
   const handleNext = () => {
-    // if (!currentAnswer) {
-    //   toast.warning("Please answer the question", {
-    //     description: "This field is required to continue.",
-    //   });
-    //   return;
-    // }
-
-    if (currentIndex < questions.length - 1) {
+    if (currentIndex < appQuestions.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
       setIsFinishing(true);
@@ -124,11 +117,14 @@ Example
         <CardHeader className="space-y-2 px-6 pb-4 pt-4">
           <CardTitle>
             <h4 className="text-[1.5rem] text-[hsl(var(--green-1))] font-semibold">
-              Question {currentIndex + 1} /{questions.length}
+              Question {currentIndex + 1} /{appQuestions.length}
             </h4>
           </CardTitle>
           <CardDescription>
-            <p className="p-text !text-[1.25rem] text-[hsl(var(--green-1))] leading-relaxed">
+            <p className="mb-3 text-[15px] font-medium text-[hsl(var(--green-1))]/70">
+            Over the past 2 weeks, how often have you experienced the following?
+            </p>
+            <p className="p-text !text-[1.15rem] text-[hsl(var(--green-1))] leading-relaxed">
               {currentQuestion.prompt}
             </p>
           </CardDescription>
@@ -185,7 +181,7 @@ Example
             variant="primary"
             size="md"
             aria-label={
-              currentIndex === questions.length - 1 ? "See Results" : "Next"
+              currentIndex === appQuestions.length - 1 ? "See Results" : "Next"
             }
             className={`text-[15px] w-[130px] ${
               !currentAnswer
@@ -198,7 +194,7 @@ Example
           >
             {isFinishing
               ? "Analyzing..."
-              : currentIndex === questions.length - 1
+              : currentIndex === appQuestions.length - 1
                 ? "See Results"
                 : "Next"}
           </Button>
