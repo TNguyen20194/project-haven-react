@@ -26,8 +26,7 @@ const TypesOfTherapy = () => {
         className="text-[hsl(var(--green-1))] text-[1.12rem]"
         variants={fadeUp}
         >
-          There's no one-size-fits-all approach. Here are some widely used
-          methods—a&nbsp;therapist can help you find the best fit.
+          There is no one size fits all approach. Here are some widely used methods, and a therapist can help you find the best fit.
         </motion.p>
       </motion.div>
 

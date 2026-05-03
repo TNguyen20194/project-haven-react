@@ -1,6 +1,11 @@
-import { useAssessmentStore } from "@/store/assessment.store";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAssessmentStore } from "@/store/assessment.store";
+import { createAssessmentSession } from "@/lib/assessmentSessionApi";
+import {
+  getAssessmentResultLevel,
+  getAssessmentTotalScore,
+} from "@/utilities/getAssessmentResult";
 import { Progress } from "@/components/UI/progress";
 import { toast } from "sonner";
 import Button from "@/components/UI/buttons/CTAbutton";
@@ -58,7 +63,7 @@ Example
     setAnswers(currentQuestion.id, value);
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (currentIndex < appQuestions.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
@@ -75,6 +80,18 @@ Example
         ),
         duration: Infinity,
       });
+
+      try {
+        const score = getAssessmentTotalScore(appQuestions, answers);
+        const resultLevel = getAssessmentResultLevel(score);
+
+        await createAssessmentSession({
+          questionCount: appQuestions.length,
+          resultLevel,
+          score,
+          completedAt: new Date().toISOString(),
+        });
+      } catch {}
 
       setTimeout(() => {
         toast.success("Your results are ready.", {
@@ -122,7 +139,10 @@ Example
           </CardTitle>
           <CardDescription>
             <p className="mb-3 text-[15px] font-medium text-[hsl(var(--green-1))]/70">
-            <em>Over the past 2 weeks, how often have you experienced the following?</em>
+              <em>
+                Over the past 2 weeks, how often have you experienced the
+                following?
+              </em>
             </p>
             <p className="p-text !text-[1.15rem] text-[hsl(var(--green-1))] leading-relaxed">
               {currentQuestion.prompt}
