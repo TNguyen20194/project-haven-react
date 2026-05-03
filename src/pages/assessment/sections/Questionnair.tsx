@@ -122,7 +122,7 @@ Example
           </CardTitle>
           <CardDescription>
             <p className="mb-3 text-[15px] font-medium text-[hsl(var(--green-1))]/70">
-            Over the past 2 weeks, how often have you experienced the following?
+            <em>Over the past 2 weeks, how often have you experienced the following?</em>
             </p>
             <p className="p-text !text-[1.15rem] text-[hsl(var(--green-1))] leading-relaxed">
               {currentQuestion.prompt}
@@ -143,7 +143,7 @@ Example
                 className={`flex cursor-pointer items-center gap-4 rounded-[10px] border px-5 py-4 bg-[hsl(var(--white))] transition ${
                   currentAnswer === value
                     ? "border-[hsl(var(--primary))] bg-[hsl(var(--background)/0.8)]"
-                    : "border-[#d9d9d3] hover:border-[hsl(var(--primary))] hover:bg-[hsl(var(--background-alt))]"
+                    : "border-[#d9d9d3] hover:border-[hsl(var(--primary))] hover:bg-[hsl(var(--teal))]/3"
                 }`}
               >
                 <RadioGroupItem
@@ -204,6 +204,7 @@ Example
       <DisclaimerBanner
         wrapperClassName="border border-[hsl(var(--border))] mt-10"
         textClassName="!text-sm text-[hsl(var(--green-1))]/80"
+        title="Important"
         description={
           <>
             This self-assessment is designed to help you reflect on your

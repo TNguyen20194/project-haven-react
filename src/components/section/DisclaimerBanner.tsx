@@ -7,7 +7,7 @@ type DisclaimerProps = {
 
 const DisclaimerBanner = ({
   description,
-  title = "Important:",
+  title = "",
   wrapperClassName = "",
   textClassName = "",
 }: DisclaimerProps) => {
