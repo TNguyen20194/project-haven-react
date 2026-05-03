@@ -43,22 +43,122 @@ const Header = () => {
   };
 
   return (
-      <header>
-        <div className="header-container">
-          {/* Logo */}
-          <div className="nav">
-            <Link to="/" className="logo">
-              MindfulPath
-            </Link>
+    <header>
+      <div className="header-container">
+        {/* Logo */}
+        <div className="nav">
+          <Link to="/" className="logo">
+            <img
+              src="/public/logo/JT Therapy.png"
+              alt="Julie Tran Therapy"
+              width="150px"
+            />
+          </Link>
+        </div>
+
+        {/* Navigations */}
+        <Navigations onAssessmentClick={handleAssessmentClick} />
+
+        {/* Theme Toggle + CTA */}
+        <div className="header-actions">
+          <ThemeToggle />
+
+          <Button type="button" variant="primary" size="md">
+            <a
+              href="https://julietran.janeapp.com/#staff_member/1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Therapist
+            </a>
+          </Button>
+        </div>
+
+        {/* Mobile Button */}
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-label="Open main menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          {/* Open icon */}
+          <span className={`mobile-icon ${isOpen ? "is-hidden" : ""}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-menu-icon lucide-menu"
+            >
+              <path d="M4 5h16" />
+              <path d="M4 12h16" />
+              <path d="M4 19h16" />
+            </svg>
+          </span>
+          {/* Close icon */}
+          <span className={`mobile-icon ${isOpen ? "" : "is-hidden"}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-x-icon lucide-x"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && isMobile && (
+        <div className="mobile-menu">
+          <nav className="mobile-menu-links" aria-label="mobile navigation">
+            {NAV_LINK.map(({ title, href, end }) => {
+              if (href === "/assessment") {
+                return (
+                  <button
+                    key={title}
+                    type="button"
+                    onClick={handleAssessmentClick}
+                  >
+                    {title}
+                  </button>
+                );
+              }
+
+              return (
+                <NavLink
+                  key={title}
+                  to={href}
+                  end={end}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {title}
+                </NavLink>
+              );
+            })}
+          </nav>
+
+          <div className="mobile-menu-row">
+            <span className="mobile-menu-label">Theme</span>
+            <ThemeToggle />
           </div>
 
-          {/* Navigations */}
-          <Navigations onAssessmentClick={handleAssessmentClick} />
-
-          {/* Theme Toggle + CTA */}
-          <div className="header-actions">
-            <ThemeToggle />
-
+          <div className="mobile-menu-cta">
             <Button type="button" variant="primary" size="md">
               <a
                 href="https://julietran.janeapp.com/#staff_member/1"
@@ -69,105 +169,9 @@ const Header = () => {
               </a>
             </Button>
           </div>
-
-          {/* Mobile Button */}
-          <button
-            className="mobile-menu-toggle"
-            type="button"
-            aria-label="Open main menu"
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-            onClick={() => setIsOpen((prev) => !prev)}
-          >
-            {/* Open icon */}
-            <span className={`mobile-icon ${isOpen ? "is-hidden" : ""}`}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-menu-icon lucide-menu"
-              >
-                <path d="M4 5h16" />
-                <path d="M4 12h16" />
-                <path d="M4 19h16" />
-              </svg>
-            </span>
-            {/* Close icon */}
-            <span className={`mobile-icon ${isOpen ? "" : "is-hidden"}`}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-x-icon lucide-x"
-              >
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </span>
-          </button>
         </div>
-
-        {/* Mobile Dropdown Menu */}
-        {isOpen && isMobile && (
-          <div className="mobile-menu">
-            <nav className="mobile-menu-links" aria-label="mobile navigation">
-              {NAV_LINK.map(({ title, href, end }) => {
-                if (href === "/assessment") {
-                  return (
-                    <button
-                      key={title}
-                      type="button"
-                      onClick={handleAssessmentClick}
-                    >
-                      {title}
-                    </button>
-                  );
-                }
-
-                return (
-                  <NavLink
-                    key={title}
-                    to={href}
-                    end={end}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {title}
-                  </NavLink>
-                );
-              })}
-            </nav>
-
-            <div className="mobile-menu-row">
-              <span className="mobile-menu-label">Theme</span>
-              <ThemeToggle />
-            </div>
-
-            <div className="mobile-menu-cta">
-              <Button type="button" variant="primary" size="md">
-                <a
-                  href="https://julietran.janeapp.com/#staff_member/1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Book a Therapist
-                </a>
-              </Button>
-            </div>
-          </div>
-        )}
-      </header>
+      )}
+    </header>
   );
 };
 
