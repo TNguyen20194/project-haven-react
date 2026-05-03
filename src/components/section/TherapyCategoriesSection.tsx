@@ -43,13 +43,13 @@ const therapyCards: TherapyCatergory[] = [
   },
   {
     icon: Leaf,
-    title: "Mindfulness-Based Approaches",
+    title: "Mindfulness Based Approaches",
     body: "Use meditation and awareness practices to help you stay present. These approaches can support stress reduction, emotional regulation, and a healthier relationship with thoughts.",
     iconClass: "text-[hsl(var(--teal))]"
   },
   {
     icon: Shield,
-    title: "Trauma-Informed Therapy",
+    title: "Trauma Informed Therapy",
     body: "An approach that recognizes the impact of trauma on mental health. It focuses on safety, trust, and empowerment while supporting individuals in processing difficult experiences.",
     iconClass: "text-[hsl(var(--blue))]"
   },

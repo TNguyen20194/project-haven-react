@@ -26,7 +26,7 @@ export const features: Feature[] = [
   {
     id: "feature-3",
     title: "You Set the Pace",
-    description: "Therapy moves at your comfort level—there's no rush",
+    description: "Therapy moves at your comfort level. There's no rush!",
     icon: Waves,
     iconClassName: "text-[hsl(var(--blue))]",
   },

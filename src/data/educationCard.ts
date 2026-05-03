@@ -20,7 +20,7 @@ export const educationCard: Card[] = [
     id: "education-2",
     icon: TreeDeciduous,
     title: "Get Personalized Insights",
-    body: "Learn about different therapy approaches—CBT, mindfulness, talk therapy—and find what might resonate with you.",
+    body: "Learn about different therapy approaches, such as CBT, mindfulness, and talk therapy, and discover what may resonate with you.",
     iconClass: "text-[hsl(var(--primary))]",
   },
   {

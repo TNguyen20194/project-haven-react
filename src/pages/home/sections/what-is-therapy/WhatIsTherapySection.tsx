@@ -22,17 +22,14 @@ const WhatIsTherapySection = () => {
 
   return (
     <section className="therapy section-container">
-      <motion.div 
-      className="max-w-[64rem] mx-auto"
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={defaultViewport}
+      <motion.div
+        className="max-w-[64rem] mx-auto"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={defaultViewport}
       >
-        <motion.div 
-        className="mx-auto text-center mb-[3rem]"
-        variants={fadeUp}
-        >
+        <motion.div className="mx-auto text-center mb-[3rem]" variants={fadeUp}>
           <Badge
             icon={Flower}
             iconClassName="text-[hsl(var(--pink))]"
@@ -45,9 +42,9 @@ const WhatIsTherapySection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="order-2 md:order-1 grid place-items-start">
-            <motion.div 
-            className="w-full max-w-sm mx-auto"
-            variants={imageReveal}
+            <motion.div
+              className="w-full max-w-sm mx-auto"
+              variants={imageReveal}
             >
               <img
                 src={therapyMind}
@@ -58,31 +55,23 @@ const WhatIsTherapySection = () => {
           </div>
 
           <div className="order-1 md:order-2 text-[1.12rem]">
-            <motion.p
-            variants={fadeUp}
-            >
+            <motion.p variants={fadeUp}>
               Therapy is a{" "}
               <span className={highlight}>safe, confidential conversation</span>{" "}
-              with a trained professional who helps you understand your
+              with a trained professional who helps you better understand your
               thoughts, feelings, and behaviors. It's not just for people in
-              crisis—it's for anyone who wants to grow, heal, or simply
-              understand themselves better.
+              crisis. It can also support anyone who wants to grow, heal, or
+              understand themselves more clearly.
             </motion.p>
-            <motion.p
-            variants={fadeUp}
-            >
-              There are many types of therapy, from{" "}
-              <span className={highlight}>
-                Cognitive Behavioral Therapy (CBT)
-              </span>
-              to mindfulness-based approaches. The right fit depends on your
-              unique needs and goals—and that's completely okay to explore.
+            <motion.p variants={fadeUp}>
+              There are many types of therapy, including{" "}
+              <span className={highlight}>Cognitive Behavioral Therapy</span>,
+              mindfulness based approaches, and talk therapy. The right fit
+              depends on your unique needs and goals, and it is completely okay
+              to explore what works best for you.
             </motion.p>
 
-            <motion.div 
-            className="space-y-4"
-            variants={listContainer}
-            >
+            <motion.div className="space-y-4" variants={listContainer}>
               {features.map(
                 ({ id, title, description, icon, iconClassName }) => (
                   <TrustedSection
@@ -98,10 +87,7 @@ const WhatIsTherapySection = () => {
           </div>
         </div>
 
-        <motion.div 
-        className="text-center mt-12"
-        variants={fadeUp}
-        >
+        <motion.div className="text-center mt-12" variants={fadeUp}>
           <Button
             variant="primary"
             size="lg"
