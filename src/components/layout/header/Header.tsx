@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "@/hooks/ThemeContext";
 import "./header.style.css";
 import Button from "../../UI/buttons/CTAbutton";
 import ThemeToggle from "../../UI/buttons/ThemeToggle";
@@ -20,6 +21,10 @@ const Header = () => {
   const MOBILE_MAX = 620;
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_MAX);
+  const { theme } = useTheme();
+
+  const logoSrc =
+    theme === "dark" ? "/logo/JT_Therapy_Dark_2.png" : "/logo/JT_Therapy.png";
 
   const { handleAssessmentEntry } = useAssessmentEntry();
 
@@ -49,7 +54,7 @@ const Header = () => {
         <div className="nav">
           <Link to="/" className="logo">
             <img
-              src="/public/logo/JT_Therapy.png"
+              src={logoSrc}
               alt="Julie Tran Therapy"
               width="150px"
             />

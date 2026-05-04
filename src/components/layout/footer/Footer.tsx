@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="footer-grid">
             <div>
                 <img
-                  src="/public/logo/JT_Therapy_Logo_-_Footer-removebg-preview.png"
+                  src="/public/logo/JT_Therapy_Logo_Footer.png"
                   alt="Julie Tran Therapy"
                   width="250px"
                 />
