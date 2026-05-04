@@ -12,7 +12,7 @@ const AssessmentLayout = () => {
           duration: 1500,
           classNames: {
             toast: "rounded-2xl shadow-lg border-none px-6 py-5",
-            warning: "!bg-[#EF4444] !text-white !border-none",
+            error: "!bg-[#EF4444] !text-white !border-none",
             loading: "!bg-[hsl(var(--moderate-bg-yellow))] !text-[hsl(var(--green-1))] !border-none",
             success: "!bg-[hsl(var(--primary))] !text-white !border-none",
             title: "!text-[16px] !font-semibold",

@@ -49,7 +49,7 @@ const Header = () => {
         <div className="nav">
           <Link to="/" className="logo">
             <img
-              src="/public/logo/JT Therapy.png"
+              src="/public/logo/JT_Therapy.png"
               alt="Julie Tran Therapy"
               width="150px"
             />

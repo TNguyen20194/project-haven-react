@@ -91,7 +91,16 @@ Example
           score,
           completedAt: new Date().toISOString(),
         });
-      } catch {}
+      } catch {
+        toast.error("We couldn't save this assessment sessions.", {
+          id: toastId,
+          description: "Please try again in a moment.",
+          duration: 2000,
+        });
+
+        setIsFinishing(false);
+        return;
+      }
 
       setTimeout(() => {
         toast.success("Your results are ready.", {

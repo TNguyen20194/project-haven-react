@@ -10,17 +10,17 @@ type AssessmentSessionPayLoad = {
 export const createAssessmentSession = async (
   payload: AssessmentSessionPayLoad,
 ) => {
-    const response = await fetch(`${DASHBOARD_API_URL}/api/assessment-sessions`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-    });
+  const response = await fetch(`${DASHBOARD_API_URL}/api/assessment-sessions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
 
-    if(!response.ok) {
-        throw new Error("Unable to save assessment session");
-    }
+  if (!response.ok) {
+    throw new Error("Unable to save assessment session");
+  }
 
-    return response.json()
+  return response.json();
 };
