@@ -159,13 +159,7 @@ const Header = () => {
 
           <div className="mobile-menu-cta">
             <Button type="button" variant="primary" size="md">
-              <a
-                href="https://julietran.janeapp.com/#staff_member/1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Book a Therapist
-              </a>
+              <Link to="/book">Book a Therapist</Link>
             </Button>
           </div>
         </div>

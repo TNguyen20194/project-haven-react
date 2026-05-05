@@ -1,4 +1,5 @@
 import Button from "../UI/buttons/CTAbutton";
+import { Link } from "react-router-dom";
 
 const ProfessionalSupport = () => {
   return (
@@ -23,13 +24,7 @@ const ProfessionalSupport = () => {
         aria-label="Book a Free Consultation"
         className="mt-8 text-shadow-xs"
       >
-        <a
-          href="https://julietran.janeapp.com/#staff_member/1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Book a Free Consultation
-        </a>
+        <Link to="/book">Book a Free Consultation</Link>
       </Button>
     </div>
   );

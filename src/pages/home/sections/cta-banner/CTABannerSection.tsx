@@ -2,6 +2,7 @@ import "./ctabanner.stye.css";
 import Button from "@/components/UI/buttons/CTAbutton";
 import { Flower2, CloudSun } from "lucide-react";
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
+import { Link } from "react-router-dom";
 
 interface CTABannerSectionProps {
   title: string;
@@ -38,13 +39,7 @@ const CTABannerSection = ({ title, description }: CTABannerSectionProps) => {
             size="lg"
             className="w-[260px]"
           >
-            <a
-              href="https://julietran.janeapp.com/#staff_member/1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a Consultation
-            </a>
+            <Link to="/book">Book a Consultation</Link>
           </Button>
         </div>
       </div>

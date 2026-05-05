@@ -65,7 +65,7 @@ const BookTherapist = () => {
                 <li className="flex gap-3">
                   <span className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[hsl(var(--primary))]" />
                   <span>
-                    Return here anytime to keep learning or reflect again.
+                    Return here anytime to keep learning or reflect&nbsp;again.
                   </span>
                 </li>
               </ul>
