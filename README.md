@@ -1,161 +1,418 @@
-# Therapy Education Web App
+# Therapy Education Web App (Project Haven)
 
 ## Project Overview
 
-This project is a free, accessible, evidence-based web application designed for a licensed psychotherapist.
+Project Haven is a therapy education and self-assessment web app built for a psychotherapy practice.
 
-The app focuses on:
+This app helps users learn about therapy, reflect on their mental welness, and connect qith professional support when they are ready.
 
-- Therapy education
-- Symptom awareness
-- Safe self-guided exploration
+This app does not diagnose users. The assessment results are educational and are meant to support self-reflection.
 
-The goal is not to diagnose, but to help users:
+## Features
 
-- Identify potential mental health symptoms
-- Understand areas of concern
-- Learn evidence-based strategies
-- Connect with professional support when needed
-- Encouraging professional consultation
+- Therapy education pages
+- Mental wellness self-assessment
+- 10-question questionnaire flow
+- Anonymous result generation
+- Score-based result card
+- Light and dark theme
+- Therapist booking CTA
+- Supabase-backed session tracking
+- Admin dashboard for completed questionnaire sessions
 
-## 💻 Technologies
+## Tech Stack
+
 ### Frontend
-- React (TypeScript)
-- Tailwind CSS
-- Zustand (state management)
-- React Router
 
-### UI & Components
+- React
+- TypeScript
+- Tailwind CSS
+- Zustand
+- React Router
 - shadcn/ui
-- Lucide Icons
+- Lucide Icon
 
 ### Backend
+
 - Node.js
-- Express (TypeScript)
-- REST API architecture
+- Express
+- TypeScript
+- REST API
 
-### Database & Auth
-- Supabase (PostgreSQL, Auth, API)
+### Database
 
-## 🎯 Core Objectives
+- Supabase
+- PostgresSQL
 
-1. Make therapy education accessible to everyone
-2. Use evidence-based screening tools
-3. Provide structured, safe psychological guidance
-4. Encourage users to seek professional support
-5. Maintain ethical safety protocols
+## Project Structure
 
-## 📚 Therapy Education First
+```txt
+**Project Haven React**
 
-Users are encouraged to:
+- Public therapy website
+- Therapy education pages
+- Questionnaire flow
+- Result page
+- Sends completed assessment data to backend
 
-- Read educational content about therapy
-- Understand common mental health symptoms
-- Learn evidence-based coping strategies
-- Explore how professional therapy can help
-  
-Clear calls-to-action encourage:
-- Taking a free assessment
-- Booking a free 15-minute consultation
+**Project Haven Dashboard**
 
+- Admind dashboard frontend
+- Express backend
+- Supabse database connection
+- Displays completed anonymous sessions
+```
 
-## 🧪 Mental Health Assessment
+## App Flow
 
-Users complete an evidence-based screening questionnaire.
+```txt
+User visits public therapy website
+→ User reads therapy education content
+→ User starts the assessment
+→ User answers 10 questions
+→ App saves answers in Zustand
+→ App calculates total score
+→ App displays result card
+→ App sends anonymous session to backend
+→ Backend saves sessions in Supabase
+→ Dashboard displays completed sessions
+```
 
-- Multiple-choice format
-- Structured scoring system
-- Psychologically informed categories
+## Architecture
 
-The assessment evaluates multiple mental health domains.
+```txt
+Project-Haven-React
+   |
+   | POST completed assessment
+   v
+Project-Haven-Dashboard Back-End
+   |
+   | Insert / Select
+   v
+Supabase Database
+   |
+   | GET completed sessions
+   v
+```
 
-## 📊 Assessment Domains
+The public app does not connect directly to Supabase. It sends completed assessment data to the backend. The backend owns the database connection and keeps Supabase keys private.
 
-The assessment evaluates the following mental health domains:
+## Public App
 
-- Emotional Regulation
-- Sleep Health
-- Anxiety
-- Motivation & Interest
-- Stress Coping
-- Relationships
-- Trauma Impact
-- Self Image
+The public app is a client-facing therapy website.
 
-Each domain is graded based on user responses.
+It includes:
 
-## 📈 Results & Grading System
+&bull; Home page
+&bull; Learn page
+&bull; Assessment page
+&bull; Results page
+&bull; Booking page
 
-After completion, users receive a structured results page.
+The goal is to make therapy feel more approachable and easier to understand.
 
-Each domain is graded as:
+## Booking Flow
 
-🟢 Low Concern
+Booking handled through Jane.
 
-🟡 Moderate Concern
+Jane does not allow its booking to be embedded inside an iframe, so the app uses a dedicated booking handoff page.
 
-🟠 Elevated Concern
+The booking page explains that the user will be taken to Jane's trusted booking system to choose an appointment time.
 
-🔴 High Concern
+This keeps the experience clear, intentional, and secure.
 
-The grading helps users understand:
+## Mental Wellness Assessment
 
-- Which areas are stable
-- Which areas may require attention
-- Which areas may benefit from professional support
+The assessment has 10 questions.
 
-## 📝 Personalized Suggestions
+Each question uses the same answer scale:
 
-If a category is graded above “Low Concern,” the user receives:
+```txt
+1 = Not at all
+2 = Rarely
+3 = Sometimes
+4 = Often
+5 = Almost always
+```
 
-- Evidence-based coping strategies
-- Educational explanations
-- Practical exercises or assignments
-- Behavioral recommendations
-- Suggested next steps
+The assessment is anonymous. Users do not need to create an account to complete it.
 
-The guidance is educational and supportive — not diagnostic.
+## How Answers Are Saved
 
-## 📧 Optional Email Results
+Each question has a unique ID.
 
-Users may choose to:
+Example:
 
-- Enter their email voluntarily
-- Receive a summary of their assessment results
+```ts
+{
+    id: "question-1",
+    prompt: "I feel overwhelmed by my daily responsibilities.",
+    options: {
+        1: "Not at all",
+        2: "Rarely",
+        3: "Sometimes",
+        4: "Often",
+        5; "Almost always"
+    }
+}
+```
 
-Email submission is optional and not required to use the app.
+When a user selects an answer, the app saves the answer by question ID.
 
-## 🔁 Retake Assessment
+```ts
+{
+    "question-1" : "3",
+    "question-2" : "4",
+    "question-3" : "2",
+}
+```
 
-Users may:
+The question ID connects each question to the selected answer
+Answers are stored in Zustand and persisted in localStorage using the assessment store.
 
-- Redo the assessment at any time
-- Re-evaluate their symptoms
-- Use the tool as a reflection resource
+## How Scoring Works
 
-No account is required to retake the assessment.
+Most questions use the selected number directly as the score.
 
-📅 Consultation Booking
+Example:
 
-Throughout the experience, users are encouraged to:
+```txt
+Question answer = 4
+Score = 4
+```
 
-- Book a free 15-minute consultation
-- Speak directly with a specialist
-- Review their results in a professional setting
+Some questions are reverse scored because they represent positive wellness habits.
+Reverse scored questions:
+
+```txt
+question-5 = Energy
+question-8 = Feeling Rested
+question-9 = Self-care
+question-10 = Connection with others
+```
+
+Reverse scoring works like this:
+
+```txt
+1 → 5
+2 → 4
+3 → 3
+4 → 2
+5 → 1
+```
+
+Example:
+
+```txt
+Question: I feel connected to others.
+Answer: 5 = Almost always
+Score: 1
+```
+
+This keeps the scoring accurate because positive wellness answers should lower the concern score.
+
+## Result Categories
+
+After all 10 answers are scored, the app adds them together.
+
+```txt
+Minimum score = 10
+Maximum score = 50
+```
+
+The final score maps to one of three resule levels:
+
+```txt
+10-20 = Low Support Needed
+21-34 = Moderate Support Needed
+35-50 = High Suport Needed
+```
+
+The result page uses the final score to show a personalized result card with:
+
+&bull; Result label
+&bull; Headline
+&bull; Score
+&bull; Support Range
+&bull; Explanation
+&bull; Suggestions
+&bull; Closing message
+
+## Backend API
+
+The backend stores completed anonymous assessment sessions.
+
+Base URL:
+
+```txt
+http://localhost:3000
+```
+
+## Create Assessment Session
+
+```txt
+POST /api/assessment-sessions
+```
+
+Request body:
+
+```json
+{
+  "questionCount": 10,
+  "resultLevel": "moderate",
+  "score": 28,
+  "completedAt": "2026-05-04T18:30:00.000Z"
+}
+```
+
+Resonse:
+
+```json
+{
+  "id": 1,
+  "participant_name": "Participant #001",
+  "question_count": 10,
+  "result_level": "moderate",
+  "score": 28,
+  "completed_at": "2026-05-04T18:30:00.000Z",
+  "created_at": "2026-05-04T18:30:01.000Z"
+}
+```
+
+## Get Assessment Sessions
+
+```txt
+GET /api/assessment-sessions
+```
+
+Respons:
+
+```json
+[
+  {
+    "id": 1,
+    "participant_name": "Participant #001",
+    "question_count": 10,
+    "result_level": "moderate",
+    "score": 28,
+    "completed_at": "2026-05-04T18:30:00.000Z",
+    "created_at": "2026-05-04T18:30:01.000Z"
+  }
+]
+```
+
+## Database
+
+Table name:
+
+```txt
+assessment_sessions
+```
+
+Columns:
+
+```txt
+id
+participant_name
+question_count
+result_level
+score
+completed_at
+created_at
+
+```
+
+The backend creates anonymous partcipant names using the generated databse ID.
+
+Example:
+
+```txt
+Participant #001
+Participant #002
+Participant #003
+```
+
+## Dashboard
+
+The dashboard displays completed questionnaire sessions from Supabase.
+The dashboard table shows:
+
+&bull; Anonymous participant name
+&bull; Completion date
+&bull; Number of questions
+&bull; Result level
+&bull; Score
+
+Example:
+
+```txt
+Participant #001
+Completed: 2026-05-04
+Questions: 10
+Result: Moderate Support Needed
+Score: 28/50
+
+```
+
+## UI State
+
+The app handles common UI states during API calls.
+
+```txt
+Loading state
+- Shows while sessions are being fetched
+
+Error state
+- Shows when the backend request fails
+
+Empty State
+- Shows when no sessions exist yet
+
+Success state
+- Shows completed sessions in the dashboard table
+```
+
+## Authentication
+The dashboard has a simple admin login and signup form
+
+Current version:
+
+```txt
+- Admin can sign up
+- Admin can log in
+- Current user is sored in localStorage
+- Admin can log out
+```
+
+Future improvement
+
+```txt
+- Replace localStorage auth with Supabase Auth
+- Add protected routes
+- Add role-based access
+- Store admin users securely
+```
+
 
 ## App Screenshots
-### *Home*
-<img src="/src/assets/project UI/homepage.jpg" alt="Home screen" width="600" />
-<br><br>
-<img src="/src/assets/project UI/what-is-therapy.jpg" alt="What is therapy" width="600" />
 
-### *Understanding Therapy*
+### Home Page
+<img src="/src//assets/project UI/home_page.png" alt="Home screen" width="" />
+
+### Learn Page
+
 <img src="/src/assets/project UI/understanding-therapy.jpg" alt="Understanding therapy" width="600" />
 <br><br>
 <img src="/src/assets/project UI/understanding-therapy-2.jpg" alt="Understanding therapy" width="600" />
 
-### *Assessment Page*
-<img src="/src/assets/project UI/assessment.jpg" alt="Assessment" width="600" />
+### Assessment Page
+<img src="/src/assets/project UI/assessment_page.png" alt="Assessment" width="70%" />
 
-### *Result Page*
-<img src="/src/assets/project UI/result2.jpg" alt="Result" width="600" />
+### Result Page
+<img src="/src/assets/project UI/assessment_page.png" alt="Assessment" width="70%" />
+
+### Login/Sign Up Page
+
+
+### Dashboard Page
+
