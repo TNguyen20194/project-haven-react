@@ -1,8 +1,10 @@
 /* ==========>> FOOTER <<==========  */
 
 .footer-container {
-    background-color: hsl(var(--green-1a));
-    padding: 3rem 1.5rem;
+    width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background-color: hsl(var(--green-1a));
+  padding: 3rem 1.5rem;
 }
 
 .footer-grid {

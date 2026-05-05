@@ -7,6 +7,7 @@ import Layout from "./components/layout/MainLayout";
 import AssessmentLayout from "./components/layout/AssessmentLayout";
 import AssessmentResult from "./pages/assessment/AssessmentResults";
 import ScrollToTop from "./components/scroll-to-top/ScrollToTop";
+import BookTherapist from "./pages/book/BookTherapist";
 import { AssessmentEntryProvider } from "./hooks/AssessmentEntryContext";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />}/>
           <Route path="/learn" element={<Learn />} />
+          <Route path="/book" element={<BookTherapist />}/>
           {/* Add "About me" page for the therapist */}
         </Route>
 

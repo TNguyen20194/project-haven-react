@@ -13,6 +13,9 @@ html, body, #root {
 }
 
 html {
+   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -36,7 +39,6 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   overflow-x: hidden;
-  margin: 0;
     scrollbar-gutter: stable;
 }
 
