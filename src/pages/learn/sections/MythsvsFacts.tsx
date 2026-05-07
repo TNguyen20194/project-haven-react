@@ -2,7 +2,7 @@ import { useState } from "react";
 import IconBadge from "@/components/UI/feature-icon/IconBadge";
 import { mythFactList } from "@/data/mythFactList";
 import { Scale } from "lucide-react";
-import MythFactCard from "@/components/section/MythFactCard";
+import MythFactCard from "../../../components/section/MythFactCard";
 import { motion } from "motion/react";
 import {
   sectionVariants,
