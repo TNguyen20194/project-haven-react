@@ -2,7 +2,7 @@ import { CalendarCheck, ExternalLink, ShieldCheck } from "lucide-react";
 
 const BookTherapist = () => {
   return (
-    <section className="relative z-10 w-full px-6 py-10 overflow-hidden">
+    <section className="w-full flex-1 flex items-center justify-center px-6 py-20">
       <div className="relative z-10 max-w-[68rem] mx-auto">
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
@@ -12,7 +12,7 @@ const BookTherapist = () => {
               </div>
 
               <h2 className="section-heading !text-left leading-none">
-                Book a Therapist
+                Book with Julie
               </h2>
             </div>
 
