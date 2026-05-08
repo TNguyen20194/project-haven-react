@@ -23,6 +23,8 @@ import { appQuestions } from "@/data/questions";
 import { Loader2 } from "lucide-react";
 import DisclaimerBanner from "@/components/section/DisclaimerBanner";
 
+const SHOULD_SAVE_ASSESSMENT = false;
+
 const Questionnaire = () => {
   const [isFinishing, setIsFinishing] = useState(false);
 
@@ -81,25 +83,27 @@ Example
         duration: Infinity,
       });
 
-      try {
-        const score = getAssessmentTotalScore(appQuestions, answers);
-        const resultLevel = getAssessmentResultLevel(score);
+      if (SHOULD_SAVE_ASSESSMENT) {
+        try {
+          const score = getAssessmentTotalScore(appQuestions, answers);
+          const resultLevel = getAssessmentResultLevel(score);
 
-        await createAssessmentSession({
-          questionCount: appQuestions.length,
-          resultLevel,
-          score,
-          completedAt: new Date().toISOString(),
-        });
-      } catch {
-        toast.error("We couldn't save this assessment sessions.", {
-          id: toastId,
-          description: "Please try again in a moment.",
-          duration: 2000,
-        });
+          await createAssessmentSession({
+            questionCount: appQuestions.length,
+            resultLevel,
+            score,
+            completedAt: new Date().toISOString(),
+          });
+        } catch {
+          toast.error("We couldn't save this assessment sessions.", {
+            id: toastId,
+            description: "Please try again in a moment.",
+            duration: 2000,
+          });
 
-        setIsFinishing(false);
-        return;
+          setIsFinishing(false);
+          return;
+        }
       }
 
       setTimeout(() => {
