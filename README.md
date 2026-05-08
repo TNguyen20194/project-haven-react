@@ -319,7 +319,6 @@ result_level
 score
 completed_at
 created_at
-
 ```
 
 The backend creates anonymous partcipant names using the generated databse ID.
@@ -351,7 +350,6 @@ Completed: 2026-05-04
 Questions: 10
 Result: Moderate Support Needed
 Score: 28/50
-
 ```
 
 ## UI State
@@ -387,32 +385,64 @@ Current version:
 Future improvement
 
 ```txt
-- Replace localStorage auth with Supabase Auth
 - Add protected routes
 - Add role-based access
-- Store admin users securely
+```
+
+## Deployment
+The public React app is deployed on Vercel.
+
+### Frontend Deployment
+
+```
+Platform: Vercel
+Framework: React + Vite
+Build command: npm run build
+Output directory: dist
+```
+
+### Local Deployment
+Install dependencies:
+
+```bash
+npm install
+```
+Run the app locally:
+```bash
+npm run dev
+```
+Build the app:
+```
+npm run build
+```
+Preview the production build:
+```
+npm run preview
 ```
 
 
 ## App Screenshots
 
 ### Home Page
-<img src="/src//assets/project UI/home_page.png" alt="Home screen" width="" />
+<img src="/src//assets/project UI/home_page.png" alt="Home Page" width="600" />
 
 ### Learn Page
 
-<img src="/src/assets/project UI/understanding-therapy.jpg" alt="Understanding therapy" width="600" />
+<img src="/src/assets/project UI/learn_page.png" alt="Learn Page" width="600" />
 <br><br>
-<img src="/src/assets/project UI/understanding-therapy-2.jpg" alt="Understanding therapy" width="600" />
 
 ### Assessment Page
-<img src="/src/assets/project UI/assessment_page.png" alt="Assessment" width="70%" />
+<img src="/src/assets/project UI/assessment_page.png" alt="Assessment Page" width="600" />
+
 
 ### Result Page
-<img src="/src/assets/project UI/assessment_page.png" alt="Assessment" width="70%" />
+<img src="/src/assets/project UI/assessment_result.png" alt="Assessment Result" width="600" />
 
 ### Login/Sign Up Page
+<img src="/src/assets/project UI/login_tab.png" alt="Login Tab" width="600" />
 
+<img src="/src/assets/project UI/sign_up_tab.png" alt="Sign Up Tab" width="600" />
 
 ### Dashboard Page
+<img src="/src/assets/project UI/dashboard_page.png" alt="Dashboard Page" width="600" />
 
