@@ -2,8 +2,6 @@ import Button from "@/components/UI/buttons/CTAbutton";
 import { Link } from "react-router-dom";
 import julieImage from "@/assets/project UI/julie-tran.webp";
 
-import { CalendarCheck, ExternalLink, ShieldCheck } from "lucide-react";
-
 const AboutSection = () => {
   return (
     <section className="px-6 py-20 bg-[hsl(var(--background))]">
