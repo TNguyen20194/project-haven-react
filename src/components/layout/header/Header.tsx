@@ -24,7 +24,7 @@ const Header = () => {
   const { theme } = useTheme();
 
   const logoSrc =
-    theme === "dark" ? "/public/logo/JT_Therapy_Dark.png" : "/logo/JT_Therapy.png";
+    theme === "dark" ? "/logo/JT_Therapy_Dark.png" : "/logo/JT_Therapy.png";
 
   const { handleAssessmentEntry } = useAssessmentEntry();
 
