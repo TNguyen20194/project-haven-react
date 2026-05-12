@@ -1,6 +1,6 @@
 import "./App.css";
 import HomePage from "./pages/home/HomePage";
-import About from "./pages/about/About";
+import AboutSection from "./pages/about/About";
 import Learn from "./pages/learn/Learn";
 import Assessment from "./pages/assessment/Assessment";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -20,7 +20,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />}/>
           <Route path="/learn" element={<Learn />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutSection />} />
           <Route path="/book" element={<BookTherapist />}/>
           {/* Add "About me" page for the therapist */}
         </Route>

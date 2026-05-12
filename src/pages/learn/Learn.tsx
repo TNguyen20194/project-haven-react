@@ -1,6 +1,6 @@
 import UnderstandingTherapy from "./sections/UnderstandingTherapy";
 import WhatToExpect from "./sections/WhattoExpect";
-import TypesOfTherapy from "./sections/TypesofTherapy";
+import TypesOfTherapy from "./sections/TypesOfTherapy";
 import HowTherapyMightHelp from "./sections/HowTherapyMightHelp";
 import MythsVsFacts from "./sections/MythsVsFactsSection";
 import CTABannerSection from "../home/sections/cta-banner/CTABannerSection";

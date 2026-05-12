@@ -1,80 +1,80 @@
+import Button from "@/components/UI/buttons/CTAbutton";
+import { Link } from "react-router-dom";
+import julieImage from "@/assets/project UI/julie-tran.webp";
+
 import { CalendarCheck, ExternalLink, ShieldCheck } from "lucide-react";
 
-const About = () => {
-   return (
-    <section className="w-full flex-1 flex items-center justify-center px-6 py-20">
-      <div className="relative z-10 max-w-[68rem] mx-auto">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <div className="flex items-center gap-4">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(var(--secondary))] text-[hsl(var(--primary))]">
-                <CalendarCheck className="h-6 w-6" />
-              </div>
+const AboutSection = () => {
+  return (
+    <section className="px-6 py-20 bg-[hsl(var(--background))]">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
+        <div>
+          <h2 className="section-heading mb-8 text-center">All About Me</h2>
 
-              <h2 className="section-heading !text-left leading-none">
-                Book with Julie
-              </h2>
-            </div>
-
-            <p className="p-text mt-5 max-w-[42rem] !text-[1.15rem] leading-relaxed">
-             Booking is handled securely through Jane. You’ll be taken to Jane’s trusted booking system to choose a time that works for you.
+          <div className="space-y-6 text-[1rem] leading-relaxed text-[hsl(var(--green-1))]">
+            <p>
+              Hi, I’m Julie Tran, a Registered Psychotherapist (Qualifying). I’m
+              glad you’re here.
             </p>
-
-            <a
-              href="https://julietran.janeapp.com/#staff_member/1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[hsl(var(--primary))] px-8 py-3 text-[hsl(var(--white))] font-medium transition hover:bg-[hsl(var(--primary)/0.9)]"
-            >
-              Continue to Booking
-              <ExternalLink className="h-4 w-4" />
-            </a>
+            <p>
+              Starting therapy is often a meaningful step, especially when
+              you’ve been managing a lot on your own. Many of the people I work
+              with feel overwhelmed, stuck in their thoughts, or disconnected
+              from themselves while trying to keep up with daily life. You might
+              be functioning on the outside but feeling exhausted, anxious, or
+              uncertain on the inside. If that resonates with you, you’re not
+              alone.
+            </p>
+            <p>
+              I support young adults, adults and seniors navigating anxiety,
+              stress, burnout, and life transitions. In our work together, we
+              slow things down and make space to better understand what you’re
+              experiencing, not just manage the symptoms, but explore what’s
+              underneath them. My goal is to help you feel more grounded, clear,
+              and connected to yourself again.
+            </p>
+            <p>
+              My approach is collaborative and compassionate, drawing from
+              evidence-based therapies such as CBT, ACT, DBT, Solution Focused
+              and Mindfulness based practices. Therapy with me is a space where
+              you can show up as you are without pressure to have it all figured
+              out. Together, we focus on building practical tools while also
+              deepening insight and self understanding.
+            </p>
+            <p>
+              I bring experience working in both community and private practice
+              settings, along with my background as a Certified Recreation
+              Therapy Specialist and former Director of Resident and Family
+              Services. This has given me a broad understanding of mental health
+              across different life experiences and care environments.
+            </p>
+            <p>
+              Outside of my work, I find grounding in creative expression, time
+              outdoors, traveling, and meaningful connection with loved ones.
+              These moments help me stay present and balanced in my own life.
+            </p>
+            <p>
+              If you’re considering therapy, I want you to know that you don’t
+              have to navigate things alone. When you’re ready, I’m here to walk
+              alongside you as you begin that process.
+            </p>
           </div>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Button type="button" variant="primary" size="md">
+              <Link to="/book">Book a Session With Me</Link>
+            </Button>
 
-          <div className="rounded-[10px] border border-[#dcded7] bg-[hsl(var(--white))] p-6 shadow-md">
-            <div className="flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--background))] text-[hsl(var(--primary))]">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-
-              <div>
-                <h3 className="text-[1.25rem] font-semibold text-[hsl(var(--green-1))]">
-                  Secure booking through Jane
-                </h3>
-                <p className="p-text mt-2 leading-relaxed">
-                  Secure booking through Jane. Your appointment opens in Jane’s
-                  trusted booking system to help keep your information
-                  protected.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-6 space-y-3 border-t border-[#dcded7] pt-5">
-              <p className="text-[0.95rem] font-medium text-[hsl(var(--green-1))]">
-                What happens next
-              </p>
-              <ul className="space-y-3 text-[0.95rem] leading-relaxed text-[hsl(var(--green-1))]/80">
-                <li className="flex gap-3">
-                  <span className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[hsl(var(--primary))]" />
-                  <span>Choose an available appointment time.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[hsl(var(--primary))]" />
-                  <span>Complete the booking details securely in Jane.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[hsl(var(--primary))]" />
-                  <span>
-                    Return here anytime to keep learning or reflect&nbsp;again.
-                  </span>
-                </li>
-              </ul>
-            </div>
+            <Button type="button" variant="secondary" size="md">
+              <Link to="/assessment">Try the Free Assessment</Link>
+            </Button>
           </div>
+        </div>
+        <div className="lg:sticky lg:top-28">
+            <img src={julieImage} alt="Julie Tran" className="h-auto w-full rounded-[18px] object-cover shadow-md"/>
         </div>
       </div>
     </section>
   );
 };
 
-export default About;
+export default AboutSection;
