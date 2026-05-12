@@ -137,7 +137,7 @@ header {
 
 /* ----- RESPONSIVE ----- */
 
-@media (max-width: 620px) {
+@media (max-width: 765px) {
   .navigation,
   .header-actions {
     display: none;
@@ -162,7 +162,7 @@ header {
   }
 }
 
-@media (min-width: 621px) {
+@media (min-width: 766px) {
   .mobile-menu {
     display: none !important;
   }

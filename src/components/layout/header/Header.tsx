@@ -18,13 +18,13 @@ Features:
 */
 
 const Header = () => {
-  const MOBILE_MAX = 620;
+  const MOBILE_MAX = 765;
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_MAX);
   const { theme } = useTheme();
 
   const logoSrc =
-    theme === "dark" ? "/logo/JT_Therapy_Dark_2.png" : "/logo/JT_Therapy.png";
+    theme === "dark" ? "/public/logo/JT_Therapy_Dark.png" : "/logo/JT_Therapy.png";
 
   const { handleAssessmentEntry } = useAssessmentEntry();
 
@@ -56,7 +56,7 @@ const Header = () => {
             <img
               src={logoSrc}
               alt="Julie Tran Therapy"
-              width="150px"
+              width="135px"
             />
           </Link>
         </div>
@@ -133,6 +133,7 @@ const Header = () => {
                     key={title}
                     type="button"
                     onClick={handleAssessmentClick}
+                    className="text-[hsl(var(--primary-alt))]"
                   >
                     {title}
                   </button>
